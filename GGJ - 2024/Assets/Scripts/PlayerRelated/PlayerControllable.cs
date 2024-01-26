@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class PlayerControllable : MonoBehaviour
 {
-    private PlayerInputObj playerInput;
+    protected PlayerInputObj playerInput;
 
     public virtual void UpdatePlayerInput(PlayerInputObj playerInput)
     {

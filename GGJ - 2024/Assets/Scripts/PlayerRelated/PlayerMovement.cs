@@ -2,10 +2,10 @@ using UnityEngine;
 
 public struct PlayerInputObj
 {
-    public int horizontalAxis;
-    public int verticalAxis;
+    public float horizontalAxis;
+    public float verticalAxis;
 
-    public PlayerInputObj(int horizontalAxis, int verticalAxis)
+    public PlayerInputObj(float horizontalAxis, float verticalAxis)
     {
         this.horizontalAxis = horizontalAxis;
         this.verticalAxis = verticalAxis;
@@ -19,8 +19,9 @@ public class PlayerMovement : PlayerControllable
     [SerializeField]
     private float speed;
 
-    private PlayerInputObj playerInput;
     private Rigidbody2D rb;
+
+
 
     private void Start()
     {

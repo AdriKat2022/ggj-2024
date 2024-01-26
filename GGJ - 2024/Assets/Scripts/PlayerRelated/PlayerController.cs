@@ -3,8 +3,18 @@ using UnityEngine;
 // Maps input and updates scripts of type <PlayerControllable>
 public class PlayerController : MonoBehaviour
 {
+    private enum InputType
+    {
+        Classic
+    }
+
+    [Header("Input")]
+    [SerializeField]
+    private InputType inputType;
+
     [Header("References")]
-    public PlayerControllable controlledScript;
+    [SerializeField]
+    private PlayerControllable controlledScript;
 
 
     private void Start()
@@ -23,7 +33,19 @@ public class PlayerController : MonoBehaviour
 
     private void SendPlayerInput()
     {
-        PlayerInputObj input = new((int)Input.GetAxis("Horizontal"), (int)Input.GetAxis("Vertical"));
+        PlayerInputObj input;
+
+        switch (inputType)
+        {
+            case InputType.Classic:
+                input = new(Mathf.Ceil(Input.GetAxis("Horizontal")), Mathf.Ceil(Input.GetAxis("Vertical")));
+                break;
+
+            default:
+                input = new();
+                break;
+        }
+
         controlledScript.UpdatePlayerInput(input);
     }
 }
