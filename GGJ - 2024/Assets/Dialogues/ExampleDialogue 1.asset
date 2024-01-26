@@ -14,14 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DialogueSpeed>k__BackingField: 100
   <IgnorePunctuation>k__BackingField: 0
+  <Skippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
-  <Dialogue>k__BackingField:
-  - 'Ceci est un dialogue normal
-
-'
-  - Il y a plusieurs textes dans ce dialogue
-  - 'On peut aussi avoir
-
-    plusieurs lignes'
+  <Bubbles>k__BackingField:
+  - ...
+  - ...
+  - ...
   <FollowingDialogue>k__BackingField: {fileID: 0}

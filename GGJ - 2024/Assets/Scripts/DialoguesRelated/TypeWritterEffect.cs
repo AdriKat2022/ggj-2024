@@ -7,6 +7,7 @@ using UnityEngine;
 public class TypeWritterEffect : MonoBehaviour
 {
     private DialogueObject currentDialogue;
+    private Coroutine typingCoroutine;
 
     public bool IsRunning { get; private set; }
 
@@ -17,7 +18,6 @@ public class TypeWritterEffect : MonoBehaviour
         {new HashSet<char>(){',', ';', '-', ':'}, 0.3f }
     };
 
-    private Coroutine typingCoroutine;
 
     public void RunDialog(DialogueObject dialogue, int index, TMP_Text bubbleText)
     {

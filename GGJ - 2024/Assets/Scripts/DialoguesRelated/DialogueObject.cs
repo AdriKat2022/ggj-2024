@@ -10,7 +10,10 @@ public class DialogueObject : ScriptableObject
     [field: SerializeField, Tooltip("Should punctuation wait be ignored ? (,?!. and - chars extends a bit the wait time after their display")]
     public bool IgnorePunctuation { get; private set; }
 
-    [field: SerializeField, Tooltip("Should the user act to pass the dialogue ? Or auto skip to immediately read the following bubble ?")]
+    [field: SerializeField, Tooltip("Can the user skip the bubbles ?")]
+    public bool Skippable { get; private set; }
+
+    [field: SerializeField, Tooltip("Should the user act to pass the bubble ? Or auto skip to immediately read the following bubble ?")]
     public bool AutoAdvance { get; private set; }
 
     [field: SerializeField, Tooltip("Time after which the dialogue will auto advance.")]
