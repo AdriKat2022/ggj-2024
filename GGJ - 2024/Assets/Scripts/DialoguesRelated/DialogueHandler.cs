@@ -24,7 +24,7 @@ public class DialogueHandler : MonoBehaviour
 
     public bool IsOpen { get; private set; }
 
-    private TypeWritterEffect typeWritter;
+    private IWritterEffect typeWritter;
 
     private Vector2 readyIconBasePosition;
     private bool isReadyToAdvance;
@@ -33,9 +33,12 @@ public class DialogueHandler : MonoBehaviour
 
     private void Start()
     {
-        if (dialogueBox == null || !dialogueBox.TryGetComponent(out typeWritter))
-            Debug.LogError("Dialogue box is not assigned or no TypeEffect component was found on it.\nYou need a dialogue game object containing", gameObject);
-        
+        if (dialogueBox == null)
+            Debug.LogError("Dialogue box is not assigned.\n", gameObject);
+
+        if (!TryGetComponent(out typeWritter))
+            Debug.LogError("No TypeEffect component was found.\nYou need an effect to display text.", gameObject);
+
 
         IsOpen = false;
         isReadyToAdvance = false;
@@ -44,14 +47,14 @@ public class DialogueHandler : MonoBehaviour
         CloseDialogueBox();
     }
 
-    #region Dialogues
-
     /// <summary>
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
     /// </summary>
     /// <param name="dialogueObjectToDisplay">The dialogue object you want to display</param>
     public void ShowDialogue(DialogueObject dialogueObjectToDisplay)
     {
+        if (IsOpen)
+            return;
         IsOpen = true;
         currentDialogue = dialogueObjectToDisplay;
         StartCoroutine(StartDialogueAnimation());
@@ -90,15 +93,21 @@ public class DialogueHandler : MonoBehaviour
                 StartCoroutine(ReadyAnimation());
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
             }
-
-            yield return new WaitForSeconds(currentDialogue.AutoAdvanceTime);
+            else
+                yield return new WaitForSeconds(currentDialogue.AutoAdvanceTime);
 
             //SoundManager.Instance.PlaySound(SoundManager.Instance.button_press);
 
             isReadyToAdvance = false;
         }
 
-        StartCoroutine(StopDialogueAnimation());
+        if (currentDialogue.FollowingDialogue != null)
+        {
+            currentDialogue = currentDialogue.FollowingDialogue;
+            StartCoroutine(StepThroughDialogue());
+        }
+        else
+            StartCoroutine(StopDialogueAnimation());
     }
 
     private IEnumerator StopDialogueAnimation()
@@ -122,14 +131,14 @@ public class DialogueHandler : MonoBehaviour
 
     private IEnumerator RunTypingEffect(int index)
     {
-        typeWritter.RunDialog(currentDialogue, index, dialogueTextLabel);
+        typeWritter.RunDialogue(currentDialogue, index, dialogueTextLabel);
+
+        yield return null;
 
         while (typeWritter.IsRunning)
         {
-            if (currentDialogue.Skippable && Input.GetKeyDown(KeyCode.E))
-            {
-                typeWritter.Stop();
-            }
+            if (!currentDialogue.NonSkippable && Input.GetKeyDown(KeyCode.E))
+                typeWritter.StopDialogue();
 
             yield return null;
         }
@@ -145,7 +154,7 @@ public class DialogueHandler : MonoBehaviour
     private void ResetDialogueBox()
     {
         dialogueTextLabel.text = string.Empty;
-        dialogueTitleLabel.text = string.Empty;
+        //dialogueTitleLabel.text = string.Empty;
     }
 
 
@@ -171,6 +180,4 @@ public class DialogueHandler : MonoBehaviour
             yield return null;
         }
     }
-
-    #endregion
 }

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class TypeWritterEffect : MonoBehaviour
+public class TypeWritterEffect : MonoBehaviour, IWritterEffect
 {
     private DialogueObject currentDialogue;
     private Coroutine typingCoroutine;
@@ -19,8 +19,13 @@ public class TypeWritterEffect : MonoBehaviour
     };
 
 
-    public void RunDialog(DialogueObject dialogue, int index, TMP_Text bubbleText)
+    public void RunDialogue(DialogueObject dialogue, int index, TMP_Text bubbleText)
     {
+        if(dialogue == null)
+        {
+            Debug.LogError("Null dialogue passed");
+            return;
+        }
         if (dialogue.BubblesLength <= index)
         {
             Debug.LogError("Out of range dialogue requested");
@@ -30,7 +35,7 @@ public class TypeWritterEffect : MonoBehaviour
         typingCoroutine = StartCoroutine(TypeText(dialogue.Bubbles[index], bubbleText));
     }
 
-    public void Stop()
+    public void StopDialogue()
     {
         StopCoroutine(typingCoroutine);
         IsRunning = false;

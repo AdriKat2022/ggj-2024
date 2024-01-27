@@ -11,7 +11,7 @@ public class DialogueObject : ScriptableObject
     public bool IgnorePunctuation { get; private set; }
 
     [field: SerializeField, Tooltip("Can the user skip the bubbles ?")]
-    public bool Skippable { get; private set; }
+    public bool NonSkippable { get; private set; }
 
     [field: SerializeField, Tooltip("Should the user act to pass the bubble ? Or auto skip to immediately read the following bubble ?")]
     public bool AutoAdvance { get; private set; }
