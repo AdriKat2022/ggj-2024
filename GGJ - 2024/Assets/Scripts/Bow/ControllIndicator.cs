@@ -10,7 +10,6 @@ public class ControllIndicator : MonoBehaviour
     [SerializeField] private float maxScale;              // Échelle maximale
     [SerializeField] private float minScale;              // Échelle minimale
     [SerializeField] private SpriteRenderer rend;              // Échelle minimale
-    [SerializeField] private Sprite holdE;              // Échelle minimale
 
     private void Update()
     {
@@ -28,8 +27,8 @@ public class ControllIndicator : MonoBehaviour
         transform.localScale = new Vector3(newScale, newScale, newScale);
     }
 
-    public void ChangeSprite()
+    public void ChangeSprite(Sprite sprite)
     {
-        rend.sprite = holdE;
+        rend.sprite = sprite;
     }
 }
