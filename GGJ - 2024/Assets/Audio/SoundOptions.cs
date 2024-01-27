@@ -12,9 +12,16 @@ public class SoundOptions : MonoBehaviour
     [SerializeField] private Slider music;
     [SerializeField] private Slider effect;
 
+    private void OnEnable()
+    {
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        mixer = soundManager.mixer;
+    }
+
     void Start()
     {
-        mixer = soundManager.mixer;
+
+       
     }
 
     // Update is called once per frame
