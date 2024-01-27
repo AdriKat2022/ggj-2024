@@ -117,6 +117,7 @@ public class BowController : MonoBehaviour
 
             yield return null;
         }
+        player.transform.rotation = Quaternion.identity;
         indicator.ChangeSprite(pressE);
         isPickedUp = false;
         isShooting = false;
