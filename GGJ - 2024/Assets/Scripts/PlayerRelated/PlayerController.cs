@@ -6,7 +6,9 @@ public class PlayerController : MonoBehaviour
     private enum InputType
     {
         Classic,
-        Inversed
+        Inversed,
+        Rotated90,
+        Rotated270
     }
 
     [Header("Input")]
@@ -44,6 +46,14 @@ public class PlayerController : MonoBehaviour
 
             case InputType.Inversed:
                 input = new(-Mathf.Ceil(Input.GetAxis("Horizontal")), -Mathf.Ceil(Input.GetAxis("Vertical")));
+                break;
+
+            case InputType.Rotated90:
+                input = new(-Mathf.Ceil(Input.GetAxis("Vertical")), Mathf.Ceil(Input.GetAxis("Horizontal")));
+                break;
+
+            case InputType.Rotated270:
+                input = new(Mathf.Ceil(Input.GetAxis("Vertical")), -Mathf.Ceil(Input.GetAxis("Horizontal")));
                 break;
 
             default:
