@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: SlimeDeathDialogue
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 35
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Je-Je ? P-Pourquoi tu m\u2019as tap\xE9 ? Pourquoi tout le monde me d\xE9teste
+    ? "
+  - "J\u2019essaie d\u2019\xEAtre gentil avec les gens, de toujours les aider et
+    qu\u2019est-ce qu\u2019on me rend ? "
+  - 'RIEN ! '
+  - "Au contraire, la vie me tabasse de plus en plus fort ! Qu\u2019est-ce que je
+    peux faire de plus ? "
+  - "Je suis la source de la rivi\xE8re, j\u2019abrite un \xE9cosyst\xE8me incroyable,
+    mais ce n\u2019est toujours pas suffisant. J\u2019en peux plus, je n\u2019ai
+    pas la force de me battre contre toi. "
+  - "Tue-moi si \xE7a te chante, mais j\u2019esp\xE8re que tu le regretteras toute
+    ta vie et que tu seras rong\xE9e par les remords."
+  <FollowingDialogue>k__BackingField: {fileID: 0}
