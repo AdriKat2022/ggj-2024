@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ClickCookie : MonoBehaviour
 {
+    [SerializeField] private bool firstTime;
     [Header("Counter")]
     [SerializeField] private TextMeshProUGUI cookieCounter;
     private int cookieCount;
@@ -29,6 +30,13 @@ public class ClickCookie : MonoBehaviour
     [SerializeField] private GameObject surbrillance2;
     [SerializeField] private float breakShrink;
 
+    [Header("SecondTime")]
+    [SerializeField] private GameObject main;
+    [SerializeField] private float waitTimer;
+    [SerializeField] private Vector3 endPosition;
+    [SerializeField] private Vector3 endRotation;
+    [SerializeField] private float moveDuration;
+
 
 
     private void Start()
@@ -41,32 +49,14 @@ public class ClickCookie : MonoBehaviour
         {
             cookieCount++;
             if (cookieCount < cookieCountBreak + 6) cookieCounter.text = "x"+cookieCount.ToString();
-            if(cookieCount == cookieCountTransition) SecondPhase();
 
-            if (cookieCount == cookieCountBreak)
+            if(cookieCount >= cookieCountTransition)
             {
-                StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomething());
-                speedLine.SetActive(false);
-            }
-            if (cookieCount == cookieCountBreak + 7) StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomething());
-            if (cookieCount == cookieCountBreak + 13)
-            {
-                StartCoroutine(gameObject.GetComponent<BreakScript>().BreakSomething());
-                surbrillance1.SetActive(false);
-                surbrillance2.SetActive(false);
-                originalScale = originalScale * breakShrink;
-
-            }
-            if (cookieCount == cookieCountBreak + 18) canvaCounter.GetComponent<BreakUI>().BreakCounter();
-            if (cookieCount == cookieCountBreak + 27)
-            {
-                StartCoroutine(gameObject.GetComponent<BreakCookie>().BreakEverything());
-                StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomethingTwo());
-                StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomethingTwo());
-                canvaCounter.SetActive(false);
+                if (firstTime) FirstTime();
+                else StartCoroutine(SecondTime());
             }
 
-
+            
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickPosition.z = 0;
 
@@ -113,9 +103,61 @@ public class ClickCookie : MonoBehaviour
         isScaling = false;
     }
 
-    private void SecondPhase()
+    private void FirstTime()
     {
-        clicDuration /= clicIncreaseFactor;
-        speedLine.SetActive(true);
+        if (cookieCount == cookieCountTransition)
+        {
+            clicDuration /= clicIncreaseFactor;
+            speedLine.SetActive(true);
+        }
+
+        if (cookieCount == cookieCountBreak)
+        {
+            StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomething());
+            speedLine.SetActive(false);
+        }
+        if (cookieCount == cookieCountBreak + 7) StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomething());
+        if (cookieCount == cookieCountBreak + 13)
+        {
+            StartCoroutine(gameObject.GetComponent<BreakScript>().BreakSomething());
+            surbrillance1.SetActive(false);
+            surbrillance2.SetActive(false);
+            originalScale = originalScale * breakShrink;
+
+        }
+        if (cookieCount == cookieCountBreak + 18) canvaCounter.GetComponent<BreakUI>().BreakCounter();
+        if (cookieCount == cookieCountBreak + 27)
+        {
+            StartCoroutine(gameObject.GetComponent<BreakCookie>().BreakEverything());
+            StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomethingTwo());
+            StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomethingTwo());
+            canvaCounter.SetActive(false);
+        }
+
+        
+    }
+
+    private IEnumerator SecondTime()
+    {
+        yield return new WaitForSeconds(waitTimer);
+        canvaCounter.SetActive(false);
+
+        float timer = 0f;
+        Vector3 startPosition = transform.position;
+        Vector3 startRotation = transform.rotation.eulerAngles;
+
+        while (timer < moveDuration)
+        {
+            // Interpolation linéaire entre les valeurs initiales et finales
+            float t = timer / moveDuration;
+            main.transform.rotation = Quaternion.Euler(Vector3.Lerp(startRotation, endRotation, t));
+            main.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+
+            // Attend la prochaine frame
+            yield return null;
+
+            // Met à jour le temps écoulé
+            timer += Time.deltaTime;
+        }
     }
 }
