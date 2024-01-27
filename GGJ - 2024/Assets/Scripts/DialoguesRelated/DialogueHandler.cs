@@ -31,6 +31,21 @@ public class DialogueHandler : MonoBehaviour
     private DialogueObject currentDialogue;
 
 
+    #region Singleton
+
+    public DialogueHandler Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    #endregion
+
+
     private void Start()
     {
         if (dialogueBox == null)

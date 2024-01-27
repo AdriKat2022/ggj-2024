@@ -3,12 +3,17 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogue", order = 1)]
 public class DialogueObject : ScriptableObject
 {
-    [field: Header("Dialogue options")]
+    [field: Header("Text timing")]
     [field: SerializeField, Tooltip("Characters per second")]
     public float DialogueSpeed { get; private set; } = 100;
 
     [field: SerializeField, Tooltip("Should punctuation wait be ignored ? (,?!. and - chars extends a bit the wait time after their display")]
     public bool IgnorePunctuation { get; private set; }
+
+    [field: SerializeField, Tooltip("If true, this will not count white spaces as characters to wait")]
+    public bool IgnoreWhiteSpaces { get; private set; }
+
+    [field: Header("Inputs")]
 
     [field: SerializeField, Tooltip("Can the user skip the bubbles ?")]
     public bool NonSkippable { get; private set; }

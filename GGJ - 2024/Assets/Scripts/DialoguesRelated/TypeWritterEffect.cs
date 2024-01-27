@@ -45,35 +45,50 @@ public class TypeWritterEffect : MonoBehaviour, IWritterEffect
     {
         IsRunning = true;
 
-        float t = 0;
-        int charIndex = 0;
+        float time = 0;
+        int currentCharIndex = 0;
+        int lastWait = -1;
 
-        while (charIndex < textToType.Length)
+        while (currentCharIndex < textToType.Length - 1)
         {
-            int lastCharIndex = charIndex;
+            int lastCharIndex = currentCharIndex;
 
-            t += Time.deltaTime * currentDialogue.DialogueSpeed;
+            time += Time.deltaTime * currentDialogue.DialogueSpeed;
 
-            charIndex = Mathf.FloorToInt(t);
-            charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
+            if (Time.deltaTime * currentDialogue.DialogueSpeed > 1)
+                Debug.LogWarning("Text is too fast, it might not account all wait times for repeated punctuation.");
+
+            currentCharIndex = Mathf.FloorToInt(time);
+            currentCharIndex = Mathf.Clamp(currentCharIndex, 0, textToType.Length-1);
+            
+            while (currentDialogue.IgnoreWhiteSpaces && textToType[currentCharIndex] == ' ' && currentCharIndex < textToType.Length-1)
+            {
+                currentCharIndex++;
+                time = currentCharIndex;
+            }
+
 
             // The for loop is just for when there is multiple characters that have to show up at the same frame
-            for (int i = lastCharIndex; i < charIndex; i++)
+            for (int i = lastCharIndex; i <= currentCharIndex; i++)
             {
                 bool isLast = i >= textToType.Length - 1;
 
-                bubbleText.text = textToType[..(i + 1)];
+                bubbleText.text = textToType[..(i+1)];
 
                 //SoundManager.Instance.PlaySound(SoundManager.Instance.text_char);
 
-                if (CheckPunctuation(textToType[i], out float waitTime) && !isLast)
+                // This code checks if we're not skipping waitable chars
+                if (i>lastWait && CheckPunctuation(textToType[i], out float waitTime) && !isLast)
                 {
-                    if (CheckPunctuation(textToType[i + 1], out float secondWaitTime))
-                    {
-                        waitTime /= 2;
-                    }
+                    //Debug.Log("punct detected ("+i+")\nWait time : "+waitTime);
+                    //Debug.Log(currentCharIndex);
+                    //Debug.Log(textToType.Length - 1);
 
+                    time = i;
+                    lastWait = i;
+                    currentCharIndex = i;
                     yield return new WaitForSeconds(waitTime);
+                    break;
                 }
             }
 

@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
-  m_Name: ExampleDialogue 2
+  m_Name: ExampleDialogue 1 (2-3)
   m_EditorClassIdentifier: 
-  <DialogueSpeed>k__BackingField: 30
+  <DialogueSpeed>k__BackingField: 100
   <IgnorePunctuation>k__BackingField: 0
-  <NonSkippable>k__BackingField: 1
-  <AutoAdvance>k__BackingField: 1
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 2
   <Bubbles>k__BackingField:
   - "enchain\xE9s !"
-  - "et auto avanc\xE9 aussi"
-  <FollowingDialogue>k__BackingField: {fileID: 0}
+  - "et auto avanc\xE9s aussi"
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 3fda2535482dd9e4b95811e9824b66c7, type: 2}

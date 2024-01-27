@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
-  m_Name: ExampleDialogue 1
+  m_Name: ExampleDialogue 1 (3-3)
   m_EditorClassIdentifier: 
-  <DialogueSpeed>k__BackingField: 100
+  <DialogueSpeed>k__BackingField: 20
   <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 1
   <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
   <Bubbles>k__BackingField:
-  - "Ils peuvent m\xEAme"
-  - "\xEAtre"
-  - ...
-  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 3fda2535482dd9e4b95811e9824b66c7, type: 2}
+  - Vous pouvez aussi les skipper si ils sont trop long.
+  - "Pratique de skipper hein ? Sinon y avait tout \xE7a \xE0 lire : la d\xE9finition
+    de l'\xE9l\xE9phant selon wikip\xE9dia est plut\xF4t grosse, et je ne parle pas
+    de l'\xE9l\xE9phant. Oui j'aime les jeux de mot."
+  <FollowingDialogue>k__BackingField: {fileID: 0}

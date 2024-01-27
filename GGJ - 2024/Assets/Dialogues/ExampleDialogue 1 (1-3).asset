@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
-  m_Name: ExampleDialogue
+  m_Name: ExampleDialogue 1 (1-3)
   m_EditorClassIdentifier: 
-  <DialogueSpeed>k__BackingField: 20
+  <DialogueSpeed>k__BackingField: 100
   <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
   <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
   <Bubbles>k__BackingField:
-  - Ceci est un exemple de dialogue simple !
-  - Il peut y avoir plusieurs bulles comme ceci.
-  <FollowingDialogue>k__BackingField: {fileID: 0}
+  - "Ils peuvent m\xEAme"
+  - "\xEAtre"
+  - ...
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: d49e76bf701566f4fa3265465a7d1199, type: 2}
