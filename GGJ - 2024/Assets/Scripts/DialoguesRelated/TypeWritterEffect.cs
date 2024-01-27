@@ -23,12 +23,12 @@ public class TypeWritterEffect : MonoBehaviour, IWritterEffect
     {
         if(dialogue == null)
         {
-            Debug.LogError("Null dialogue passed");
+            Debug.LogError("Internal error : Null dialogue passed");
             return;
         }
         if (dialogue.BubblesLength <= index)
         {
-            Debug.LogError("Out of range dialogue requested");
+            Debug.LogError("Internal error : Out of range dialogue requested");
             return;
         }
         currentDialogue = dialogue;
