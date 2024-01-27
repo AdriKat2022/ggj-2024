@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1316031245271839413, guid: b80c2ae79730f7746ab9e0d0bca19c94, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 08e7cbf472ae18a4d9409c2122365c5d, type: 2}
+    - target: {fileID: 1316031245271839413, guid: b80c2ae79730f7746ab9e0d0bca19c94, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2605988797688889942, guid: 08e7cbf472ae18a4d9409c2122365c5d, type: 2}
+    - target: {fileID: 1316031245271839413, guid: b80c2ae79730f7746ab9e0d0bca19c94, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2021098718404677603, guid: b80c2ae79730f7746ab9e0d0bca19c94, type: 3}
       propertyPath: m_Name
       value: CookiePhase2
