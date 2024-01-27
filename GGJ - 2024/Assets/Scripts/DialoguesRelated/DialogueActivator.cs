@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class DialogueActivator : MonoBehaviour
 {
-    [SerializeField]
+    [Header("Interaction")]
+    [SerializeField, Tooltip("Can the interaction be reused ?")]
+    private bool repeatable;
+    [SerializeField, Tooltip("The dialogue to display.")]
     private DialogueObject dialogueToDisplay;
-    [SerializeField]
-    private bool repeatable = false;
 
-    [Space]
+    [Header("Auto trigger")]
+    [SerializeField, Tooltip("Disable the auto dialogue trigger.")]
+    private bool usedByDialogueInteractible;
+
 
     private DialogueHandler dialogueHandler;
 
@@ -34,6 +38,9 @@ public class DialogueActivator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (usedByDialogueInteractible)
+            return;
+
         if (dialogueToDisplay != null && dialogueHandler != null)
         {
             TriggerDialogue();

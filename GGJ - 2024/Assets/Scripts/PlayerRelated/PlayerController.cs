@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     private enum InputType
     {
-        Classic
+        Classic,
+        Inversed
     }
 
     [Header("Input")]
@@ -39,6 +40,10 @@ public class PlayerController : MonoBehaviour
         {
             case InputType.Classic:
                 input = new(Mathf.Ceil(Input.GetAxis("Horizontal")), Mathf.Ceil(Input.GetAxis("Vertical")));
+                break;
+
+            case InputType.Inversed:
+                input = new(-Mathf.Ceil(Input.GetAxis("Horizontal")), -Mathf.Ceil(Input.GetAxis("Vertical")));
                 break;
 
             default:
