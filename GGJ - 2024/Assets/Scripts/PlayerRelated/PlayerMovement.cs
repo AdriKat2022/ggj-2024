@@ -19,19 +19,24 @@ public class PlayerMovement : PlayerControllable
     [SerializeField]
     private float speed;
 
-    private Rigidbody2D rb;
+    [Header("Animation")]
+    [SerializeField]
+    private Animator animator;
 
+    private Rigidbody2D rb;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
         playerInput = new(0, 0);
     }
 
     private void Update()
     {
         MovePlayer();
+        Animate();
     }
 
     private void MovePlayer()
@@ -43,4 +48,11 @@ public class PlayerMovement : PlayerControllable
 
         rb.velocity = velocity;
     }
+
+    private void Animate()
+    {
+        animator.SetFloat("HorizontalInput", rb.velocity.x);
+        animator.SetFloat("VerticalInput", rb.velocity.y);
+    }
+        
 }
