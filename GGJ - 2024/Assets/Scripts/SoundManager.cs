@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip damage;
 
+    [Header("Audio Mixer")]
+
+    public AudioMixer mixer;
 
 
     #region Singleton
@@ -133,4 +137,7 @@ public class SoundManager : MonoBehaviour
 
         PlayMusic(clip, forceRestart: forceRestart);
     }
+
+
+
 }
