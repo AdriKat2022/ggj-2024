@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_margin: {x: 40, y: 30, z: 40, w: 30}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &310893845016287930
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -296,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &719822752029127684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -315,8 +315,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.6143, y: -360.8219}
-  m_SizeDelta: {x: 1159.0986, y: 157.2239}
+  m_AnchoredPosition: {x: -1.6143, y: -380}
+  m_SizeDelta: {x: 1377.1318, y: 188.6308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6750613338634622423
 CanvasRenderer:
@@ -563,8 +563,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0021972656, y: -0.0013275146}
-  m_SizeDelta: {x: -46.869995, y: -0.070007324}
+  m_AnchoredPosition: {x: 0, y: 0.0002593994}
+  m_SizeDelta: {x: -0.00012207, y: 0.0005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3569293592097521991
 CanvasRenderer:
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 40, y: 30, z: 40, w: 30}
+  m_margin: {x: 150, y: 40, z: 150, w: 40}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -716,6 +716,9 @@ MonoBehaviour:
   bubbleAnimationTime: 0.2
   readyAnimationSpeed: 1
   readyAnimationDepth: 1
+  bubbleAnimationTimeSubtitle: 0
+  readyAnimationSpeedSubtitle: 0
+  readyAnimationDepthSubtitle: 0
   dialogueTextLabel: {fileID: 4356302405808405388}
   dialogueBox: {fileID: 398258453339149400}
   readyIcon: {fileID: 4090036044076375218}
@@ -723,6 +726,7 @@ MonoBehaviour:
   subtitleBox: {fileID: 1593173230119444229}
   typeWritter: {fileID: 5586499773686004746}
   instantWritter: {fileID: 1876955452538459498}
+  testSubtitles: {fileID: 11400000, guid: 44c10954ecdff56448168666a758d3c2, type: 2}
 --- !u!114 &5586499773686004746
 MonoBehaviour:
   m_ObjectHideFlags: 0

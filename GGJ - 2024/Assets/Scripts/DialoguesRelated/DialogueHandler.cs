@@ -45,6 +45,11 @@ public class DialogueHandler : MonoBehaviour
     private SubtitleObject currentSubtitles;
 
 
+    [Header("Debug")]
+    [SerializeField]
+    private SubtitleObject testSubtitles;
+
+
     #region Singleton
 
     public static DialogueHandler Instance { get; private set; }
@@ -75,6 +80,15 @@ public class DialogueHandler : MonoBehaviour
         readyIconBasePosition = readyIcon.transform.position;
         CloseDialogueBox();
     }
+
+
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.W))
+            ShowSubtitles(testSubtitles);
+    }
+
 
     /// <summary>
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
@@ -134,7 +148,7 @@ public class DialogueHandler : MonoBehaviour
         while (i < currentSubtitles.BubblesLength)
         {
             instantWritter.RunDialogue(currentSubtitles, i, subtitleTextLabel);
-            yield return new WaitForSeconds(currentSubtitles.Bubbles[i].Item2);
+            yield return new WaitForSeconds(currentSubtitles.Bubbles[i].time);
             i++;
         }
 
