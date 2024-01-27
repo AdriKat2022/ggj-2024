@@ -1,11 +1,22 @@
+using System;
 using UnityEngine;
+
 
 [CreateAssetMenu(menuName = "Subtitle", order = 1)]
 public class SubtitleObject : ScriptableObject
 {
+    [Serializable]
+    public struct Subtitle
+    {
+        [TextArea]
+        public string text;
+        public float time;
+    }
+
+
     [field: Header("Subtitles")]
-    [field: SerializeField, TextArea]
-    public (string,float)[] Bubbles { get; private set; }
+    [field: SerializeField]
+    public Subtitle[] Bubbles { get; private set; }
     public int BubblesLength => Bubbles.Length;
 
 
