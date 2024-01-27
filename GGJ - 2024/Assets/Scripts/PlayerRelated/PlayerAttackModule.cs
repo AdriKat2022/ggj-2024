@@ -11,7 +11,7 @@ public class PlayerAttackModule : MonoBehaviour
     private float damage;
 
 
-    private void Start()
+    private void onEnable()
     {
         isActive = false;
         timer = 0;
@@ -49,15 +49,25 @@ public class PlayerAttackModule : MonoBehaviour
             timer -= Time.deltaTime;
             yield return null;
         }
-
+        this.gameObject.SetActive(false);
         isActive = false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(isActive && other.TryGetComponent(out IDamageable damageable))
+        if(other.TryGetComponent(out IDamageable damageable))
         {
             damageable.Damage(damage);
+            print("isDamageable");
+        }
+
+        if(other.TryGetComponent(out DoorBehaviour door))
+        {
+            if (!door.GetIsBoss())
+            {
+                other.gameObject.SetActive(false);
+            }
+            
         }
     }
 }

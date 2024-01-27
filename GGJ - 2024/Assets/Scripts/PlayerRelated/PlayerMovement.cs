@@ -44,7 +44,7 @@ public class PlayerMovement : PlayerControllable
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        attackModule.gameObject.SetActive(false);
         playerInput = new(0, 0, false);
 
         isAttacking = false;
@@ -52,6 +52,7 @@ public class PlayerMovement : PlayerControllable
 
     private void Update()
     {
+        facingDirection = GetFacingDirection();
         Attack();
         MovePlayer();
         Animate();
@@ -75,7 +76,7 @@ public class PlayerMovement : PlayerControllable
         velocity.x = playerInput.horizontalAxis * speed;
         velocity.y = playerInput.verticalAxis * speed;
 
-        facingDirection = GetFacingDirection();
+        
 
         rb.velocity = velocity;
     }
@@ -88,15 +89,19 @@ public class PlayerMovement : PlayerControllable
             return 90;
         if (playerInput.horizontalAxis < -0.1)
             return 270;
-
-        return 0;
+        if (playerInput.verticalAxis < -0.1)
+            return 0;
+        else
+        {
+            return facingDirection;
+        }
     }
 
     private void Attack()
     {
         if (!playerInput.attack || isAttacking)
-            return;
-
+        { return; }
+        attackModule.gameObject.SetActive(true);
         coolDown = endlag;
         isAttacking = true;
         animator.SetTrigger("Attack");

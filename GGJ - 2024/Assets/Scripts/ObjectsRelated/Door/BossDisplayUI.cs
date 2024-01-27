@@ -36,5 +36,9 @@ public class BossDisplayUI : MonoBehaviour
         BossBar.SetActive(val);
         soundManager.PlayMusic(soundManager.BossThemeIntro);
         soundManager.PlayMusic(soundManager.BossTheme, soundManager.BossThemeIntro.length - Time.deltaTime);
+        if (!val)
+        {
+            soundManager.StopMusic();
+        }
     }
 }
