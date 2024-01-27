@@ -56,18 +56,16 @@ public abstract class PlayerInteractable : MonoBehaviour
     protected virtual void ToogleInteractable(bool toogle)
     {
         interactable = toogle;
-        interactableVisual.gameObject.SetActive(toogle);
+        interactableVisual.SetActive(toogle);
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)
     {
         // TODO : Detect if it is the player collision
 
-        Debug.Log("Detect");
 
         if (!hasInteracted && Helper.IsLayerInLayerMask(collision.gameObject.layer, interactableLayer))
         {
-            Debug.Log("player");
             ToogleInteractable(true);
         }
     }

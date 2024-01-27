@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7950c43b49e70343a42a860bca58661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reusableAfterExitCollision: 0
+  reusableAfterExitCollision: 1
   interactableLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repeatable: 1
-  dialogueToDisplay: {fileID: 11400000, guid: e2915e25fa407fd4e83a6632d44ddf52, type: 2}
+  dialogueToDisplay: {fileID: 11400000, guid: fe6b765498179664e8652bff0bc816b9, type: 2}
   usedByDialogueInteractible: 1
 --- !u!61 &1467557160021797222
 BoxCollider2D:
