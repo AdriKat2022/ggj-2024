@@ -89,6 +89,23 @@ public class DialogueHandler : MonoBehaviour
         currentDialogue = dialogueObjectToDisplay;
         StartCoroutine(StartDialogueAnimation());
     }
+
+    /// <summary>
+    /// This will make the dialogue box appear and display all the bubbles and following dialogues.
+    /// </summary>
+    /// <param name="dialogueObjectToDisplay">The dialogue object you want to display</param>
+    public IEnumerator ShowDialogueWait(DialogueObject dialogueObjectToDisplay)
+    {
+        if (IsOpen)
+            yield break;
+
+        IsOpen = true;
+        currentDialogue = dialogueObjectToDisplay;
+        yield return StartDialogueAnimation();
+    }
+
+    #region Subtitles
+
     /// <summary>
     /// This will make the subtitles box appear and display all the bubbles and following subtitles.
     /// </summary>
@@ -130,6 +147,8 @@ public class DialogueHandler : MonoBehaviour
         subtitleBox.SetActive(false);
     }
 
+    #endregion
+
     #region Dialogues
 
     private IEnumerator StartDialogueAnimation()
@@ -147,7 +166,7 @@ public class DialogueHandler : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(StepThroughDialogue());
+        yield return StepThroughDialogue();
     }
 
     private IEnumerator StepThroughDialogue()
@@ -176,10 +195,10 @@ public class DialogueHandler : MonoBehaviour
         if (currentDialogue.FollowingDialogue != null)
         {
             currentDialogue = currentDialogue.FollowingDialogue;
-            StartCoroutine(StepThroughDialogue());
+            yield return StepThroughDialogue();
         }
         else
-            StartCoroutine(StopDialogueAnimation());
+            yield return StopDialogueAnimation();
     }
 
     private IEnumerator StopDialogueAnimation()
