@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
   m_Name: ExampleDialogue
   m_EditorClassIdentifier: 
-  <DialogueSpeed>k__BackingField: 20
+  <DialogueSpeed>k__BackingField: 100
   <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
   <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
