@@ -1,19 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BowController : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private ControllIndicator indicator;
+    [SerializeField] private float launchSpeed;
+    [SerializeField] private float torqueForce;
+    [SerializeField] private float launchDuration;
     private GameObject player;
     private bool isPickedUp;
+    private bool isShooting;
 
-    private int bowBehaviour;
+    [SerializeField] private Sprite holdE;              // Échelle minimale
+    [SerializeField] private Sprite pressE;              // Échelle minimale
+
+
+    [SerializeField] private int bowBehaviour;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out PlayerMovement player))
+        if(!isPickedUp && collision.TryGetComponent(out PlayerMovement player))
         {
             this.player = player.gameObject;
         }
@@ -21,7 +30,7 @@ public class BowController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerMovement _))
+        if (!isPickedUp && collision.TryGetComponent(out PlayerMovement _))
         {
             this.player = null;
         }
@@ -40,18 +49,79 @@ public class BowController : MonoBehaviour
             {
                 anim.SetBool("Attack", false);
                 anim.SetBool("Shoot", true);
-                if(bowBehaviour==0)
+                
+            }
+            if (!isShooting &&  anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+            {
+                isShooting = true;
+                transform.parent = null;
+                if (bowBehaviour == 0)
                 {
-                    bowBehaviour = 1;
+                    StartCoroutine(Launch());
                 }
+                else if (bowBehaviour == 1)
+                {
+                    StartCoroutine(LaunchPlayer());
+                }
+                else if (bowBehaviour == 2)
+                {
+                    StartCoroutine(Launch());
+                }
+
             }
         }
         else if(player && Input.GetKeyDown(KeyCode.E)) {
             transform.parent = player.transform;
             transform.localPosition = new Vector3(0.3f, -0.18f, 0);
             isPickedUp = true;
-            indicator.ChangeSprite();
+            indicator.ChangeSprite(holdE);
         }
         
     }
+
+    private IEnumerator Launch()
+    {
+        float elapsedTime = 0f;
+        Vector3 moveDirection = player.transform.right;
+
+
+        while (elapsedTime < launchDuration)
+        {
+            // Déplace l'objet dans la direction spécifiée
+            transform.Translate(launchSpeed * Time.deltaTime * moveDirection, Space.World);
+
+            // Tourne l'objet constamment
+            transform.Rotate(Time.deltaTime * torqueForce * Vector3.forward, Space.World);
+
+            // Incrémente le temps écoulé
+            elapsedTime += Time.deltaTime;
+
+            // Attend la prochaine frame
+            yield return null;
+        }
+    }
+
+    private IEnumerator LaunchPlayer()
+    {
+        float elapsedTime = 0f;
+        Vector3 moveDirection = player.transform.right;
+
+
+        while (elapsedTime < launchDuration)
+        {
+            player.transform.Translate(launchSpeed * Time.deltaTime * moveDirection, Space.World);
+
+            player.transform.Rotate(Time.deltaTime * torqueForce * Vector3.forward, Space.World);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+        indicator.ChangeSprite(pressE);
+        isPickedUp = false;
+        isShooting = false;
+        bowBehaviour = 2;
+        player = null;
+    }
+
 }
