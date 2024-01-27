@@ -33,7 +33,7 @@ public class DialogueHandler : MonoBehaviour
 
     #region Singleton
 
-    public DialogueHandler Instance { get; private set; }
+    public static DialogueHandler Instance { get; private set; }
 
     private void Awake()
     {

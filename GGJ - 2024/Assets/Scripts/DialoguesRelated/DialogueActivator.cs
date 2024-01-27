@@ -10,13 +10,16 @@ public class DialogueActivator : MonoBehaviour
 
     [Space]
 
-    [SerializeField]
     private DialogueHandler dialogueHandler;
 
     private bool activated = false;
 
     private void Start()
     {
+        dialogueHandler = DialogueHandler.Instance;
+        if (dialogueHandler == null)
+            Debug.LogError("There is no dialogue handler in the scene. Dialogues won't open.");
+
         activated = false;
     }
 
