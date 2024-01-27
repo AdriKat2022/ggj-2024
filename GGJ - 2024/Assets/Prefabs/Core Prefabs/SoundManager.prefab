@@ -47,13 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f118d5a9ca3844ea4f0fa782297523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 0}
-  effectSource: {fileID: 0}
-  effectRepeatSource: {fileID: 0}
+  musicSource: {fileID: 5950256147534747855}
+  effectSource: {fileID: 7839107821340966663}
+  effectSourceRepeat: {fileID: 5918857173104036000}
   mainMenu: {fileID: 0}
-  defaultLevel: {fileID: 0}
-  invincibility: {fileID: 0}
-  gameOver: {fileID: 0}
+  firstTheme: {fileID: 0}
   jump: {fileID: 0}
   damage: {fileID: 0}
 --- !u!1 &4758911555352636194
