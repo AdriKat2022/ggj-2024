@@ -51,8 +51,16 @@ public class PlayerMovement : PlayerControllable
 
     private void Animate()
     {
-        animator.SetFloat("HorizontalInput", rb.velocity.x);
-        animator.SetFloat("VerticalInput", rb.velocity.y);
+        if (rb.velocity != Vector2.zero)
+        {
+            animator.SetBool("Moving", true);
+            animator.SetFloat("moveX", rb.velocity.x);
+            animator.SetFloat("moveY", rb.velocity.y);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
     }
         
 }
