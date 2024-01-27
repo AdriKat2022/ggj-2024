@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class TypeWritterEffect : MonoBehaviour, IWritterEffect
+public class TypeWritterEffect : MonoBehaviour
 {
     private DialogueObject currentDialogue;
     private Coroutine typingCoroutine;
