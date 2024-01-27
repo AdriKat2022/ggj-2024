@@ -7,6 +7,16 @@ public class Slime : MonoBehaviour
 {
     [SerializeField] private PostProcessVolume vol;
     [SerializeField] private DialogueObject deathDialogue;
+    [SerializeField] private float kickForce = 20;
+
+    private Rigidbody2D rb;
+    private Collider2D col;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+    }
 
     private void Update()
     {
@@ -15,18 +25,29 @@ public class Slime : MonoBehaviour
 
     public void Dies()
     {
-        Debug.Log("dies");
         vol.enabled = true;
 
         StartCoroutine(DieCoroutine());
     }
 
 
-    IEnumerator DieCoroutine()
+    private IEnumerator DieCoroutine()
     {
         yield return new WaitForSecondsRealtime(1);
 
-        DialogueHandler.Instance.ShowDialogue(deathDialogue);
+        yield return DialogueHandler.Instance.ShowDialogueWait(deathDialogue);
+
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        col.isTrigger = true;
+
+        rb.AddForce(kickForce * (Vector2.up + Vector2.left).normalized, ForceMode2D.Impulse);
+        rb.AddTorque(kickForce, ForceMode2D.Impulse);
+
+        vol.enabled = false;
+
+        yield return new WaitForSecondsRealtime(1);
+
+        Destroy(gameObject);
     }
 
     private void SlimeDebug()
