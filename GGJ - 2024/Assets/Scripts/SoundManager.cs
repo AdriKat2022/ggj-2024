@@ -6,7 +6,11 @@ public class SoundManager : MonoBehaviour
     [Header("Sources")]
 
     [SerializeField]
-    private AudioSource musicSource, effectSource, effectSourceRepeat;
+    private AudioSource musicSource;
+    [SerializeField]
+    private AudioSource effectSource;
+    [SerializeField]
+    private AudioSource effectSourceRepeat;
 
 
     [Header("Musics")]
