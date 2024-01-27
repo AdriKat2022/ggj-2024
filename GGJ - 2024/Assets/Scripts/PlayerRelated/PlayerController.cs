@@ -41,25 +41,27 @@ public class PlayerController : MonoBehaviour
         switch (inputType)
         {
             case InputType.Classic:
-                input = new(Mathf.Ceil(Input.GetAxis("Horizontal")), Mathf.Ceil(Input.GetAxis("Vertical")));
+                input = new(Mathf.Ceil(Input.GetAxis("Horizontal")), Mathf.Ceil(Input.GetAxis("Vertical")), false);
                 break;
 
             case InputType.Inversed:
-                input = new(-Mathf.Ceil(Input.GetAxis("Horizontal")), -Mathf.Ceil(Input.GetAxis("Vertical")));
+                input = new(-Mathf.Ceil(Input.GetAxis("Horizontal")), -Mathf.Ceil(Input.GetAxis("Vertical")), false);
                 break;
 
             case InputType.Rotated90:
-                input = new(-Mathf.Ceil(Input.GetAxis("Vertical")), Mathf.Ceil(Input.GetAxis("Horizontal")));
+                input = new(-Mathf.Ceil(Input.GetAxis("Vertical")), Mathf.Ceil(Input.GetAxis("Horizontal")), false);
                 break;
 
             case InputType.Rotated270:
-                input = new(Mathf.Ceil(Input.GetAxis("Vertical")), -Mathf.Ceil(Input.GetAxis("Horizontal")));
+                input = new(Mathf.Ceil(Input.GetAxis("Vertical")), -Mathf.Ceil(Input.GetAxis("Horizontal")), false);
                 break;
 
             default:
                 input = new();
                 break;
         }
+
+        input.attack = Input.GetKeyDown(KeyCode.Space);
 
         controlledScript.UpdatePlayerInput(input);
     }

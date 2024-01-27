@@ -18,6 +18,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip mainMenu;
     public AudioClip firstTheme;
+    public AudioClip BossThemeIntro;
+    public AudioClip BossTheme;
 
     [Header("Sound effects")]
 
