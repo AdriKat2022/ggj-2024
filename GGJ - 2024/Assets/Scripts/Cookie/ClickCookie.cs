@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class ClickCookie : MonoBehaviour
 {
+    [Header("Counter")]
     [SerializeField] private TextMeshProUGUI cookieCounter;
     private int cookieCount;
+    [Header("ClicCookie")]
 
     [SerializeField] private GameObject plusUnCookiePrefab;
     [SerializeField] private float shrinkFactor;
@@ -16,6 +18,17 @@ public class ClickCookie : MonoBehaviour
     [SerializeField] private int cookieCountTransition;
     private bool isScaling = false;
     [SerializeField] private Vector3 originalScale;
+
+    [Header("Phase2")]
+    [SerializeField] private GameObject speedLine;
+    [SerializeField] private int cookieCountBreak;
+    [SerializeField] private GameObject decorGauche;
+    [SerializeField] private GameObject decorDroit;
+    [SerializeField] private GameObject canvaCounter;
+    [SerializeField] private GameObject surbrillance1;
+    [SerializeField] private GameObject surbrillance2;
+    [SerializeField] private float breakShrink;
+
 
 
     private void Start()
@@ -27,8 +40,31 @@ public class ClickCookie : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && !isScaling)
         {
             cookieCount++;
-            cookieCounter.text = "x"+cookieCount.ToString();
+            if (cookieCount < cookieCountBreak + 6) cookieCounter.text = "x"+cookieCount.ToString();
             if(cookieCount == cookieCountTransition) SecondPhase();
+
+            if (cookieCount == cookieCountBreak)
+            {
+                StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomething());
+                speedLine.SetActive(false);
+            }
+            if (cookieCount == cookieCountBreak + 7) StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomething());
+            if (cookieCount == cookieCountBreak + 13)
+            {
+                StartCoroutine(gameObject.GetComponent<BreakScript>().BreakSomething());
+                surbrillance1.SetActive(false);
+                surbrillance2.SetActive(false);
+                originalScale = originalScale * breakShrink;
+
+            }
+            if (cookieCount == cookieCountBreak + 18) canvaCounter.GetComponent<BreakUI>().BreakCounter();
+            if (cookieCount == cookieCountBreak + 27)
+            {
+                StartCoroutine(gameObject.GetComponent<BreakCookie>().BreakEverything());
+                StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomethingTwo());
+                StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomethingTwo());
+                canvaCounter.SetActive(false);
+            }
 
 
             Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -80,5 +116,6 @@ public class ClickCookie : MonoBehaviour
     private void SecondPhase()
     {
         clicDuration /= clicIncreaseFactor;
+        speedLine.SetActive(true);
     }
 }
