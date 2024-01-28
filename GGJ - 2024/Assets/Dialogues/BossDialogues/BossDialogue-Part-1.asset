@@ -15,8 +15,8 @@ MonoBehaviour:
   <DialogueSpeed>k__BackingField: 35
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
-  <LockPlayerMovements>k__BackingField: 1
-  <NonSkippable>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 1
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
   <Bubbles>k__BackingField:
@@ -30,6 +30,10 @@ MonoBehaviour:
   - "A l\u2019\xE9poque, notre terre \xE9tait gouvern\xE9e par des dinosaures, en
     particulier les tric\xE9ratops avec lesquels j\u2019ai eu de nombreuses histoires
     que tu peux retrouver dans ton Culturo\xA9 le plus proche."
+  <DialogueEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <DialogueEventIndex>k__BackingField: 0
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: dbd76d8a24e2e3c4b811dac35039891a, type: 2}
   <FollowingSubtitle>k__BackingField: {fileID: 0}
