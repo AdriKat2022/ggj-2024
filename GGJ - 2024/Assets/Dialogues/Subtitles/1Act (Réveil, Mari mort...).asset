@@ -18,14 +18,14 @@ MonoBehaviour:
       se passe est urgent."
     time: 4.8
     sizeModifer: 0
-  - text: "Le roi, Tomp\xE9re, vient de tuer ton mari Pablo."
+  - text: "Le roi, ton p\xE8re, vient de tuer ton mari Pablo."
     time: 3.41
     sizeModifer: 0
   - text: Normalement je te dirais de porter plainte au commissariat, mais on a pas
       fait de commissariat.
     time: 5.08
     sizeModifer: 0
-  - text: "Donc pour l\u2019histoire tu devras te venger de Tomp\xE9re, ce satan\xE9
+  - text: "Donc pour l\u2019histoire tu devras te venger de ton p\xE8re, ce satan\xE9
       roi !"
     time: 4.1
     sizeModifer: 0

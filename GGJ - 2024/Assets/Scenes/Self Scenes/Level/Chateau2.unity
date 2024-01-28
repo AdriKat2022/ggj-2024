@@ -296,6 +296,7 @@ MonoBehaviour:
   demonHasBeenKilled:
     m_PersistentCalls:
       m_Calls: []
+  isKing: 1
 --- !u!1 &214549829
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repeatable: 0
-  dialogueToDisplay: {fileID: 0}
+  dialogueToDisplay: {fileID: 11400000, guid: df9c373de91bf8b4f9624c6b9446826a, type: 2}
+  subtitleToDisplay: {fileID: 0}
   usedByDialogueInteractible: 0
 --- !u!1 &1036161603
 GameObject:
@@ -18149,11 +18151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8345292598181004809, guid: c9c2bd7349174fb4d97784ae3e52338f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.71962094
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8345292598181004809, guid: c9c2bd7349174fb4d97784ae3e52338f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.406051
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8345292598181004809, guid: c9c2bd7349174fb4d97784ae3e52338f, type: 3}
       propertyPath: m_LocalPosition.z
