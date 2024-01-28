@@ -42,8 +42,11 @@ public class DialogueActivator : MonoBehaviour
                 dialogueHandler.ShowDialogue(dialogueToDisplay);
             if (subtitleToDisplay != null)
                 dialogueHandler.ShowSubtitles(subtitleToDisplay);
+            if (GameManager.Instance != null)
+            {
 
             GameManager.Instance.endDialogueAction = endAction;
+            }
         }
     }
 
