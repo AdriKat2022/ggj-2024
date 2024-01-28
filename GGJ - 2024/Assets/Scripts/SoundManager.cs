@@ -20,6 +20,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip firstTheme;
     public AudioClip BossThemeIntro;
     public AudioClip BossTheme;
+    public AudioClip spaceTheme;
 
     [Header("Sound effects")]
 
