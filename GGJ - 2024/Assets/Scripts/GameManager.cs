@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public EndDialogueAction endDialogueAction = null;
 
-    private int dungeonState = 0;
+    public int dungeonState = 0;
     // 0 : aucun dongeon visité
     // 1 : premier dongeon visité
     // Etc...
