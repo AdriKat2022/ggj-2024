@@ -297,8 +297,11 @@ public class DialogueHandler : MonoBehaviour
         IsOpen = false;
         dialogueBox.SetActive(false);
         ResetDialogueBox();
-
-        GameManager.Instance.executeEndDialogueAction();
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.executeEndDialogueAction();
+        }
+       
     }
 
     private void ResetDialogueBox()
