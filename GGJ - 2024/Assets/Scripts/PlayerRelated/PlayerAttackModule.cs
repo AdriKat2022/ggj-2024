@@ -88,7 +88,7 @@ public class PlayerAttackModule : MonoBehaviour
             StartCoroutine(GetPushed());
             if (this.transform.parent.GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1f)
             {
-                SceneManager.LoadScene("Overwold");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
