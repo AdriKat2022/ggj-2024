@@ -99,6 +99,7 @@ public class BowController : MonoBehaviour
             // Attend la prochaine frame
             yield return null;
         }
+        Destroy(gameObject);
     }
 
     private IEnumerator LaunchPlayer()
