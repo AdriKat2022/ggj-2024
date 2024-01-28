@@ -15,11 +15,12 @@ MonoBehaviour:
   <LockPlayerMovements>k__BackingField: 0
   <Bubbles>k__BackingField:
   - text: ENFIN LETZGOOOOOOOOOOOOO
-    time: 5
+    time: 4.5
     sizeModifer: 5
   - text: bon allez, next duuunjon hophophop.
-    time: 5
+    time: 4.7
     sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 62ce2e1397dae9d4081394f1072df1eb, type: 3}
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
-  - text: "\xC7a commence \xE0 \xEAtre sacr\xE9ment long\u2026 y a pas un bouton
-      pour skip l\xE0 ? S\xE9rieusement ?"
-    time: 6
+  - text: "\xC7a commence \xE0 \xEAtre sacr\xE9ment long l\xE0\u2026 y a pas un bouton
+      pour skip ? S\xE9rieusement ?"
+    time: 5.3
     sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: c7ff288a4de4e01499fe2d9b76015a08, type: 3}
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: b007321c1952aa7429be625b99f9909a, type: 2}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

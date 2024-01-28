@@ -15,21 +15,19 @@ MonoBehaviour:
   <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
   - text: "Tu viens encore de briser absolument toutes les r\xE8gles de la physique"
-    time: 5
+    time: 3.36
     sizeModifer: 0
   - text: "mais bon avec toi \xE7a m\u2019\xE9tonne m\xEAme plus."
-    time: 4
+    time: 3.06
     sizeModifer: 0
   - text: "Oh et puis tu sais quoi, si l\u2019arc c\u2019est trop compliqu\xE9 pour
       toi.."
-    time: 5
+    time: 4.15
     sizeModifer: 0
-  - text: prends
-    time: 5
+  - text: "prends \xE7a."
+    time: 1.14
     sizeModifer: 0
-  - text: "\xE7a."
-    time: 1
-    sizeModifer: 5
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 70c37cb934dc05042a8fa41c05169412, type: 3}
   <FollowUpTime>k__BackingField: 1
   <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 11400000, guid: bbed47827f807e8469b364f641b9152b, type: 2}

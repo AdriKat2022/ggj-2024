@@ -15,11 +15,12 @@ MonoBehaviour:
   <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
   - text: "Ok papi est bien gentil mais j\u2019ai aquaponey dans genre 1 heure"
-    time: 5
+    time: 3.5
     sizeModifer: 0
   - text: "donc trouve un moyen de chopper l\u2019arc histoire qu\u2019on y aille."
-    time: 5
+    time: 1.99
     sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 0777b1acaca065249a34dbe6242e7fef, type: 3}
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 83cba06026d751443bac4ec2b1855ad3, type: 2}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

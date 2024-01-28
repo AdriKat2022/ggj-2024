@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 [CreateAssetMenu(menuName = "Subtitle", order = 1)]
@@ -24,7 +25,8 @@ public class SubtitleObject : ScriptableObject
     [field: SerializeField]
     public Subtitle[] Bubbles { get; private set; }
     public int BubblesLength => Bubbles.Length;
-
+    [field: SerializeField, Tooltip("Audio clip of the subtitles")]
+    public AudioClip SubtitlesAudio { get; private set; }
 
     [field: Header("Follow up")]
     [field: SerializeField, Tooltip("Time after which the subtitle will switch.")]

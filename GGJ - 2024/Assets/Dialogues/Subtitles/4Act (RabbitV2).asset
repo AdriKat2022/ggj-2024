@@ -15,11 +15,12 @@ MonoBehaviour:
   <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
   - text: "OK C\u2019est parti pour le deuxi\xE8me round de Blo vs Lapinou"
-    time: 3
+    time: 8.3
     sizeModifer: 0
   - text: cette fois-ci sera la bonne pas vrai ?
-    time: 2.5
+    time: 3.7
     sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: d647e144247958c4395430f888037951, type: 3}
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

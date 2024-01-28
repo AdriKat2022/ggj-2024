@@ -34,6 +34,7 @@ MonoBehaviour:
       mieux pour tirer."
     time: 6
     sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 773c1d2cb6f5d77408ee1386ab77f526, type: 3}
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

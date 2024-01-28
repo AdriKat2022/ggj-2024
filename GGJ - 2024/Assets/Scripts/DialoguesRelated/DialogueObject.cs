@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Dialogue", order = 1)]
 public class DialogueObject : ScriptableObject
@@ -32,6 +33,12 @@ public class DialogueObject : ScriptableObject
     [field: SerializeField, TextArea]
     public string[] Bubbles { get; private set; }
     public int BubblesLength => Bubbles.Length;
+
+    [field: Header("Events")]
+    [field: SerializeField]
+    public UnityEvent DialogueEvent { get; private set; }
+    [field: SerializeField]
+    public int DialogueEventIndex { get; private set; }
 
 
     [field: Header("Follow up")]
