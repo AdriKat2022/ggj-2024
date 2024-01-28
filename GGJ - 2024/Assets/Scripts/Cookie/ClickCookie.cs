@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClickCookie : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class ClickCookie : MonoBehaviour
     [SerializeField] private Vector3 endPosition;
     [SerializeField] private Vector3 endRotation;
     [SerializeField] private float moveDuration;
+    [SerializeField] private SubtitleObject subtitlesAfterCookie;
+
 
 
 
@@ -145,11 +148,17 @@ public class ClickCookie : MonoBehaviour
     private IEnumerator SecondTime()
     {
         yield return new WaitForSeconds(waitTimer);
+
         canvaCounter.SetActive(false);
+        DialogueHandler.Instance.ShowSubtitles(subtitlesAfterCookie);
+
+        yield return new WaitForSeconds(5f);
 
         float timer = 0f;
         Vector3 startPosition = transform.position;
         Vector3 startRotation = transform.rotation.eulerAngles;
+
+        StartCoroutine(ToNextScene());
 
         while (timer < moveDuration)
         {
@@ -164,5 +173,12 @@ public class ClickCookie : MonoBehaviour
             // Met à jour le temps écoulé
             timer += Time.deltaTime;
         }
+    }
+
+    private IEnumerator ToNextScene()
+    {
+        yield return new WaitForSeconds(15f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

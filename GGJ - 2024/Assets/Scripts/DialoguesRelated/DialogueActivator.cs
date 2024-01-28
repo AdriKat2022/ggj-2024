@@ -20,9 +20,13 @@ public class DialogueActivator : MonoBehaviour
 
     private bool activated = false;
 
+    private EndDialogueAction endAction;
+
     private void Start()
     {
         dialogueHandler = DialogueHandler.Instance;
+        endAction = GetComponent<EndDialogueAction>();
+
         if (dialogueHandler == null)
             Debug.LogError("There is no dialogue handler in the scene. Dialogues won't open.");
 
@@ -38,6 +42,8 @@ public class DialogueActivator : MonoBehaviour
                 dialogueHandler.ShowDialogue(dialogueToDisplay);
             if (subtitleToDisplay != null)
                 dialogueHandler.ShowSubtitles(subtitleToDisplay);
+
+            GameManager.Instance.endDialogueAction = endAction;
         }
     }
 

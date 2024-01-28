@@ -16,7 +16,7 @@ MonoBehaviour:
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
   <LockPlayerMovements>k__BackingField: 0
-  <NonSkippable>k__BackingField: 1
+  <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 1
   <AutoAdvanceTime>k__BackingField: 0
   <Bubbles>k__BackingField:
@@ -25,6 +25,10 @@ MonoBehaviour:
     centaines d\u2019ann\xE9es plus tard mais n\xE9anmoins le terme est s\xE9mantiquement
     int\xE9ressant mais bon je ne m'\xE9talerai pas plus parce que ce n\u2019est
     pas pour cela que nous sommes r\xE9unis actuellement mais"
+  <DialogueEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <DialogueEventIndex>k__BackingField: 0
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 66fc8dbdf2c88104f96af6fd6ca9233c, type: 2}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

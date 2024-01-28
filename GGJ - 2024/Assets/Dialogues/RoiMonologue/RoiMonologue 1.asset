@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: RoiMonologue 1
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 100
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Ne plus pouvoir taxer ces pauvres gens m\u2019avait tellement manqu\xE9. Heureusement
+    que tu \xE9tais l\xE0 pour sauver le royaume. "
+  - "Quand je pense \xE0 tout cet argent qui va tinter dans mes poches\u2026 "
+  - "Euuh je veux dire\u2026 "
+  - "Dans les caisses du royaume \xE9videmment. J\u2019aime aucunement l\u2019argent,
+    mais on sait tous que l\u2019argent est bien mieux utilis\xE9 quand il est dans
+    les mains des dirigeants."
+  DialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DialogueEventIndex: 0
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 385a014ff30473e46beb26953310e966, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

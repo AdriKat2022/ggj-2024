@@ -153,7 +153,9 @@ MonoBehaviour:
   letterAppearDelay: 0.15
   delayBefore: 1.5
   delayAfter: 2.5
+  delayBeforeCookieClicker: 15
   cookieClicker: {fileID: 7752441053320806873, guid: 6df24e0f22e19ff439c7da109a98d36f, type: 3}
+  soundM: {fileID: 0}
 --- !u!1 &3166860620995355132
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,8 +23,8 @@ public class BowController : MonoBehaviour
     private bool isPickedUp;
     private bool isShooting;
 
-    [SerializeField] private Sprite holdE;              // Échelle minimale
-    [SerializeField] private Sprite pressE;              // Échelle minimale
+    [SerializeField] private Sprite holdE;              // Ã‰chelle minimale
+    [SerializeField] private Sprite pressE;              // Ã‰chelle minimale
 
 
     [SerializeField] private int bowBehaviour;
@@ -124,13 +124,13 @@ public class BowController : MonoBehaviour
 
         while (elapsedTime < launchDuration)
         {
-            // Déplace l'objet dans la direction spécifiée
+            // DÃ©place l'objet dans la direction spÃ©cifiÃ©e
             transform.Translate(launchSpeed * Time.deltaTime * moveDirection, Space.World);
 
             // Tourne l'objet constamment
             transform.Rotate(Time.deltaTime * torqueForce * Vector3.forward, Space.World);
 
-            // Incrémente le temps écoulé
+            // IncrÃ©mente le temps Ã©coulÃ©
             elapsedTime += Time.deltaTime;
 
             // Attend la prochaine frame

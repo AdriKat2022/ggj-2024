@@ -62,6 +62,8 @@ public class DialogueHandler : MonoBehaviour
     [SerializeField]
     private DialogueObject testDialogue;
 
+    private EndDialogueAction endDialogueAction;
+
     #region Events
 
     public static event Action<bool> OnDialogueOpenIsPlayerLocked;
@@ -86,6 +88,8 @@ public class DialogueHandler : MonoBehaviour
 
     private void Start()
     {
+        endDialogueAction = GetComponent<EndDialogueAction>();
+
         if (dialogueBox == null)
             Debug.LogError("Dialogue box is not assigned.\n", gameObject);
 
@@ -293,6 +297,8 @@ public class DialogueHandler : MonoBehaviour
         IsOpen = false;
         dialogueBox.SetActive(false);
         ResetDialogueBox();
+
+        GameManager.Instance.executeEndDialogueAction();
     }
 
     private void ResetDialogueBox()
@@ -351,6 +357,8 @@ public class DialogueHandler : MonoBehaviour
         subtitleTextLabel.text = string.Empty;
         subtitleBox.SetActive(false);
         IsOpen = false;
+
+        GameManager.Instance.executeEndDialogueAction();
     }
 
     #endregion

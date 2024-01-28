@@ -10,6 +10,7 @@ public class SpaceText : MonoBehaviour
     [SerializeField] private float letterAppearDelay; // Délai entre chaque lettre
     [SerializeField] private float delayBefore; // Délai entre chaque lettre
     [SerializeField] private float delayAfter; // Délai entre chaque lettre
+    [SerializeField] private float delayBeforeCookieClicker; // Délai entre chaque lettre
     [SerializeField] private GameObject cookieClicker; // Délai entre chaque lettre
     [SerializeField] private SoundManager soundM;
 
@@ -34,8 +35,8 @@ public class SpaceText : MonoBehaviour
         }
         yield return new WaitForSeconds(delayAfter);
         textComponent.gameObject.SetActive(false);
+        yield return new WaitForSeconds(delayBeforeCookieClicker);
         Instantiate(cookieClicker);
         soundM.StopMusic();
-
     }
 }
