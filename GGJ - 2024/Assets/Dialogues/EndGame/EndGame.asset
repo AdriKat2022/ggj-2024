@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: EndGame
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 1
+  <Bubbles>k__BackingField:
+  - text: '*bruits d''aspirateur*'
+    time: 2
+    sizeModifer: 0
+  - text: Alalalalalalala
+    time: 2
+    sizeModifer: 0
+  - text: Ahhhhhhhh
+    time: 1
+    sizeModifer: 0
+  - text: Bon. Bah..
+    time: 1.8
+    sizeModifer: 0
+  - text: "Ce jeu \xE9tait franchement pas ouf hein"
+    time: 3
+    sizeModifer: 0
+  - text: Alalalalala
+    time: 1
+    sizeModifer: 0
+  - text: "Les graphistes qui ne se coordonnnent pas\u2026 "
+    time: 3.2
+    sizeModifer: 0
+  - text: "Le sound design, bon il laisse \xE0 d\xE9sirer"
+    time: 3.2
+    sizeModifer: 0
+  - text: Ah, les devs
+    time: 1
+    sizeModifer: 0
+  - text: Bon bah
+    time: 0.75
+    sizeModifer: 0
+  - text: "Bonne chance pour celui qui veut r\xE9utiliser le code !"
+    time: 3.7
+    sizeModifer: 0
+  - text: Alalalala
+    time: 2
+    sizeModifer: 0
+  - text: Franchement pas fou.
+    time: 4.35
+    sizeModifer: 0
+  - text: Bon on se fait une petite game de LoL ?
+    time: 2
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: d03cc0396c5c60a4e8c281f102c667ca, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

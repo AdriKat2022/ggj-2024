@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: 2-Portal (Ici on fait autre chose)
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - text: "Oui bah \xE9coute hein si tu voulais vraiment des portails t\u2019avais
+      qu\u2019\xE0 jouer \xE0 Portal hein."
+    time: 6.5
+    sizeModifer: 0
+  - text: Ici on fait autre chose.
+    time: 2.6
+    sizeModifer: 0
+  - text: "Bon laisse moi te trouver un truc\u2026."
+    time: 2
+    sizeModifer: 0
+  - text: Mmmmmh
+    time: 1.7
+    sizeModifer: 0
+  - text: "Ouais \xE9coute tiens joue \xE0 \xE7a pendant un moment."
+    time: 3.5
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: f3a0f087480dbef4c89a4e0c83d73c9c, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

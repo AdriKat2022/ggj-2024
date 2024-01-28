@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: 1-Portal
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - text: "Oh tiens, je me demande bien ce que c\u2019est !"
+    time: 3.46
+    sizeModifer: 0
+  - text: "Je n\u2019ai"
+    time: 0.74
+    sizeModifer: 0
+  - text: jamais
+    time: 0.57
+    sizeModifer: 20
+  - text: "vu \xE7a ailleurs."
+    time: 1
+    sizeModifer: 0
+  - text: '*Petits rires*'
+    time: 0.4
+    sizeModifer: 0
+  - text: Non, non
+    time: 1.4
+    sizeModifer: 0
+  - text: Jamais
+    time: 0.55
+    sizeModifer: 0
+  - text: Jamais
+    time: 0.45
+    sizeModifer: 20
+  - text: "\xC7a c'est non."
+    time: 2.4
+    sizeModifer: 0
+  - text: "Je crois bien que cette arme permet de faire des portails qui sont reli\xE9s
+      entre"
+    time: 5.6
+    sizeModifer: 0
+  - text: euuuuuuuuux
+    time: 1.2
+    sizeModifer: 0
+  - text: C'est si innovant !
+    time: 2.8
+    sizeModifer: 0
+  - text: "Personne n\u2019a jamais eu cette id\xE9e."
+    time: 2.38
+    sizeModifer: 0
+  - text: "surtout pas ce petit studio qui s\u2019appelle Valve"
+    time: 3.5
+    sizeModifer: -20
+  - text: Bref, utilise moi ce Portal Pistolet
+    time: 2.8
+    sizeModifer: 0
+  - text: histoire qu'on en finisse.
+    time: 1.2
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 5dd35de9451bb5741b126fa25246bfe5, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}
