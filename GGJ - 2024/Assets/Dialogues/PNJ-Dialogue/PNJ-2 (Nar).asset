@@ -16,8 +16,9 @@ MonoBehaviour:
   <Bubbles>k__BackingField:
   - text: "Un arc.. Tu sais pas trop t\u2019en servir mais bon, peut-\xEAtre que
       la deuxi\xE8me fois sera la bonne."
-    time: 5
+    time: 7
     sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: bab0cb741a54d9343b0a907a4feee1ef, type: 3}
   <FollowUpTime>k__BackingField: 1
   <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 159f274feeaab614f9e3dd0a8ce39960, type: 2}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

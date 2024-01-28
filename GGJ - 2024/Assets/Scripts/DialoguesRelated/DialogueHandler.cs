@@ -310,6 +310,9 @@ public class DialogueHandler : MonoBehaviour
     {
         OnDialogueOpenIsPlayerLocked?.Invoke(currentSubtitles.LockPlayerMovements);
 
+        if(currentSubtitles.SubtitlesAudio != null)
+            SoundManager.Instance.PlaySound(currentSubtitles.SubtitlesAudio);
+
         int i = 0;
 
         while (i < currentSubtitles.BubblesLength)
@@ -342,6 +345,7 @@ public class DialogueHandler : MonoBehaviour
     {
         subtitleTextLabel.text = string.Empty;
         subtitleBox.SetActive(false);
+        IsOpen = false;
     }
 
     #endregion
