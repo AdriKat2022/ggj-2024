@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyPot : MonoBehaviour, IDamageable
@@ -8,20 +6,9 @@ public class DestroyPot : MonoBehaviour, IDamageable
 
     [SerializeField] private GameObject inventaire;
     [SerializeField] private ParticleSystem particle;
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
 
-
-    public void Damage(float dmg)
+    public void Damage(int dmg)
     {
         particle.gameObject.SetActive(true);
         particle.Play();

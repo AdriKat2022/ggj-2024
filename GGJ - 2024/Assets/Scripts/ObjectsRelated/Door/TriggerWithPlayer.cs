@@ -1,35 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TriggerWithPlayer : MonoBehaviour
 {
+    [SerializeField]
+    private bool isforName;
 
-    private bool hasBeenTriggered;
-    [SerializeField] private bool isforName;
     public UnityEvent<bool> BarTriggeredEvent;
     public UnityEvent<bool> NameTriggeredEvent;
 
-    public bool GetTriggered()
+    private bool hasBeenTriggered;
+
+
+    public bool GotTriggered()
     {
         return hasBeenTriggered;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         hasBeenTriggered = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<PlayerMovement>(out PlayerMovement movement))
+        if (collision.gameObject.TryGetComponent(out PlayerMovement movement))
         {
             print("has been triggered");
             if (isforName)

@@ -1,36 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorBehaviour : MonoBehaviour
+public class DoorBehaviour : MonoBehaviour, IDamageable
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private TriggerWithPlayer TriggerName;
+    [SerializeField]
+    private TriggerWithPlayer TriggerBar;
+    [SerializeField]
+    private bool isBoss;
 
-    [SerializeField] private TriggerWithPlayer TriggerName;
-    
-    [SerializeField] private TriggerWithPlayer TriggerBar;
-    [SerializeField] private bool isBoss;
 
-    private GameObject UIHandler;
-
-    public bool GetIsBoss()
+    public bool IsBoss()
     {
         return isBoss;
     }
 
-    void Start()
+    public void Damage(int dmg)
     {
-        UIHandler = GameObject.Find("UI Handler");
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if (!isBoss)
+            gameObject.SetActive(false);
         
     }
-
-    
 
     private void OnDisable()
     {
@@ -42,5 +32,4 @@ public class DoorBehaviour : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-
 }
