@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
   m_Name: 2Act (Rabbit)
   m_EditorClassIdentifier: 
-  <LockPlayerMovements>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
   - text: 
     time: 1
