@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: PNJ-3
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 50
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 1
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Mais mon petit doigt, enfin ce qu\u2019il en reste, me dit que vous \xEAtes
+    l\xE0 pour entendre le r\xE9cit de ma vie palpitante ! \r\n\r\n"
+  - "Il y a fort, fort, mais tellement fort longtemps que le vieux roi n\u2019existait
+    pas encore, un jeune apollon est n\xE9! ET OUI ! Ce jeune apollon est moi. Je
+    ne suis certe plus jeune, mais j\u2019ai encore tout mon \xE9clat ne trouvez-vous
+    pas ? Mais bref, ce jeune apollon n'\xE9tait pas seulement beau, mais aussi terriblement
+    fort!"
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 11400000, guid: a3d8a9e14dfbbc244999d378dc7ac19f, type: 2}

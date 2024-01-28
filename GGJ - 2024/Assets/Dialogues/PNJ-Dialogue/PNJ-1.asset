@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: PNJ-1
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 50
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 1
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Enchant\xE9 jeune fille, cela fait tellement de bien de voir du monde dans ce
+    coin du royaume. Cela doit bien faire au moins 10 ans que je n\u2019ai vu personne
+    d\u2019autres que ces lapins."
+  - "Mais ce n\u2019est plus de mon \xE2ge de les chasser ! Mon arc ne me sert plus
+    \xE0 rien\u2026 et j\u2019ai tellement faim\u2026"
+  - "Mais o\xF9 sont mes mani\xE8res, vous n\u2019\xEAtes pas l\xE0 pour m\u2019\xE9couter
+    me plaindre."
+  <FollowUpTime>k__BackingField: 1
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 11400000, guid: 5d4c31a3827dff142bad886120296a47, type: 2}

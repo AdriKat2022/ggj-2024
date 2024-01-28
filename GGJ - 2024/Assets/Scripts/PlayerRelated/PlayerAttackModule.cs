@@ -4,24 +4,22 @@ using UnityEngine;
 public class PlayerAttackModule : MonoBehaviour
 {
     [SerializeField]
-    private float activeTime;
+    private int damage = 999;
+    [SerializeField]
+    private float startUpTime = .2f;
+    [SerializeField]
+    private float activeTime = .1f;
 
     private bool isActive;
     private float timer;
-    private float damage;
 
+    private Collider2D hitbox;
 
-    private void onEnable()
+    private void Start()
     {
+        hitbox = GetComponent<Collider2D>();
+        hitbox.enabled = false;
         isActive = false;
-        timer = 0;
-    }
-
-    private void Update()
-    {
-        if (!isActive)
-            return;
-
     }
 
     public void UpdateRotation(float angle)
@@ -29,27 +27,32 @@ public class PlayerAttackModule : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,angle);
     }
 
-    public void ActivateModule(float damage)
+    public void ActivateModule()
     {
-        this.damage = damage;
         StartCoroutine(ActivateAttackModule());
     }
 
+    public void SetDamage(int damage) => this.damage = damage;
+
     private IEnumerator ActivateAttackModule()
     {
-        timer = activeTime;
-
         if(isActive)
             yield break;
 
         isActive = true;
+
+        yield return new WaitForSeconds(startUpTime);
+
+        hitbox.enabled = true;
+        timer = activeTime;
 
         while(timer > 0)
         {
             timer -= Time.deltaTime;
             yield return null;
         }
-        this.gameObject.SetActive(false);
+
+        hitbox.enabled = false;
         isActive = false;
     }
 
@@ -58,16 +61,6 @@ public class PlayerAttackModule : MonoBehaviour
         if(other.TryGetComponent(out IDamageable damageable))
         {
             damageable.Damage(damage);
-            print("isDamageable");
-        }
-
-        if(other.TryGetComponent(out DoorBehaviour door))
-        {
-            if (!door.GetIsBoss())
-            {
-                other.gameObject.SetActive(false);
-            }
-            
         }
         if (other.TryGetComponent(out RoiDemonBehaviour roiDemon))
         {

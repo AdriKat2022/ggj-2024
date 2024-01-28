@@ -1,9 +1,18 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class DialogueHandler : MonoBehaviour
 {
+    public enum EventType
+    {
+        All,
+        Dialogue,
+        Subtitle
+    }
+
+
     [Header("Animations")]
     [SerializeField]
     private float bubbleAnimationTime;
@@ -11,24 +20,53 @@ public class DialogueHandler : MonoBehaviour
     private float readyAnimationSpeed;
     [SerializeField]
     private float readyAnimationDepth;
+    [SerializeField]
+    private float bubbleAnimationTimeSubtitle;
+    [SerializeField]
+    private float readyAnimationSpeedSubtitle;
+    [SerializeField]
+    private float readyAnimationDepthSubtitle;
 
-    [Header("References")]
+    [Header("Dialogue")]
     [SerializeField]
     private TMP_Text dialogueTextLabel;
-    [SerializeField]
-    private TMP_Text dialogueTitleLabel;
     [SerializeField]
     private GameObject dialogueBox;
     [SerializeField]
     private GameObject readyIcon;
 
+    [Header("Subtitles")]
+    [SerializeField]
+    private TMP_Text subtitleTextLabel;
+    [SerializeField]
+    private GameObject subtitleBox;
+
     public bool IsOpen { get; private set; }
 
-    private IWritterEffect typeWritter;
+    [SerializeField]
+    private TypeWritterEffect typeWritter;
+    [SerializeField]
+    private InstantWritterEffect instantWritter;
 
     private Vector2 readyIconBasePosition;
     private bool isReadyToAdvance;
     private DialogueObject currentDialogue;
+    private SubtitleObject currentSubtitles;
+    private float subtitlesBaseFontSize;
+    //private float dialoguesBaseFontSize;
+
+
+    [Header("Debug")]
+    [SerializeField]
+    private SubtitleObject testSubtitles;
+    [SerializeField]
+    private DialogueObject testDialogue;
+
+    #region Events
+
+    public static event Action<bool> OnDialogueOpenIsPlayerLocked;
+
+    #endregion
 
 
     #region Singleton
@@ -51,9 +89,10 @@ public class DialogueHandler : MonoBehaviour
         if (dialogueBox == null)
             Debug.LogError("Dialogue box is not assigned.\n", gameObject);
 
-        if (!TryGetComponent(out typeWritter))
-            Debug.LogError("No TypeEffect component was found.\nYou need an effect to display text.", gameObject);
+        //if (!TryGetComponent(out typeWritter))
+        //    Debug.LogError("No TypeEffect component was found.\nYou need an effect to display text.", gameObject);
 
+        subtitlesBaseFontSize = subtitleTextLabel.fontSize;
 
         IsOpen = false;
         isReadyToAdvance = false;
@@ -62,21 +101,93 @@ public class DialogueHandler : MonoBehaviour
         CloseDialogueBox();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+            ShowDialogue(testDialogue);
+        if (Input.GetKeyDown(KeyCode.C))
+            ShowSubtitles(testSubtitles);
+    }
+
+
+    #region Public functions
+
     /// <summary>
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
     /// </summary>
     /// <param name="dialogueObjectToDisplay">The dialogue object you want to display</param>
-    public void ShowDialogue(DialogueObject dialogueObjectToDisplay)
+    public void ShowDialogue(DialogueObject dialogueObjectToDisplay, bool forceOpen = false)
     {
-        if (IsOpen)
+        if (IsOpen && !forceOpen)
             return;
+
         IsOpen = true;
         currentDialogue = dialogueObjectToDisplay;
         StartCoroutine(StartDialogueAnimation());
     }
+    /// <summary>
+    /// This will make the dialogue box appear and display all the bubbles and following dialogues.
+    /// </summary>
+    /// <param name="dialogueObjectToDisplay">The dialogue object you want to display</param>
+    public IEnumerator ShowDialogueWait(DialogueObject dialogueObjectToDisplay, bool forceOpen = false)
+    {
+        if (IsOpen && !forceOpen)
+            yield break;
+
+        IsOpen = true;
+        currentDialogue = dialogueObjectToDisplay;
+        yield return StartDialogueAnimation();
+    }
+    /// <summary>
+    /// This will make the subtitles box appear and display all the bubbles and following subtitles.
+    /// </summary>
+    /// <param name="subtitlesToDisplay">The dialogue object you want to display as subtitles</param>
+    public void ShowSubtitles(SubtitleObject subtitlesToDisplay, bool forceOpen = false)
+    {
+        if (IsOpen && !forceOpen)
+            return;
+
+        IsOpen = true;
+        currentSubtitles = subtitlesToDisplay;
+        StartSubtitlesAnimation();
+    }
+
+    public void Interrupt(EventType eventToInterrupt)
+    {
+        switch (eventToInterrupt)
+        {
+            case EventType.All:
+                StopAllCoroutines();
+                dialogueTextLabel.text = string.Empty;
+                dialogueBox.SetActive(false);
+                subtitleTextLabel.text = string.Empty;
+                subtitleBox.SetActive(false);
+                IsOpen = false;
+                OnDialogueOpenIsPlayerLocked?.Invoke(false);
+                break;
+
+            case EventType.Dialogue:
+
+                // nah
+
+                break;
+
+            case EventType.Subtitle:
+
+                // nah
+
+                break;
+        }
+    }
+
+    #endregion
+
+    #region Dialogues
 
     private IEnumerator StartDialogueAnimation()
     {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentDialogue.LockPlayerMovements);
+
         float scale = 0f;
 
         dialogueBox.transform.localScale = new Vector3(1, scale, 1);
@@ -90,11 +201,13 @@ public class DialogueHandler : MonoBehaviour
             yield return null;
         }
 
-        StartCoroutine(StepThroughDialogue());
+        yield return StepThroughDialogue();
     }
 
     private IEnumerator StepThroughDialogue()
     {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentDialogue.LockPlayerMovements);
+
         for(int i = 0 ; i<currentDialogue.BubblesLength ; i++)
         {
             yield return RunTypingEffect(i);
@@ -107,6 +220,7 @@ public class DialogueHandler : MonoBehaviour
             {
                 StartCoroutine(ReadyAnimation());
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+                yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.E));
             }
             else
                 yield return new WaitForSeconds(currentDialogue.AutoAdvanceTime);
@@ -119,10 +233,20 @@ public class DialogueHandler : MonoBehaviour
         if (currentDialogue.FollowingDialogue != null)
         {
             currentDialogue = currentDialogue.FollowingDialogue;
-            StartCoroutine(StepThroughDialogue());
+            yield return StepThroughDialogue();
+            yield break;
         }
-        else
-            StartCoroutine(StopDialogueAnimation());
+
+        StartCoroutine(StopDialogueAnimation());
+
+        if (currentDialogue.FollowingSubtitle != null)
+        {
+            yield return new WaitForSeconds(currentDialogue.FollowUpTime);
+            ShowSubtitles(currentDialogue.FollowingSubtitle, true);
+            yield break;
+        }
+        
+        OnDialogueOpenIsPlayerLocked?.Invoke(false);
     }
 
     private IEnumerator StopDialogueAnimation()
@@ -171,6 +295,60 @@ public class DialogueHandler : MonoBehaviour
         dialogueTextLabel.text = string.Empty;
         //dialogueTitleLabel.text = string.Empty;
     }
+
+    #endregion
+
+    #region Subtitles
+
+    private void StartSubtitlesAnimation()
+    {
+        subtitleBox.SetActive(true);
+        StartCoroutine(StepThroughSubtitles());
+    }
+
+    private IEnumerator StepThroughSubtitles()
+    {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentSubtitles.LockPlayerMovements);
+
+        if(currentSubtitles.SubtitlesAudio != null)
+            SoundManager.Instance.PlaySound(currentSubtitles.SubtitlesAudio);
+
+        int i = 0;
+
+        while (i < currentSubtitles.BubblesLength)
+        {
+            subtitleTextLabel.fontSize = subtitlesBaseFontSize + currentSubtitles.Bubbles[i].sizeModifer;
+            instantWritter.RunDialogue(currentSubtitles, i, subtitleTextLabel);
+            yield return new WaitForSeconds(currentSubtitles.Bubbles[i].time);
+            i++;
+        }
+
+        if (currentSubtitles.FollowingSubtitle != null)
+        {
+            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
+            ShowSubtitles(currentSubtitles.FollowingSubtitle, true);
+            yield break;
+        }
+
+        CloseSubtitlesBox();
+
+        if (currentSubtitles.FollowingDialogue != null)
+        {
+            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
+            ShowDialogue(currentSubtitles.FollowingDialogue, true);
+        }
+        
+        OnDialogueOpenIsPlayerLocked?.Invoke(false);
+    }
+
+    private void CloseSubtitlesBox()
+    {
+        subtitleTextLabel.text = string.Empty;
+        subtitleBox.SetActive(false);
+        IsOpen = false;
+    }
+
+    #endregion
 
 
     private IEnumerator ReadyAnimation()

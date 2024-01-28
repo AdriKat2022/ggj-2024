@@ -18,6 +18,8 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        isFollowing = true;
+
         if (minBoundTr)
         {
             minBound = minBoundTr.position;

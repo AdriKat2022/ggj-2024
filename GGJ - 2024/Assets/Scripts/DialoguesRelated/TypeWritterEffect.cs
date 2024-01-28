@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 
 
-public class TypeWritterEffect : MonoBehaviour, IWritterEffect
+public class TypeWritterEffect : MonoBehaviour
 {
     private DialogueObject currentDialogue;
     private Coroutine typingCoroutine;
@@ -15,7 +15,7 @@ public class TypeWritterEffect : MonoBehaviour, IWritterEffect
     private readonly Dictionary<HashSet<char>, float> punctuationWaitTimeChart = new()
     {
         {new HashSet<char>(){'.', '!', '?'}, 0.6f },
-        {new HashSet<char>(){',', ';', '-', ':'}, 0.3f }
+        {new HashSet<char>(){',', ';', ':'}, 0.3f }
     };
 
 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: BossDialogue-Part-3
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 50
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 1
+  <AutoAdvance>k__BackingField: 1
+  <AutoAdvanceTime>k__BackingField: 2
+  <Bubbles>k__BackingField:
+  - JE DISAIS DONC
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 0b296c16801869347853b407a0e02dfe, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}
