@@ -16,36 +16,26 @@ MonoBehaviour:
   - text: "Bonjour Blo. D\xE9sol\xE9 de te r\xE9veiller comme \xE7a, mais ce qu\u2019il
       se passe est urgent."
     time: 6
+    sizeModifer: 0
   - text: "Le roi, Tomp\xE9re, vient de tuer ton mari Pablo."
     time: 4
+    sizeModifer: 0
   - text: Normalement je te dirais de porter plainte au commissariat, mais on a pas
       fait de commissariat.
     time: 6
+    sizeModifer: 0
   - text: "Donc pour l\u2019histoire tu devras te venger de Tomp\xE9re, ce satan\xE9
       roi !"
     time: 5
+    sizeModifer: 0
   - text: "Pour cela, tu devras traverser ce royaume en qu\xEAte de TROIS donjons,
       et apr\xE8s cela tu seras capable d\u2019entrer dans le palais royal pour lui
-      mettre la t\xEAte sur un piquet (enfin pas vraiment, les graphistes ont eu
-      la flemme)."
+      mettre la t\xEAte sur un piquet "
     time: 10
-  - text: Regardes Blo, un lapin.
-    time: 2
-  - text: "Si tu le bats, tu gagneras ni exp\xE9rience, ni argent, mais tu auras
-      sur la conscience la mort d\u2019un animal pour strictement aucune raison"
-    time: 7
-  - text: hormis de faire avancer le jeu.
-    time: 2
-  - text: "Oui, parce que tant que tu le tues pas on bouge pas d\u2019ici."
-    time: 4
-  - text: ...
-    time: 2
-  - text: "Comment \xE7a tu supportes les droits des animaux ?"
+    sizeModifer: 0
+  - text: (enfin pas vraiment, les graphistes ont eu la flemme).
     time: 3
-  - text: "C\u2019est moi le narrateur c\u2019est moi qui d\xE9cide OK ??"
-    time: 4
-  - text: "Alors utilise ton arc plus vite que \xE7a"
-    time: 2
-  - text: et bats le !
-    time: 1
+    sizeModifer: 0
+  <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

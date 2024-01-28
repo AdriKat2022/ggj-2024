@@ -48,6 +48,8 @@ public class DialogueHandler : MonoBehaviour
     [Header("Debug")]
     [SerializeField]
     private SubtitleObject testSubtitles;
+    [SerializeField]
+    private DialogueObject testDialogue;
 
 
     #region Singleton
@@ -85,7 +87,9 @@ public class DialogueHandler : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
+            ShowDialogue(testDialogue);
+        if (Input.GetKeyDown(KeyCode.C))
             ShowSubtitles(testSubtitles);
     }
 
@@ -94,9 +98,9 @@ public class DialogueHandler : MonoBehaviour
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
     /// </summary>
     /// <param name="dialogueObjectToDisplay">The dialogue object you want to display</param>
-    public void ShowDialogue(DialogueObject dialogueObjectToDisplay)
+    public void ShowDialogue(DialogueObject dialogueObjectToDisplay, bool forceOpen = false)
     {
-        if (IsOpen)
+        if (IsOpen && !forceOpen)
             return;
 
         IsOpen = true;
@@ -108,9 +112,9 @@ public class DialogueHandler : MonoBehaviour
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
     /// </summary>
     /// <param name="dialogueObjectToDisplay">The dialogue object you want to display</param>
-    public IEnumerator ShowDialogueWait(DialogueObject dialogueObjectToDisplay)
+    public IEnumerator ShowDialogueWait(DialogueObject dialogueObjectToDisplay, bool forceOpen = false)
     {
-        if (IsOpen)
+        if (IsOpen && !forceOpen)
             yield break;
 
         IsOpen = true;
@@ -124,9 +128,9 @@ public class DialogueHandler : MonoBehaviour
     /// This will make the subtitles box appear and display all the bubbles and following subtitles.
     /// </summary>
     /// <param name="subtitlesToDisplay">The dialogue object you want to display as subtitles</param>
-    public void ShowSubtitles(SubtitleObject subtitlesToDisplay)
+    public void ShowSubtitles(SubtitleObject subtitlesToDisplay, bool forceOpen = false)
     {
-        if (IsOpen)
+        if (IsOpen && !forceOpen)
             return;
 
         IsOpen = true;
@@ -152,7 +156,20 @@ public class DialogueHandler : MonoBehaviour
             i++;
         }
 
+        if (currentSubtitles.FollowingSubtitle != null)
+        {
+            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
+            ShowSubtitles(currentSubtitles.FollowingSubtitle, true);
+            yield break;
+        }
+
         CloseSubtitlesBox();
+
+        if (currentSubtitles.FollowingDialogue != null)
+        {
+            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
+            ShowDialogue(currentSubtitles.FollowingDialogue, true);
+        }
     }
 
     private void CloseSubtitlesBox()
@@ -210,9 +227,17 @@ public class DialogueHandler : MonoBehaviour
         {
             currentDialogue = currentDialogue.FollowingDialogue;
             yield return StepThroughDialogue();
+
+            yield break;
         }
-        else
-            yield return StopDialogueAnimation();
+
+        StartCoroutine(StopDialogueAnimation());
+
+        if (currentDialogue.FollowingSubtitle != null)
+        {
+            yield return new WaitForSeconds(currentDialogue.FollowUpTime);
+            ShowSubtitles(currentDialogue.FollowingSubtitle, true);
+        }
     }
 
     private IEnumerator StopDialogueAnimation()
@@ -263,6 +288,7 @@ public class DialogueHandler : MonoBehaviour
     }
 
     #endregion 
+
 
 
     private IEnumerator ReadyAnimation()

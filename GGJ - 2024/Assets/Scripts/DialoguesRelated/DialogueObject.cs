@@ -32,7 +32,11 @@ public class DialogueObject : ScriptableObject
 
 
     [field: Header("Follow up")]
+    [field: SerializeField, Tooltip("Time after which the dialogue will switch.")]
+    public float FollowUpTime { get; private set; }
     [field: SerializeField, Tooltip("Does the dialogue chain up on another one ?\nUsually used to change to have different dialogue options in one go for multiple bubbles.")]
     public DialogueObject FollowingDialogue { get; private set; }
+    [field: SerializeField, Tooltip("Does the dialogue chain up on a subtitle ?\nIngored if there is a following dialogue.")]
+    public SubtitleObject FollowingSubtitle { get; private set; }
 
 }

@@ -11,6 +11,7 @@ public class SubtitleObject : ScriptableObject
         [TextArea]
         public string text;
         public float time;
+        public float sizeModifer;
     }
 
 
@@ -21,7 +22,11 @@ public class SubtitleObject : ScriptableObject
 
 
     [field: Header("Follow up")]
-    [field: SerializeField, Tooltip("Does the dialogue chain up on another one ?\nUsually used to change to have different dialogue options in one go for multiple bubbles.")]
+    [field: SerializeField, Tooltip("Time after which the subtitle will switch.")]
+    public float FollowUpTime { get; private set; }
+    [field: SerializeField, Tooltip("Does the subtitle chain up on a dialogue ?\nIngored if there is a following subtitle.")]
     public DialogueObject FollowingDialogue { get; private set; }
+    [field: SerializeField, Tooltip("Does the subtitle chain up on another one ?")]
+    public SubtitleObject FollowingSubtitle { get; private set; }
 
 }
