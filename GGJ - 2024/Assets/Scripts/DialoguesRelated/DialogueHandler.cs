@@ -101,8 +101,6 @@ public class DialogueHandler : MonoBehaviour
         CloseDialogueBox();
     }
 
-
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
@@ -222,6 +220,7 @@ public class DialogueHandler : MonoBehaviour
             {
                 StartCoroutine(ReadyAnimation());
                 yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+                yield return new WaitUntil(() => Input.GetKeyUp(KeyCode.E));
             }
             else
                 yield return new WaitForSeconds(currentDialogue.AutoAdvanceTime);
@@ -297,7 +296,7 @@ public class DialogueHandler : MonoBehaviour
         //dialogueTitleLabel.text = string.Empty;
     }
 
-    #endregion 
+    #endregion
 
     #region Subtitles
 
