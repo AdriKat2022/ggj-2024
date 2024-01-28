@@ -163,14 +163,15 @@ public class BowController : MonoBehaviour
         player = null;
     }
 
-    public void InteractionEnd()
+    public IEnumerator InteractionEnd()
     {
+        DialogueHandler.Instance.ShowSubtitles(dialog0, true);
+        yield return new WaitForSeconds(10);
         foreach (Collider2D wall in walls)
         {
             wall.enabled = false;
         }
 
-        DialogueHandler.Instance.ShowSubtitles(dialog0, true);
     }
 
     public void InteractionEnd2()
@@ -186,7 +187,7 @@ public class BowController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(bowBehaviour==0) InteractionEnd();
+        if(bowBehaviour==0) StartCoroutine(InteractionEnd());
         else if (bowBehaviour == 2) InteractionEnd2();
 
     }

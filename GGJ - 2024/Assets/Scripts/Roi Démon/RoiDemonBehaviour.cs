@@ -19,11 +19,13 @@ public class RoiDemonBehaviour : MonoBehaviour
     public UnityEvent<bool> demonHasBeenKilled;
 
     public bool isKing;
+    private SoundManager soundManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+
     }
 
     // Update is called once per frame
@@ -66,14 +68,12 @@ public class RoiDemonBehaviour : MonoBehaviour
 
             // Incrémente le temps écoulé
             elapsedTime += Time.deltaTime;
-
             // Attend la prochaine frame
 
             demonHasBeenKilled?.Invoke(true);
 
             yield return null;
 
-            print(elapsedTime);
         }
         if (isKing)
         {

@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repeatable: 1
   dialogueToDisplay: {fileID: 11400000, guid: fe6b765498179664e8652bff0bc816b9, type: 2}
+  subtitleToDisplay: {fileID: 0}
   usedByDialogueInteractible: 1
 --- !u!61 &1467557160021797222
 BoxCollider2D:

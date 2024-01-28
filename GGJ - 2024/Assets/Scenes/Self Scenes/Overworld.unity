@@ -2241,7 +2241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4227323388678742495, guid: 1aa24b2ceab449541b583d1d7ffdc131, type: 3}
       propertyPath: fleeSpeed
-      value: 10
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4227323388678742495, guid: 1aa24b2ceab449541b583d1d7ffdc131, type: 3}
       propertyPath: endPosition.x

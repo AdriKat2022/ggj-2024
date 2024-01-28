@@ -30,7 +30,7 @@ public class MinigunController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(FindObjectOfType<Arrow>().gameObject);
+        
     }
 
     // Update is called once per frame
@@ -44,6 +44,7 @@ public class MinigunController : MonoBehaviour
                 transform.localPosition = new Vector3(1.3f, 0f, 0);
                 isPickedUp = true;
                 transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                Destroy(FindObjectOfType<Arrow>().gameObject);
                 DialogueHandler.Instance.ShowSubtitles(holdMinigunDialog, true);
             }
             else
