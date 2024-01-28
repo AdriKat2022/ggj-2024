@@ -48,6 +48,11 @@ public class ClickCookie : MonoBehaviour
     private void Start()
     {
         cookieCounter.text = "x0";
+        if(GameManager.Instance != null)
+        {
+
+        GameManager.Instance.blo.canMove = false;
+        }
     }
     private void OnMouseOver()
     {

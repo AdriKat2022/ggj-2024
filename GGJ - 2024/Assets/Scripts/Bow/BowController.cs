@@ -15,7 +15,7 @@ public class BowController : MonoBehaviour
 
     [SerializeField] private Collider2D[] walls;
     [SerializeField] private Collider2D wallTree;
-    [SerializeField] private DialogueObject dialog0;
+    [SerializeField] private SubtitleObject dialog0;
     [SerializeField] private SubtitleObject dialog1;
     [SerializeField] private SubtitleObject dialog2;
 
@@ -170,7 +170,7 @@ public class BowController : MonoBehaviour
             wall.enabled = false;
         }
 
-        DialogueHandler.Instance.ShowDialogue(dialog0, true);
+        DialogueHandler.Instance.ShowSubtitles(dialog0, true);
     }
 
     public void InteractionEnd2()

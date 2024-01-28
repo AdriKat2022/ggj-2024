@@ -15,6 +15,11 @@ public class BreakScript : MonoBehaviour
     [SerializeField] private float breakDuration2;
 
     private Vector3 intPos;
+
+    private void Start()
+    {
+        intPos = GameManager.Instance.cookieInitPos;
+    }
     public IEnumerator BreakSomething()
     {
         float timer = 0f;
