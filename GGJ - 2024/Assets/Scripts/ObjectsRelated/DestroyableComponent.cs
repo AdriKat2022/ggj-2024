@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class DestroyableComponent : MonoBehaviour, IDamageable
 {
@@ -26,7 +27,14 @@ public class DestroyableComponent : MonoBehaviour, IDamageable
     private void DeleteObject()
     {
         if(effectOnDestroy != null)
-            Instantiate(effectOnDestroy);
+        {
+            GameObject part = Instantiate(effectOnDestroy);
+            if(part.TryGetComponent<ParticleSystem>(out var partic)) {
+                partic.Play();
+            }
+            
+
+        }
         if (soundOnDestroy != null)
             SoundManager.Instance.PlaySound(soundOnDestroy);
 

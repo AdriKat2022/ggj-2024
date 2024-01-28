@@ -9,6 +9,8 @@ public class MinigunController : MonoBehaviour
     [SerializeField] private Transform origin;
     private GameObject player;
     private bool isPickedUp;
+    [SerializeField] private SubtitleObject holdMinigunDialog;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,6 +44,7 @@ public class MinigunController : MonoBehaviour
                 transform.localPosition = new Vector3(1.3f, 0f, 0);
                 isPickedUp = true;
                 transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                DialogueHandler.Instance.ShowSubtitles(holdMinigunDialog, true);
             }
             else
             {

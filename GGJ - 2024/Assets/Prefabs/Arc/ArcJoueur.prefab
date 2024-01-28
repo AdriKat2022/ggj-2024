@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2481465482149447499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6205181, y: -3.1794615, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.06, y: 1.06, z: 1.06}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -158,12 +158,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6950535306563635332}
   indicator: {fileID: 8783018143385565768}
+  lapin: {fileID: 0}
   launchSpeed: 15
   torqueForce: -1440
   launchDuration: 1
-  holdE: {fileID: 0}
-  pressE: {fileID: 0}
+  walls: []
+  dialog0: {fileID: 11400000, guid: 2a528ab44752bc44fa94d6ac32d3f910, type: 2}
+  dialog1: {fileID: 11400000, guid: 1b4a865ac7286c04186b250cb504462e, type: 2}
+  dialog2: {fileID: 11400000, guid: f8772f1c63ff82740a752d1ffb10fab3, type: 2}
+  holdE: {fileID: 21300000, guid: 0bd7bf8bf3d2e8649958506c9c5d4d2d, type: 3}
+  pressE: {fileID: 21300000, guid: a049c50f6dcd6d947914c61edae5500b, type: 3}
   bowBehaviour: 1
+  minigun: {fileID: 4503809848150207186, guid: f33247da95ca7624986ddb760c1d34f2, type: 3}
 --- !u!1 &7602709650275406947
 GameObject:
   m_ObjectHideFlags: 0

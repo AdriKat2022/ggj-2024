@@ -12,6 +12,8 @@ public class RabbitScript : MonoBehaviour
     [SerializeField] private float destroyRabbitTime; // Vitesse d'oscillation en unités par seconde
     private bool isDead; // Vitesse d'oscillation en unités par seconde
     private bool willFlee; // Vitesse d'oscillation en unités par seconde
+    [SerializeField] private SubtitleObject killRabbitSubtitle;
+
 
 
     void Update()
@@ -37,6 +39,7 @@ public class RabbitScript : MonoBehaviour
         if(collision.TryGetComponent(out Munition _)) {
             anim.SetBool("Dead", true);
             isDead = true;
+            DialogueHandler.Instance.ShowSubtitles(killRabbitSubtitle, true);
         }
     }
 

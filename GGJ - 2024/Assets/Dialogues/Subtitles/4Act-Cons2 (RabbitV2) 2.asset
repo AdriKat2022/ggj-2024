@@ -30,4 +30,4 @@ MonoBehaviour:
   <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 70c37cb934dc05042a8fa41c05169412, type: 3}
   <FollowUpTime>k__BackingField: 1
   <FollowingDialogue>k__BackingField: {fileID: 0}
-  <FollowingSubtitle>k__BackingField: {fileID: 11400000, guid: bbed47827f807e8469b364f641b9152b, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

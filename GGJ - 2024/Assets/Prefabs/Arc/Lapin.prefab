@@ -105,6 +105,7 @@ MonoBehaviour:
   oscillationSpeed: 0.2
   fleeSpeed: 3.5
   destroyRabbitTime: 5
+  killRabbitSubtitle: {fileID: 11400000, guid: 7cbaea63629cea24087a41c68b56b939, type: 2}
 --- !u!95 &3151264309181796216
 Animator:
   serializedVersion: 5
