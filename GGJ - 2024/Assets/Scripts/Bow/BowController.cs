@@ -11,6 +11,10 @@ public class BowController : MonoBehaviour
     [SerializeField] private float launchSpeed;
     [SerializeField] private float torqueForce;
     [SerializeField] private float launchDuration;
+
+    [SerializeField] private Collider2D[] walls;
+    [SerializeField] private DialogueObject endDialogue;
+
     private GameObject player;
     private bool isPickedUp;
     private bool isShooting;
@@ -126,6 +130,21 @@ public class BowController : MonoBehaviour
         isShooting = false;
         bowBehaviour = 2;
         player = null;
+    }
+
+    public void InteractionEnd()
+    {
+        foreach (Collider2D wall in walls)
+        {
+            wall.enabled = false;
+        }
+
+        DialogueHandler.Instance.ShowDialogue(endDialogue, true);
+    }
+
+    private void OnDestroy()
+    {
+        InteractionEnd();
     }
 
 }

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: Lapin end
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 100
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - ".... Euh alors. Comment dire. Sur une \xE9chelle de 1 \xE0 10, c'\xE9tait pitoyable.
+    LAMENTABLE. "
+  - "J\u2019ai jamais vu une dinguerie aussi dingue si tu vois ce que je veux dire.
+    Je t\u2019ai demand\xE9 de tirer avec l\u2019arc et toi, tu me tires l\u2019arc.
+    T\u2019as rien compris en fait. "
+  - "M\xEAme ma petite s\u0153ur aurait fait mieux ET J\u2019AI PAS DE PETITE S\u0152UR.
+    Maintenant fait un effort et arr\xEAte de te ridiculiser."
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}
