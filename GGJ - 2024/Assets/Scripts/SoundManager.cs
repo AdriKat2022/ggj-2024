@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class SoundManager : MonoBehaviour
 
     public AudioMixer mixer;
 
+
+    private int requestedSceneMusic;
+    private int requestedSceneEffect;
 
     #region Singleton
     public static SoundManager Instance { get; private set ; }
@@ -130,13 +134,24 @@ public class SoundManager : MonoBehaviour
 
     private IEnumerator PlaySoundAfterTime(AudioClip clip, float delay)
     {
+        requestedSceneEffect = SceneManager.GetActiveScene().buildIndex;
+
         yield return new WaitForSeconds(delay);
+
+        if (requestedSceneEffect != SceneManager.GetActiveScene().buildIndex)
+            yield break;
+
         PlaySound(clip);
     }
     private IEnumerator PlayMusicAfterTime(AudioClip clip, float delay, bool forceRestart)
     {
+        requestedSceneMusic = SceneManager.GetActiveScene().buildIndex;
+
         if (delay > 0)
             yield return new WaitForSeconds(delay);
+
+        if (requestedSceneMusic != SceneManager.GetActiveScene().buildIndex)
+            yield break;
 
         PlayMusic(clip, forceRestart: forceRestart);
     }
