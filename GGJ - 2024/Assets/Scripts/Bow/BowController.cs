@@ -13,7 +13,7 @@ public class BowController : MonoBehaviour
     [SerializeField] private float launchDuration;
 
     [SerializeField] private Collider2D[] walls;
-    [SerializeField] private DialogueObject endDialogue;
+    [SerializeField] private SubtitleObject endDialogue;
 
     private GameObject player;
     private bool isPickedUp;
@@ -139,7 +139,7 @@ public class BowController : MonoBehaviour
             wall.enabled = false;
         }
 
-        DialogueHandler.Instance.ShowDialogue(endDialogue, true);
+        DialogueHandler.Instance.ShowSubtitles(endDialogue, true);
     }
 
     private void OnDestroy()
