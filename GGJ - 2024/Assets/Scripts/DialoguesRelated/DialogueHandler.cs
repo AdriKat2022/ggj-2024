@@ -160,6 +160,12 @@ public class DialogueHandler : MonoBehaviour
         {
             case EventType.All:
                 StopAllCoroutines();
+                dialogueTextLabel.text = string.Empty;
+                dialogueBox.SetActive(false);
+                subtitleTextLabel.text = string.Empty;
+                subtitleBox.SetActive(false);
+                IsOpen = false;
+                OnDialogueOpenIsPlayerLocked?.Invoke(false);
                 break;
 
             case EventType.Dialogue:
@@ -178,58 +184,12 @@ public class DialogueHandler : MonoBehaviour
 
     #endregion
 
-    #region Subtitles
-
-    private void StartSubtitlesAnimation()
-    {
-        subtitleBox.SetActive(true);
-        StartCoroutine(StepThroughSubtitles());
-    }
-
-    private IEnumerator StepThroughSubtitles()
-    {
-        OnDialogueOpenIsPlayerLocked?.Invoke(currentSubtitles.LockPlayerMovements);
-
-        int i = 0;
-
-        while (i < currentSubtitles.BubblesLength)
-        {
-            subtitleTextLabel.fontSize = subtitlesBaseFontSize + currentSubtitles.Bubbles[i].sizeModifer;
-            instantWritter.RunDialogue(currentSubtitles, i, subtitleTextLabel);
-            yield return new WaitForSeconds(currentSubtitles.Bubbles[i].time);
-            i++;
-        }
-
-        if (currentSubtitles.FollowingSubtitle != null)
-        {
-            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
-            ShowSubtitles(currentSubtitles.FollowingSubtitle, true);
-            yield break;
-        }
-
-        CloseSubtitlesBox();
-
-        if (currentSubtitles.FollowingDialogue != null)
-        {
-            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
-            ShowDialogue(currentSubtitles.FollowingDialogue, true);
-        }
-        
-        OnDialogueOpenIsPlayerLocked?.Invoke(false);
-    }
-
-    private void CloseSubtitlesBox()
-    {
-        subtitleTextLabel.text = string.Empty;
-        subtitleBox.SetActive(false);
-    }
-
-    #endregion
-
     #region Dialogues
 
     private IEnumerator StartDialogueAnimation()
     {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentDialogue.LockPlayerMovements);
+
         float scale = 0f;
 
         dialogueBox.transform.localScale = new Vector3(1, scale, 1);
@@ -275,7 +235,6 @@ public class DialogueHandler : MonoBehaviour
         {
             currentDialogue = currentDialogue.FollowingDialogue;
             yield return StepThroughDialogue();
-
             yield break;
         }
 
@@ -285,6 +244,7 @@ public class DialogueHandler : MonoBehaviour
         {
             yield return new WaitForSeconds(currentDialogue.FollowUpTime);
             ShowSubtitles(currentDialogue.FollowingSubtitle, true);
+            yield break;
         }
         
         OnDialogueOpenIsPlayerLocked?.Invoke(false);
@@ -338,6 +298,54 @@ public class DialogueHandler : MonoBehaviour
     }
 
     #endregion 
+
+    #region Subtitles
+
+    private void StartSubtitlesAnimation()
+    {
+        subtitleBox.SetActive(true);
+        StartCoroutine(StepThroughSubtitles());
+    }
+
+    private IEnumerator StepThroughSubtitles()
+    {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentSubtitles.LockPlayerMovements);
+
+        int i = 0;
+
+        while (i < currentSubtitles.BubblesLength)
+        {
+            subtitleTextLabel.fontSize = subtitlesBaseFontSize + currentSubtitles.Bubbles[i].sizeModifer;
+            instantWritter.RunDialogue(currentSubtitles, i, subtitleTextLabel);
+            yield return new WaitForSeconds(currentSubtitles.Bubbles[i].time);
+            i++;
+        }
+
+        if (currentSubtitles.FollowingSubtitle != null)
+        {
+            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
+            ShowSubtitles(currentSubtitles.FollowingSubtitle, true);
+            yield break;
+        }
+
+        CloseSubtitlesBox();
+
+        if (currentSubtitles.FollowingDialogue != null)
+        {
+            yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
+            ShowDialogue(currentSubtitles.FollowingDialogue, true);
+        }
+        
+        OnDialogueOpenIsPlayerLocked?.Invoke(false);
+    }
+
+    private void CloseSubtitlesBox()
+    {
+        subtitleTextLabel.text = string.Empty;
+        subtitleBox.SetActive(false);
+    }
+
+    #endregion
 
 
     private IEnumerator ReadyAnimation()

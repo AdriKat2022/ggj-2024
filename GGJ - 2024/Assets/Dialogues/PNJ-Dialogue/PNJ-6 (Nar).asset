@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
-  - text: "Ok papi est bien gentil mais j\u2019ai aquaponey dans genre 1h "
+  - text: "Ok papi est bien gentil mais j\u2019ai aquaponey dans genre 1 heure"
     time: 5
     sizeModifer: 0
   - text: "donc trouve un moyen de chopper l\u2019arc histoire qu\u2019on y aille."

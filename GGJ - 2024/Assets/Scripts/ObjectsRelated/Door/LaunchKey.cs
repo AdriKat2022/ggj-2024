@@ -23,7 +23,7 @@ public class LaunchKey : MonoBehaviour
 
         if (isLaunched && other.TryGetComponent(out DoorBehaviour door))
         {
-            if (door.GetIsBoss())
+            if (door.IsBoss())
             {
                 other.gameObject.SetActive(false);
             }

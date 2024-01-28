@@ -24,7 +24,7 @@ public class PlayerMovement : PlayerControllable
 
     [Header("Attack")]
     [SerializeField]
-    private float attackPower = 9999;
+    private int attackPower = 9999;
     [SerializeField]
     private float endlag = .8f;
     [SerializeField]
@@ -42,9 +42,9 @@ public class PlayerMovement : PlayerControllable
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        attackModule.gameObject.SetActive(false);
-        playerInput = new(0, 0, false);
+        attackModule.SetDamage(attackPower);
 
+        playerInput = new(0, 0, false);
         isAttacking = false;
     }
 
@@ -104,7 +104,7 @@ public class PlayerMovement : PlayerControllable
         isAttacking = true;
         animator.SetTrigger("Attack");
         attackModule.UpdateRotation(facingDirection);
-        attackModule.ActivateModule(attackPower);
+        attackModule.ActivateModule();
     }
 
     private void Animate()
