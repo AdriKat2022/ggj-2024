@@ -8,6 +8,8 @@ public class DialogueActivator : MonoBehaviour
     private bool repeatable;
     [SerializeField, Tooltip("The dialogue to display.")]
     private DialogueObject dialogueToDisplay;
+    [SerializeField, Tooltip("The dialogue to display.")]
+    private SubtitleObject subtitleToDisplay;
 
     [Header("Auto trigger")]
     [SerializeField, Tooltip("Disable the auto dialogue trigger.")]
@@ -32,7 +34,10 @@ public class DialogueActivator : MonoBehaviour
         if (repeatable || !activated)
         {
             activated = true;
-            dialogueHandler.ShowDialogue(dialogueToDisplay);
+            if (dialogueToDisplay != null)
+                dialogueHandler.ShowDialogue(dialogueToDisplay);
+            if (subtitleToDisplay != null)
+                dialogueHandler.ShowSubtitles(subtitleToDisplay);
         }
     }
 
