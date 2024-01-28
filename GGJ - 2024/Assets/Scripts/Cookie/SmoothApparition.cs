@@ -6,6 +6,7 @@ public class SmoothApparition : MonoBehaviour
 {
     [SerializeField] private float startDuration;  // Durée de la transition en secondes
     [SerializeField] private float transitionDuration;  // Durée de la transition en secondes
+    private Vector3 intPos;
     [SerializeField] private Vector3 startRotation;
     [SerializeField] private Vector3 intermediateRotation;
     [SerializeField] private Vector3 endRotation;
@@ -18,6 +19,7 @@ public class SmoothApparition : MonoBehaviour
 
     void Start()
     {
+        intPos = new Vector3(0,0,0);
         // Démarre la coroutine pour la transition
         StartCoroutine(TransitionRoutine());
     }
@@ -32,7 +34,7 @@ public class SmoothApparition : MonoBehaviour
             // Interpolation linéaire entre les valeurs initiales et finales
             float t = timer / transitionDuration;
             transform.rotation = Quaternion.Euler(Vector3.Lerp(startRotation, intermediateRotation, t));
-            transform.position = Vector3.Lerp(startPosition, intermediatePosition, t);
+            transform.position = Vector3.Lerp(intPos + startPosition, intPos + intermediatePosition, t);
             transform.localScale = Vector3.Lerp(startScale, intermediateScale, t);
 
             // Attend la prochaine frame
@@ -49,7 +51,7 @@ public class SmoothApparition : MonoBehaviour
             // Interpolation linéaire entre les valeurs initiales et finales
             float t = timer / transitionDuration;
             transform.rotation = Quaternion.Euler(Vector3.Lerp(intermediateRotation, endRotation, t));
-            transform.position = Vector3.Lerp(intermediatePosition, endPosition, t);
+            transform.position = Vector3.Lerp(intPos + intermediatePosition, intPos + endPosition, t);
             transform.localScale = Vector3.Lerp(intermediateScale, endScale, t);
 
             // Attend la prochaine frame
@@ -61,7 +63,7 @@ public class SmoothApparition : MonoBehaviour
 
         // Assure que la transition est complète en fixant les valeurs finales
         transform.rotation = Quaternion.Euler(endRotation);
-        transform.position = endPosition;
+        transform.position = endPosition + intPos;
         transform.localScale = endScale;
 
     }

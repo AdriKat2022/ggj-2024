@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1
-  effectOnDestroy: {fileID: 0}
+  effectOnDestroy: {fileID: 2481465482149447499, guid: 7e2b6336e0018fd49a2b294956f2ff7b, type: 3}
   soundOnDestroy: {fileID: 0}
   interruptDialoguesOnDeath: 1
 --- !u!70 &5530099827415577498
