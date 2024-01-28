@@ -15,7 +15,7 @@ public class TypeWritterEffect : MonoBehaviour
     private readonly Dictionary<HashSet<char>, float> punctuationWaitTimeChart = new()
     {
         {new HashSet<char>(){'.', '!', '?'}, 0.6f },
-        {new HashSet<char>(){',', ';', '-', ':'}, 0.3f }
+        {new HashSet<char>(){',', ';', ':'}, 0.3f }
     };
 
 

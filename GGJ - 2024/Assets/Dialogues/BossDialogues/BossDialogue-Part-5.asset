@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
-  m_Name: ExampleDialogue 1 (2-3)
+  m_Name: BossDialogue-Part-5
   m_EditorClassIdentifier: 
-  <DialogueSpeed>k__BackingField: 20
+  <DialogueSpeed>k__BackingField: 25
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
   <NonSkippable>k__BackingField: 1
   <AutoAdvance>k__BackingField: 1
-  <AutoAdvanceTime>k__BackingField: 2
+  <AutoAdvanceTime>k__BackingField: 1
   <Bubbles>k__BackingField:
-  - "enchain\xE9s !"
-  - "et auto avanc\xE9s aussi"
-  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 3fda2535482dd9e4b95811e9824b66c7, type: 2}
+  - "fin voil\xE0 bref \xE7a commence \xE0 \xEAtre long l\xE0 en plus je dois aller
+    au petit coin si tu vois ce que je veux dire parceque si tu continue \xE0 lire
+    je vais p\xE9ter super fort si tu vois ce que je veux dire. Tu me crois pas,
+    et bien tu devr..!"
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: PNJ-6 (Nar)
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 1
+  <Bubbles>k__BackingField:
+  - text: "Ok papi est bien gentil mais j\u2019ai aquaponey dans genre 1h "
+    time: 5
+    sizeModifer: 0
+  - text: "donc trouve un moyen de chopper l\u2019arc histoire qu\u2019on y aille."
+    time: 5
+    sizeModifer: 0
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 83cba06026d751443bac4ec2b1855ad3, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

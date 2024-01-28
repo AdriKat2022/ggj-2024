@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-using System.Threading;
 using UnityEngine;
 
 public struct PlayerInputObj

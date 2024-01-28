@@ -10,15 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
-  m_Name: ExampleDialogue
+  m_Name: PNJ-5
   m_EditorClassIdentifier: 
-  <DialogueSpeed>k__BackingField: 100
+  <DialogueSpeed>k__BackingField: 50
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
-  <NonSkippable>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 1
+  <NonSkippable>k__BackingField: 1
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
   <Bubbles>k__BackingField:
-  - Ceci est un exemple de dialogue simple !
-  - Il peut y avoir plusieurs bulles comme ceci.
+  - "Bien plus beau et bien plus fort que ses fr\xE8res et s\u0153urs par ailleurs."
+  - "Ah ah, ces bons rien, toujours \xE0 se cacher sous les jupons de maman quand
+    je les martyrisais ah ah ah. "
+  <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 11400000, guid: 13fc116c0ff244c4e855653ef8824947, type: 2}

@@ -10,25 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
-  m_Name: FirstAct
+  m_Name: 2Act (Rabbit)
   m_EditorClassIdentifier: 
   <Bubbles>k__BackingField:
-  - text: "Bonjour Blo. D\xE9sol\xE9 de te r\xE9veiller comme \xE7a, mais ce qu\u2019il
-      se passe est urgent."
-    time: 6
-  - text: "Le roi, Tomp\xE9re, vient de tuer ton mari Pablo."
-    time: 4
-  - text: Normalement je te dirais de porter plainte au commissariat, mais on a pas
-      fait de commissariat.
-    time: 6
-  - text: "Donc pour l\u2019histoire tu devras te venger de Tomp\xE9re, ce satan\xE9
-      roi !"
-    time: 5
-  - text: "Pour cela, tu devras traverser ce royaume en qu\xEAte de TROIS donjons,
-      et apr\xE8s cela tu seras capable d\u2019entrer dans le palais royal pour lui
-      mettre la t\xEAte sur un piquet (enfin pas vraiment, les graphistes ont eu
-      la flemme)."
-    time: 10
   - text: Regardes Blo, un lapin.
     time: 2
   - text: "Si tu le bats, tu gagneras ni exp\xE9rience, ni argent, mais tu auras

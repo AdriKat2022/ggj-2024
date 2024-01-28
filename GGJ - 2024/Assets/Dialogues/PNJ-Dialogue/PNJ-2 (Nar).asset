@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: PNJ-2 (Nar)
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 1
+  <Bubbles>k__BackingField:
+  - text: "Un arc.. Tu sais pas trop t\u2019en servir mais bon, peut-\xEAtre que
+      la deuxi\xE8me fois sera la bonne."
+    time: 5
+    sizeModifer: 0
+  <FollowUpTime>k__BackingField: 1
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 159f274feeaab614f9e3dd0a8ce39960, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}
