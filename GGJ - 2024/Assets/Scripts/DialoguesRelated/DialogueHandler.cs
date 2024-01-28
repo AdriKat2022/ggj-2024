@@ -186,6 +186,11 @@ public class DialogueHandler : MonoBehaviour
 
     private IEnumerator StartDialogueAnimation()
     {
+        if (currentDialogue == null)
+        {
+            OnDialogueOpenIsPlayerLocked?.Invoke(false);
+            yield break;
+        }
         OnDialogueOpenIsPlayerLocked?.Invoke(currentDialogue.LockPlayerMovements);
 
         float scale = 0f;
