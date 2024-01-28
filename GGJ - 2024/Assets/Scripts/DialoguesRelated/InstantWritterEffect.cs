@@ -8,9 +8,4 @@ public class InstantWritterEffect : MonoBehaviour
     {
         textPlaceHolder.text = dialogueObject.Bubbles[index].text;
     }
-
-    public void StopDialogue()
-    {
-
-    }
 }

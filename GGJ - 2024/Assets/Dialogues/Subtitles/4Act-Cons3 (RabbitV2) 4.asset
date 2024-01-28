@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
-  m_Name: PNJ-4 (Nar)
+  m_Name: 4Act-Cons3 (RabbitV2) 4
   m_EditorClassIdentifier: 
-  <LockPlayerMovements>k__BackingField: 1
+  <LockPlayerMovements>k__BackingField: 0
   <Bubbles>k__BackingField:
-  - text: "\xC7a commence \xE0 \xEAtre sacr\xE9ment long\u2026 y a pas un bouton
-      pour skip l\xE0 ? S\xE9rieusement ?"
-    time: 6
+  - text: ENFIN LETZGOOOOOOOOOOOOO
+    time: 5
+    sizeModifer: 5
+  - text: bon allez, next duuunjon hophophop.
+    time: 5
     sizeModifer: 0
   <FollowUpTime>k__BackingField: 0
-  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: b007321c1952aa7429be625b99f9909a, type: 2}
+  <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

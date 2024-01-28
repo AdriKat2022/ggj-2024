@@ -15,6 +15,7 @@ MonoBehaviour:
   <DialogueSpeed>k__BackingField: 50
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 1
   <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0

@@ -44,6 +44,8 @@ public class DialogueHandler : MonoBehaviour
     private bool isReadyToAdvance;
     private DialogueObject currentDialogue;
     private SubtitleObject currentSubtitles;
+    private float subtitlesBaseFontSize;
+    //private float dialoguesBaseFontSize;
 
 
     [Header("Debug")]
@@ -82,6 +84,7 @@ public class DialogueHandler : MonoBehaviour
         //if (!TryGetComponent(out typeWritter))
         //    Debug.LogError("No TypeEffect component was found.\nYou need an effect to display text.", gameObject);
 
+        subtitlesBaseFontSize = subtitleTextLabel.fontSize;
 
         IsOpen = false;
         isReadyToAdvance = false;
@@ -160,6 +163,7 @@ public class DialogueHandler : MonoBehaviour
 
         while (i < currentSubtitles.BubblesLength)
         {
+            subtitleTextLabel.fontSize = subtitlesBaseFontSize + currentSubtitles.Bubbles[i].sizeModifer;
             instantWritter.RunDialogue(currentSubtitles, i, subtitleTextLabel);
             yield return new WaitForSeconds(currentSubtitles.Bubbles[i].time);
             i++;
@@ -179,6 +183,8 @@ public class DialogueHandler : MonoBehaviour
             yield return new WaitForSeconds(currentSubtitles.FollowUpTime);
             ShowDialogue(currentSubtitles.FollowingDialogue, true);
         }
+        
+        OnDialogueOpenIsPlayerLocked?.Invoke(false);
     }
 
     private void CloseSubtitlesBox()
@@ -249,6 +255,8 @@ public class DialogueHandler : MonoBehaviour
             yield return new WaitForSeconds(currentDialogue.FollowUpTime);
             ShowSubtitles(currentDialogue.FollowingSubtitle, true);
         }
+        
+        OnDialogueOpenIsPlayerLocked?.Invoke(false);
     }
 
     private IEnumerator StopDialogueAnimation()
