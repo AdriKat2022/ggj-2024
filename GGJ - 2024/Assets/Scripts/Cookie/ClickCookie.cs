@@ -31,7 +31,7 @@ public class ClickCookie : MonoBehaviour
     [SerializeField] private GameObject surbrillance2;
     [SerializeField] private float breakShrink;
     [SerializeField] private Collider2D colliderGouffre;
-    [SerializeField] private SpriteRenderer spriteRendererPont;
+    [SerializeField] private GameObject spriteRendererPont;
 
 
     [Header("SecondTime")]
@@ -47,6 +47,8 @@ public class ClickCookie : MonoBehaviour
 
     private void Start()
     {
+        colliderGouffre =  GameObject.Find("WallPont").GetComponent<Collider2D>();
+        spriteRendererPont = GameObject.Find("Pont");
         cookieCounter.text = "x0";
         if(GameManager.Instance != null)
         {
@@ -58,12 +60,15 @@ public class ClickCookie : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit[] hits = Physics.RaycastAll(ray);
+            print("gg");
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
 
-            foreach (RaycastHit hit in hits)
+            foreach (RaycastHit2D hit in hits)
             {
-                if(hit.collider.gameObject == gameObject)
+                print(hit.collider.name);
+
+                if (hit.collider.gameObject == gameObject)
                 {
                     OnClick();
                 }
@@ -160,7 +165,7 @@ public class ClickCookie : MonoBehaviour
             StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomethingTwo());
             canvaCounter.SetActive(false);
             colliderGouffre.enabled = false;
-            spriteRendererPont.enabled = true;
+            spriteRendererPont.SetActive(true);
         }
 
 
