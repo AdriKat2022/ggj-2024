@@ -27,10 +27,5 @@ public class SpaceManager : MonoBehaviour
             DialogueHandler.Instance.ShowSubtitles(subtitles);
             state = 1;
         }
-
-        if (timer > time_state2 && state == 1)
-        {
-
-        }
     }
 }
