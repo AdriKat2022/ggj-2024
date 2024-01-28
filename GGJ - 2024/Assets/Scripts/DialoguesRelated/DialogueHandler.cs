@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class DialogueHandler : MonoBehaviour
 {
+    public enum EventType
+    {
+        All,
+        Dialogue,
+        Subtitle
+    }
+
+
     [Header("Animations")]
     [SerializeField]
     private float bubbleAnimationTime;
@@ -104,6 +112,8 @@ public class DialogueHandler : MonoBehaviour
     }
 
 
+    #region Public functions
+
     /// <summary>
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
     /// </summary>
@@ -117,7 +127,6 @@ public class DialogueHandler : MonoBehaviour
         currentDialogue = dialogueObjectToDisplay;
         StartCoroutine(StartDialogueAnimation());
     }
-
     /// <summary>
     /// This will make the dialogue box appear and display all the bubbles and following dialogues.
     /// </summary>
@@ -131,9 +140,6 @@ public class DialogueHandler : MonoBehaviour
         currentDialogue = dialogueObjectToDisplay;
         yield return StartDialogueAnimation();
     }
-
-    #region Subtitles
-
     /// <summary>
     /// This will make the subtitles box appear and display all the bubbles and following subtitles.
     /// </summary>
@@ -148,6 +154,31 @@ public class DialogueHandler : MonoBehaviour
         StartSubtitlesAnimation();
     }
 
+    public void Interrupt(EventType eventToInterrupt)
+    {
+        switch (eventToInterrupt)
+        {
+            case EventType.All:
+                StopAllCoroutines();
+                break;
+
+            case EventType.Dialogue:
+
+                // nah
+
+                break;
+
+            case EventType.Subtitle:
+
+                // nah
+
+                break;
+        }
+    }
+
+    #endregion
+
+    #region Subtitles
 
     private void StartSubtitlesAnimation()
     {
@@ -307,7 +338,6 @@ public class DialogueHandler : MonoBehaviour
     }
 
     #endregion 
-
 
 
     private IEnumerator ReadyAnimation()

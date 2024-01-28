@@ -21,10 +21,10 @@ public class DialogueObject : ScriptableObject
     [field: SerializeField, Tooltip("Can the user skip the bubbles ?")]
     public bool NonSkippable { get; private set; }
 
-    [field: SerializeField, Tooltip("Should the user act to pass the bubble ? Or auto skip to immediately read the following bubble ?")]
+    [field: SerializeField, Tooltip("Should the user press a button to go to the next bubble ? Or auto skips to immediately read the following bubble ?")]
     public bool AutoAdvance { get; private set; }
 
-    [field: SerializeField, Tooltip("Time after which the dialogue will auto advance.")]
+    [field: SerializeField, Tooltip("Time after which the dialogue will auto advance if AutoAdvance is set to true.")]
     public float AutoAdvanceTime { get; private set; }
 
 
