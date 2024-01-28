@@ -16,7 +16,7 @@ MonoBehaviour:
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
   <LockPlayerMovements>k__BackingField: 0
-  <NonSkippable>k__BackingField: 1
+  <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 1
   <AutoAdvanceTime>k__BackingField: 1
   <Bubbles>k__BackingField:
@@ -24,6 +24,10 @@ MonoBehaviour:
     au petit coin si tu vois ce que je veux dire parceque si tu continue \xE0 lire
     je vais p\xE9ter super fort si tu vois ce que je veux dire. Tu me crois pas,
     et bien tu devr..!"
+  <DialogueEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <DialogueEventIndex>k__BackingField: 0
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttackModule : MonoBehaviour
 {
@@ -15,11 +16,14 @@ public class PlayerAttackModule : MonoBehaviour
 
     private Collider2D hitbox;
 
+    DialogueHandler dialogueHandler;
+
     private void Start()
     {
         hitbox = GetComponent<Collider2D>();
         hitbox.enabled = false;
         isActive = false;
+        dialogueHandler = GameObject.Find("UI Handler").GetComponent<DialogueHandler>();
     }
 
     public void UpdateRotation(float angle)
@@ -65,6 +69,9 @@ public class PlayerAttackModule : MonoBehaviour
         if (other.TryGetComponent(out RoiDemonBehaviour roiDemon))
         {
             StartCoroutine(roiDemon.GetLaunched());
+            dialogueHandler.Interrupt(DialogueHandler.EventType.All);
+            
+            
 
         }
         if (other.TryGetComponent(out RoiBehaviour roi))
@@ -79,6 +86,10 @@ public class PlayerAttackModule : MonoBehaviour
             yield return new WaitForEndOfFrame();
             this.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 0.03f);
             StartCoroutine(GetPushed());
+            if (this.transform.parent.GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1f)
+            {
+                SceneManager.LoadScene("Overwold");
+            }
         }
     }
 }

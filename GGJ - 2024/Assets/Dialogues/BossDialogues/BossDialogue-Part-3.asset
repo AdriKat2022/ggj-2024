@@ -16,11 +16,15 @@ MonoBehaviour:
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
   <LockPlayerMovements>k__BackingField: 0
-  <NonSkippable>k__BackingField: 1
+  <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 1
   <AutoAdvanceTime>k__BackingField: 2
   <Bubbles>k__BackingField:
   - JE DISAIS DONC
+  <DialogueEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <DialogueEventIndex>k__BackingField: 0
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 0b296c16801869347853b407a0e02dfe, type: 2}
   <FollowingSubtitle>k__BackingField: {fileID: 0}
