@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class RoiDemonBehaviour : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class RoiDemonBehaviour : MonoBehaviour
     [SerializeField] private float launchSpeed;
     [SerializeField] private float torqueForce;
 
-    public UnityEvent<bool> demonHasBeenKilled; 
+    public UnityEvent<bool> demonHasBeenKilled;
+
+    public bool isKing;
 
     // Start is called before the first frame update
     void Start()
@@ -72,7 +75,12 @@ public class RoiDemonBehaviour : MonoBehaviour
 
             print(elapsedTime);
         }
-        
+        if (isKing)
+        {
+            SceneManager.LoadScene("League of Legends");
+        }
         this.gameObject.SetActive(false);
     }
+
+    
 }
