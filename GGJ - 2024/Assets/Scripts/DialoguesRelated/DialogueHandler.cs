@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -50,6 +51,12 @@ public class DialogueHandler : MonoBehaviour
     private SubtitleObject testSubtitles;
     [SerializeField]
     private DialogueObject testDialogue;
+
+    #region Events
+
+    public static event Action<bool> OnDialogueOpenIsPlayerLocked;
+
+    #endregion
 
 
     #region Singleton
@@ -147,6 +154,8 @@ public class DialogueHandler : MonoBehaviour
 
     private IEnumerator StepThroughSubtitles()
     {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentSubtitles.LockPlayerMovements);
+
         int i = 0;
 
         while (i < currentSubtitles.BubblesLength)
@@ -202,6 +211,8 @@ public class DialogueHandler : MonoBehaviour
 
     private IEnumerator StepThroughDialogue()
     {
+        OnDialogueOpenIsPlayerLocked?.Invoke(currentDialogue.LockPlayerMovements);
+
         for(int i = 0 ; i<currentDialogue.BubblesLength ; i++)
         {
             yield return RunTypingEffect(i);

@@ -15,6 +15,9 @@ public class DialogueObject : ScriptableObject
 
     [field: Header("Inputs")]
 
+    [field: SerializeField, Tooltip("Can the user move during the bubbles ?")]
+    public bool LockPlayerMovements { get; private set; }
+
     [field: SerializeField, Tooltip("Can the user skip the bubbles ?")]
     public bool NonSkippable { get; private set; }
 

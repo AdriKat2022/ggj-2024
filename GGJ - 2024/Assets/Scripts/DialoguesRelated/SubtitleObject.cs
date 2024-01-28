@@ -16,6 +16,11 @@ public class SubtitleObject : ScriptableObject
 
 
     [field: Header("Subtitles")]
+    [field: SerializeField, Tooltip("Can the user move during the bubbles ?")]
+    public bool LockPlayerMovements { get; private set; }
+
+
+    [field: Header("Subtitles")]
     [field: SerializeField]
     public Subtitle[] Bubbles { get; private set; }
     public int BubblesLength => Bubbles.Length;

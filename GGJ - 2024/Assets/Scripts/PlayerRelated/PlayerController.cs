@@ -20,6 +20,19 @@ public class PlayerController : MonoBehaviour
     private PlayerControllable controlledScript;
 
 
+    private bool isPlayerLocked;
+
+
+    private void OnEnable()
+    {
+        DialogueHandler.OnDialogueOpenIsPlayerLocked += LockPlayer;
+    }
+
+    private void OnDisable()
+    {
+        DialogueHandler.OnDialogueOpenIsPlayerLocked -= LockPlayer;
+    }
+
     private void Start()
     {
         if(controlledScript == null)
@@ -37,6 +50,12 @@ public class PlayerController : MonoBehaviour
     private void SendPlayerInput()
     {
         PlayerInputObj input;
+
+        if (isPlayerLocked)
+        {
+            controlledScript.UpdatePlayerInput(new PlayerInputObj(0,0,false));
+            return;
+        }
 
         switch (inputType)
         {
@@ -63,6 +82,12 @@ public class PlayerController : MonoBehaviour
 
         input.attack = Input.GetKeyDown(KeyCode.Space);
 
+
         controlledScript.UpdatePlayerInput(input);
+    }
+
+    private void LockPlayer(bool lockPlayer)
+    {
+        isPlayerLocked = lockPlayer;
     }
 }
