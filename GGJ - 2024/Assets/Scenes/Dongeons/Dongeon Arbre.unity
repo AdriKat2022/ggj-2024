@@ -488,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lapin
       objectReference: {fileID: 0}
+    - target: {fileID: 4227323388678742495, guid: 1aa24b2ceab449541b583d1d7ffdc131, type: 3}
+      propertyPath: timeBeforeSwitchScene
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

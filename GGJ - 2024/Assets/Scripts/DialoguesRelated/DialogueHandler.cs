@@ -360,8 +360,8 @@ public class DialogueHandler : MonoBehaviour
         subtitleTextLabel.text = string.Empty;
         subtitleBox.SetActive(false);
         IsOpen = false;
-
-        GameManager.Instance.executeEndDialogueAction();
+        if(GameManager.Instance)
+            GameManager.Instance.executeEndDialogueAction();
     }
 
     #endregion

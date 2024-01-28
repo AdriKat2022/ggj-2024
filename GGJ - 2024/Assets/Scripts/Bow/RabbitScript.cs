@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RabbitScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class RabbitScript : MonoBehaviour
     private bool isDead; // Vitesse d'oscillation en unités par seconde
     private bool willFlee; // Vitesse d'oscillation en unités par seconde
     [SerializeField] private SubtitleObject killRabbitSubtitle;
+    [SerializeField] private float timeBeforeSwitchScene; // Vitesse d'oscillation en unités par seconde
 
 
 
@@ -36,7 +38,7 @@ public class RabbitScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent(out Munition _)) {
+        if(!isDead && collision.TryGetComponent(out Munition _)) {
             anim.SetBool("Dead", true);
             isDead = true;
             DialogueHandler.Instance.ShowSubtitles(killRabbitSubtitle, true);
@@ -47,5 +49,12 @@ public class RabbitScript : MonoBehaviour
     {
         willFlee = true;
         Destroy(gameObject, destroyRabbitTime);
+    }
+
+    public IEnumerator SwitchScene()
+    {
+        yield return new WaitForSeconds(timeBeforeSwitchScene);
+        GameManager.Instance.dungeonState = 1;
+        SceneManager.LoadScene("Hugo2");
     }
 }
