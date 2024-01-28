@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: 1-Cookie (Plus vite)
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - text: Ehmm
+    time: 1
+    sizeModifer: 0
+  - text: "Tu peux faire un effort s'te pla\xEEt ?"
+    time: 1.8
+    sizeModifer: 0
+  - text: et appuyer
+    time: 0.6
+    sizeModifer: 0
+  - text: plus vite ?
+    time: 0.7
+    sizeModifer: 50
+  - text: Hein ?
+    time: 0.5
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: e21701079ef55ce4fbe5464a6dfb454f, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

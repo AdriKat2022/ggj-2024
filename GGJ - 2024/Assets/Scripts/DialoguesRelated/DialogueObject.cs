@@ -34,11 +34,9 @@ public class DialogueObject : ScriptableObject
     public string[] Bubbles { get; private set; }
     public int BubblesLength => Bubbles.Length;
 
-    [field: Header("Events")]
-    [field: SerializeField]
-    public UnityEvent DialogueEvent { get; private set; }
-    [field: SerializeField]
-    public int DialogueEventIndex { get; private set; }
+    [Header("Events")]
+    public UnityEvent DialogueEvent;
+    public int DialogueEventIndex;
 
 
     [field: Header("Follow up")]

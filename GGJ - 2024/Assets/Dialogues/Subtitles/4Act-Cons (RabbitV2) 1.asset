@@ -15,24 +15,24 @@ MonoBehaviour:
   <LockPlayerMovements>k__BackingField: 1
   <Bubbles>k__BackingField:
   - text: "Je\u2026 Je sais pas comment t\u2019as fait mais"
-    time: 3
+    time: 3.59
     sizeModifer: 0
   - text: "je suis \xE0 moiti\xE9 impressionn\xE9"
-    time: 2.5
+    time: 1.94
     sizeModifer: 0
   - text: "et \xE0 moiti\xE9 genre"
-    time: 2.5
+    time: 1.5
     sizeModifer: 0
   - text: "pas impressionn\xE9.."
-    time: 2.5
+    time: 1.61
     sizeModifer: 0
   - text: "Tiens, tu sais quoi, regarde cette vid\xE9o (https://www.youtube.com/watch?v=QlVipew4oMI)
-      et reviens quand t\u2019as tout compris."
-    time: 2.5
+      et reviens quand t\u2019auras tout compris."
+    time: 5.4
     sizeModifer: 0
-  - text: "Ah et puis, d\u2019ailleurs, prends cette fl\xE8che, \xE7a sera s\xFBrement
+  - text: "Tiens, d\u2019ailleurs, prends cette fl\xE8che, \xE7a sera s\xFBrement
       mieux pour tirer."
-    time: 6
+    time: 4.3
     sizeModifer: 0
   <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 773c1d2cb6f5d77408ee1386ab77f526, type: 3}
   <FollowUpTime>k__BackingField: 0
