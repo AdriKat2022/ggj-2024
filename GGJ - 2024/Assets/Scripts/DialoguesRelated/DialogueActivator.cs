@@ -46,7 +46,7 @@ public class DialogueActivator : MonoBehaviour
         if (usedByDialogueInteractible)
             return;
 
-        if (dialogueToDisplay != null && dialogueHandler != null)
+        if (dialogueHandler != null)
         {
             TriggerDialogue();
         }
