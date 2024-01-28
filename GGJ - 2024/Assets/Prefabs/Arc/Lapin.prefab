@@ -103,8 +103,8 @@ MonoBehaviour:
   startPosition: {x: 5.69, y: -2.69, z: 0}
   endPosition: {x: 5.69, y: 3.07, z: 0}
   oscillationSpeed: 0.2
-  isDead: 0
-  willFlee: 0
+  fleeSpeed: 3.5
+  destroyRabbitTime: 5
 --- !u!95 &3151264309181796216
 Animator:
   serializedVersion: 5

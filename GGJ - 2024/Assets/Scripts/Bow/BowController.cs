@@ -7,6 +7,7 @@ public class BowController : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private ControllIndicator indicator;
+    [SerializeField] private RabbitScript lapin;
     [SerializeField] private float launchSpeed;
     [SerializeField] private float torqueForce;
     [SerializeField] private float launchDuration;
@@ -57,6 +58,7 @@ public class BowController : MonoBehaviour
                 transform.parent = null;
                 if (bowBehaviour == 0)
                 {
+                    if(lapin) lapin.Flee();
                     StartCoroutine(Launch());
                 }
                 else if (bowBehaviour == 1)
