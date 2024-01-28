@@ -19,7 +19,7 @@ public class SmoothApparition : MonoBehaviour
 
     void Start()
     {
-        intPos = new Vector3(0,0,0);
+        intPos = GameManager.Instance.cookieInitPos;
         // Démarre la coroutine pour la transition
         StartCoroutine(TransitionRoutine());
     }

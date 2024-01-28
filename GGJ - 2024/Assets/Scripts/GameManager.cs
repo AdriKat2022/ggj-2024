@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public EndDialogueAction endDialogueAction = null;
+    public PlayerMovement blo;
+    public EndDialogueAction endDialogueAction { get;  set; }
+    public Vector3 cookieInitPos { get; set; }  
 
     public int dungeonState = 0;
     // 0 : aucun dongeon visité

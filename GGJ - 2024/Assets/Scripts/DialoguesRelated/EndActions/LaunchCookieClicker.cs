@@ -11,8 +11,12 @@ public class LaunchCookieClicker : EndDialogueAction
         Debug.Log("cookie spawn");
 
         Vector3 spawnPos = Camera.main.transform.position;
-        spawnPos.y = 0;
+        spawnPos.z = 0;
 
-        Instantiate(clicker, spawnPos, Quaternion.identity);
+        Debug.Log(spawnPos);
+
+        GameManager.Instance.cookieInitPos = spawnPos;
+
+        Instantiate(clicker);
     }
 }

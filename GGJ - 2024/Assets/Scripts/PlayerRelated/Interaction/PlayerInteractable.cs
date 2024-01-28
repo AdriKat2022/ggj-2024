@@ -56,7 +56,10 @@ public abstract class PlayerInteractable : MonoBehaviour
     protected virtual void ToogleInteractable(bool toogle)
     {
         interactable = toogle;
-        interactableVisual.SetActive(toogle);
+        if (interactableVisual != null)
+        {
+            interactableVisual.SetActive(toogle);
+        }
     }
 
     protected void OnTriggerEnter2D(Collider2D collision)

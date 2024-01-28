@@ -39,6 +39,8 @@ public class PlayerMovement : PlayerControllable
     private float coolDown;
     private float facingDirection;
 
+    public bool canMove = true;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,10 +52,12 @@ public class PlayerMovement : PlayerControllable
 
     private void Update()
     {
-        facingDirection = GetFacingDirection();
-        Attack();
-        MovePlayer();
-        Animate();
+        if (canMove) {
+            facingDirection = GetFacingDirection();
+            Attack();
+            MovePlayer();
+            Animate();
+        }
     }
 
     private void MovePlayer()
