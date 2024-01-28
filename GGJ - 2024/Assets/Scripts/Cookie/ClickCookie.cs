@@ -49,7 +49,23 @@ public class ClickCookie : MonoBehaviour
     {
         cookieCounter.text = "x0";
     }
-    private void OnMouseOver()
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit[] hits = Physics.RaycastAll(ray);
+
+            foreach (RaycastHit hit in hits)
+            {
+                if(hit.collider.gameObject == gameObject)
+                {
+                    OnClick();
+                }
+            }
+        }
+    }
+    private void OnClick()
     {
         if(Input.GetMouseButtonDown(0) && !isScaling)
         {
