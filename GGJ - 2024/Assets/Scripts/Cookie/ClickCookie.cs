@@ -60,7 +60,6 @@ public class ClickCookie : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            print("gg");
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D[] hits = Physics2D.RaycastAll(mousePosition, Vector2.zero);
 

@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Dongeons/Dongeon Arbre.unity
     guid: 18025bf2684c5d64695cddbc03263c8e
   - enabled: 1
-    path: Assets/Scenes/Self Scenes/Overworld 1.unity
+    path: Assets/Scenes/Self Scenes/Overworld2.unity
     guid: d8f6a0a72ff942842ab3ce2a71daa490
   - enabled: 1
     path: Assets/Scenes/Self Scenes/Level/SpaceTemple.unity

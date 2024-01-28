@@ -41,6 +41,7 @@ public class PlayerMovement : PlayerControllable
 
     public bool canMove = true;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

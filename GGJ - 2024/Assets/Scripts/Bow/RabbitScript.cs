@@ -16,6 +16,7 @@ public class RabbitScript : MonoBehaviour
     [SerializeField] private SubtitleObject killRabbitSubtitle;
     [SerializeField] private float timeBeforeSwitchScene; // Vitesse d'oscillation en unités par seconde
 
+    [SerializeField] private GameObject key;
 
 
     void Update()
@@ -42,6 +43,8 @@ public class RabbitScript : MonoBehaviour
             anim.SetBool("Dead", true);
             isDead = true;
             DialogueHandler.Instance.ShowSubtitles(killRabbitSubtitle, true);
+            key.SetActive(true);
+
         }
     }
 
@@ -51,10 +54,4 @@ public class RabbitScript : MonoBehaviour
         Destroy(gameObject, destroyRabbitTime);
     }
 
-    public IEnumerator SwitchScene()
-    {
-        yield return new WaitForSeconds(timeBeforeSwitchScene);
-        GameManager.Instance.dungeonState = 1;
-        SceneManager.LoadScene("Hugo2");
-    }
 }

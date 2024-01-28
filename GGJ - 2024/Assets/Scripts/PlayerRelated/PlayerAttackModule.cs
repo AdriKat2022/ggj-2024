@@ -17,6 +17,7 @@ public class PlayerAttackModule : MonoBehaviour
     private Collider2D hitbox;
 
     DialogueHandler dialogueHandler;
+    SoundManager soundManager;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerAttackModule : MonoBehaviour
         hitbox.enabled = false;
         isActive = false;
         dialogueHandler = GameObject.Find("UI Handler").GetComponent<DialogueHandler>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     public void UpdateRotation(float angle)
@@ -77,19 +79,20 @@ public class PlayerAttackModule : MonoBehaviour
         if (other.TryGetComponent(out RoiBehaviour roi))
         {
             this.transform.parent.position = roi.gameObject.transform.position - new Vector3(0, 1, 0);
-            this.transform.parent.GetComponent<Rigidbody2D>().mass = 0;
+            roi.transform.GetComponent<Rigidbody2D>().mass = 1;
+            roi.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(100, 0));
+            roi.transform.GetComponent<Rigidbody2D>().AddTorque(10);
+
             StartCoroutine(GetPushed());
         }
 
         IEnumerator GetPushed()
         {
-            yield return new WaitForEndOfFrame();
-            this.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 0.03f);
-            StartCoroutine(GetPushed());
-            if (this.transform.parent.GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1f)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+            soundManager.StopMusic();
+            yield return new WaitForSeconds(5);
+            soundManager.StopMusic();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
         }
     }
 }
