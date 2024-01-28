@@ -49,4 +49,14 @@ public class CameraFollow : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, newPos, followSpeed * Time.deltaTime);
         }
     }
+
+    public void SetFollow(Transform follow)
+    {
+        this.follow = follow;
+    }
+
+    public void SetFollowSpeed(float speed)
+    {
+        this.followSpeed = speed;
+    }
 }

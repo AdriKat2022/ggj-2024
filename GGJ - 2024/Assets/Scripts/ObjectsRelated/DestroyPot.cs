@@ -10,14 +10,20 @@ public class DestroyPot : MonoBehaviour, IDamageable
 
     public void Damage(int dmg)
     {
-        particle.gameObject.SetActive(true);
+        
+        particle.gameObject.transform.position = this.gameObject.transform.position;
         particle.Play();
         this.gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
-        inventaire.transform.position = this.gameObject.transform.position;
-        inventaire.SetActive(true);
+        if (inventaire != null)
+        {
+            inventaire.transform.position = this.gameObject.transform.position;
+            inventaire.SetActive(true);
+        }
+        
+
     }
 }

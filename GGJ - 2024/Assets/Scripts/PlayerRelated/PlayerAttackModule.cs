@@ -62,5 +62,23 @@ public class PlayerAttackModule : MonoBehaviour
         {
             damageable.Damage(damage);
         }
+        if (other.TryGetComponent(out RoiDemonBehaviour roiDemon))
+        {
+            StartCoroutine(roiDemon.GetLaunched());
+
+        }
+        if (other.TryGetComponent(out RoiBehaviour roi))
+        {
+            this.transform.parent.position = roi.gameObject.transform.position - new Vector3(0, 1, 0);
+            this.transform.parent.GetComponent<Rigidbody2D>().mass = 0;
+            StartCoroutine(GetPushed());
+        }
+
+        IEnumerator GetPushed()
+        {
+            yield return new WaitForEndOfFrame();
+            this.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * 0.03f);
+            StartCoroutine(GetPushed());
+        }
     }
 }
