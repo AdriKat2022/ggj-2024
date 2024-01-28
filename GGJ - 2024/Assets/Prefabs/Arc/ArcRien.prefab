@@ -161,6 +161,8 @@ MonoBehaviour:
   launchSpeed: 10
   torqueForce: -1080
   launchDuration: 2
+  holdE: {fileID: 21300000, guid: 0bd7bf8bf3d2e8649958506c9c5d4d2d, type: 3}
+  pressE: {fileID: 21300000, guid: a049c50f6dcd6d947914c61edae5500b, type: 3}
   bowBehaviour: 0
 --- !u!1 &6399270264359426398
 GameObject:
@@ -265,4 +267,3 @@ MonoBehaviour:
   maxScale: 0.19
   minScale: 0.15
   rend: {fileID: 2466584204038962099}
-  holdE: {fileID: 21300000, guid: 0bd7bf8bf3d2e8649958506c9c5d4d2d, type: 3}
