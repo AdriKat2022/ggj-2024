@@ -763,8 +763,8 @@ MonoBehaviour:
   subtitleBox: {fileID: 1593173230119444229}
   typeWritter: {fileID: 5586499773686004746}
   instantWritter: {fileID: 1876955452538459498}
-  testSubtitles: {fileID: 11400000, guid: 44c10954ecdff56448168666a758d3c2, type: 2}
-  testDialogue: {fileID: 11400000, guid: 61df6ce665f75eb4084df7e9ef10e82f, type: 2}
+  testSubtitles: {fileID: 0}
+  testDialogue: {fileID: 0}
 --- !u!114 &5586499773686004746
 MonoBehaviour:
   m_ObjectHideFlags: 0
