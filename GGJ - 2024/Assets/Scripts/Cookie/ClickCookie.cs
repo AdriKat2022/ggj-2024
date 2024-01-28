@@ -20,7 +20,7 @@ public class ClickCookie : MonoBehaviour
     private bool isScaling = false;
     [SerializeField] private Vector3 originalScale;
 
-    [Header("Phase2")]
+    [Header("Phase1")]
     [SerializeField] private GameObject speedLine;
     [SerializeField] private int cookieCountBreak;
     [SerializeField] private GameObject decorGauche;
@@ -29,6 +29,9 @@ public class ClickCookie : MonoBehaviour
     [SerializeField] private GameObject surbrillance1;
     [SerializeField] private GameObject surbrillance2;
     [SerializeField] private float breakShrink;
+    [SerializeField] private Collider2D colliderGouffre;
+    [SerializeField] private SpriteRenderer spriteRendererPont;
+
 
     [Header("SecondTime")]
     [SerializeField] private GameObject main;
@@ -132,9 +135,11 @@ public class ClickCookie : MonoBehaviour
             StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomethingTwo());
             StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomethingTwo());
             canvaCounter.SetActive(false);
+            colliderGouffre.enabled = false;
+            spriteRendererPont.enabled = true;
         }
 
-        
+
     }
 
     private IEnumerator SecondTime()
