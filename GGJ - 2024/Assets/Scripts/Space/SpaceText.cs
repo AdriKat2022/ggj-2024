@@ -11,6 +11,7 @@ public class SpaceText : MonoBehaviour
     [SerializeField] private float delayBefore; // Délai entre chaque lettre
     [SerializeField] private float delayAfter; // Délai entre chaque lettre
     [SerializeField] private GameObject cookieClicker; // Délai entre chaque lettre
+    [SerializeField] private SoundManager soundM;
 
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class SpaceText : MonoBehaviour
     {
         textComponent.maxVisibleCharacters = 0;
         StartCoroutine(ShowTextWithSound());
+        soundM.PlayMusic(soundM.spaceTheme);
 
     }
 
@@ -33,5 +35,7 @@ public class SpaceText : MonoBehaviour
         yield return new WaitForSeconds(delayAfter);
         textComponent.gameObject.SetActive(false);
         Instantiate(cookieClicker);
+        soundM.StopMusic();
+
     }
 }
