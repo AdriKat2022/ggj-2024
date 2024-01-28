@@ -39,7 +39,7 @@ public class CameraShake : MonoBehaviour
     public void AddStress(float stress)
     {
         this.stress += stress;
-        this.stress = Mathf.Clamp(stress, 0, 1);
+        this.stress = Mathf.Clamp01(stress);
     }
 
 
@@ -48,6 +48,12 @@ public class CameraShake : MonoBehaviour
         manageShake_CR = ManageShake();
         StartCoroutine(manageShake_CR);
         canShake = true;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            AddStress(0.3f);
     }
 
     private IEnumerator ManageShake()

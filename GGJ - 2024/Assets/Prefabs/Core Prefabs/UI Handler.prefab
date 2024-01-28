@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1463741219848638764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -364,6 +364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3194645227926182197}
+  - component: {fileID: 22825319411807564}
   - component: {fileID: 6434187592530228276}
   - component: {fileID: 5063243805222606225}
   m_Layer: 5
@@ -387,11 +388,43 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1463741219848638764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.89941186, y: 0}
-  m_AnchorMax: {x: 1, y: 0.33400002}
-  m_AnchoredPosition: {x: -8.680542, y: 7.822403}
-  m_SizeDelta: {x: -28.3996, y: -28.96}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 554, y: -122.7}
+  m_SizeDelta: {x: -1026.9829, y: -197.696}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &22825319411807564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090036044076375218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c539903cc1300a04bb8c82fd192417ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bypassTimescale: 0
+  activateOnAwake: 1
+  isActive: 0
+  enableRotation: 1
+  rotationDepth: 5
+  rotationSpeed: 5
+  enableHoverScale: 0
+  hoverDepth: 0
+  hoverSpeed: 0
+  enableClickAnimation: 1
+  clickDepth: 0.35
+  clickSpeed: 5
+  replaceClickByKey: 1
+  overridingKey: 101
+  playSoundOnHover: 0
+  soundOnHover: {fileID: 0}
+  playSoundOnClick: 0
+  soundOnClick: {fileID: 0}
+  onUpClickInstead: 0
+  useFunctionInstead: 0
 --- !u!222 &6434187592530228276
 CanvasRenderer:
   m_ObjectHideFlags: 0
