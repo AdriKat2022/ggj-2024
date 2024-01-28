@@ -52,6 +52,9 @@ MonoBehaviour:
   effectSourceRepeat: {fileID: 5918857173104036000}
   mainMenu: {fileID: 0}
   firstTheme: {fileID: 0}
+  BossThemeIntro: {fileID: 0}
+  BossTheme: {fileID: 0}
+  spaceTheme: {fileID: 8300000, guid: 18429465a01b5e947b5d70ddb9d88418, type: 3}
   jump: {fileID: 0}
   damage: {fileID: 0}
   mixer: {fileID: 24100000, guid: 495b9ee35ae40d141b464d702f0e18c3, type: 2}
