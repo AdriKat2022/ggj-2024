@@ -39,6 +39,7 @@ public class TriggerWithPlayer : MonoBehaviour
             else
             {
                 BarTriggeredEvent?.Invoke(true);
+
             }
         }
     } 

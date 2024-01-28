@@ -10,6 +10,7 @@ public class DoorBehaviour : MonoBehaviour
     
     [SerializeField] private TriggerWithPlayer TriggerBar;
     [SerializeField] private bool isBoss;
+    [SerializeField] private ParticleSystem particle;
 
     private GameObject UIHandler;
 
@@ -34,6 +35,8 @@ public class DoorBehaviour : MonoBehaviour
 
     private void OnDisable()
     {
+        particle.gameObject.transform.position = this.gameObject.transform.position;
+        particle.Play();
         if (isBoss)
         {
             TriggerName.NameTriggeredEvent.Invoke(false);
