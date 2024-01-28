@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DungeonEntry : PlayerInteractable
+public class DungeonEntry : MonoBehaviour
 {
     [SerializeField , Range(1, 3)] private int dungeonId;
 
-    public override void Interact()
+    
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.Instance.LoadDungeon(dungeonId);
-    }
+        
+            if (collision.gameObject.TryGetComponent(out PlayerController player))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+    
 }
