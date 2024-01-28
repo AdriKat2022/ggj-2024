@@ -194,5 +194,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vol: {fileID: 0}
-  deathDialogue: {fileID: 0}
+  deathDialogue: {fileID: 11400000, guid: a4e588ce401cc9d46b5bc4983106852f, type: 2}
   kickForce: 20
