@@ -64,6 +64,7 @@ MonoBehaviour:
   totalDestruction: {fileID: 8300000, guid: 33ce416f75e8e8d488005bf6adc5eb41, type: 3}
   electricity: {fileID: 8300000, guid: 145eac11280e56f468fa1d56cb55a614, type: 3}
   plusVite: {fileID: 8300000, guid: e21701079ef55ce4fbe5464a6dfb454f, type: 3}
+  amongUs: {fileID: 8300000, guid: fd87f17b955a9544ba25d5cb7d838701, type: 3}
   mixer: {fileID: 24100000, guid: 495b9ee35ae40d141b464d702f0e18c3, type: 2}
 --- !u!1 &4758911555352636194
 GameObject:

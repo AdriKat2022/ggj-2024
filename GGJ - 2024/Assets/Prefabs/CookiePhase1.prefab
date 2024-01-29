@@ -237,7 +237,7 @@ MonoBehaviour:
   fallDuration: 0.9
   fallSpeed: 6
   rotationFallSpeed: -24
-  rollDuration: 10
+  rollDuration: 5
   rollSpeed: 2
   rotationSpeed: -25
 --- !u!114 &5961894209900275137

@@ -34,6 +34,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip totalDestruction;
     public AudioClip electricity;
     public AudioClip plusVite;
+    public AudioClip bowArrow;
 
     [Header("Audio Mixer")]
 
