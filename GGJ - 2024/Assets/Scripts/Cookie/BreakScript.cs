@@ -24,7 +24,7 @@ public class BreakScript : MonoBehaviour
     public IEnumerator BreakSomething()
     {
         float timer = 0f;
-        Vector3 startPosition = transform.position + intPos;
+        Vector3 startPosition = transform.position;
         Vector3 startRotation = transform.rotation.eulerAngles;
 
         while (timer < breakDuration)
@@ -32,7 +32,7 @@ public class BreakScript : MonoBehaviour
             // Interpolation linéaire entre les valeurs initiales et finales
             float t = timer / breakDuration;
             transform.rotation = Quaternion.Euler(Vector3.Lerp(startRotation, endRotation, t));
-            transform.position = Vector3.Lerp(startPosition + intPos, endPosition + intPos, t);
+            transform.position = Vector3.Lerp(startPosition, endPosition + intPos, t);
 
             // Attend la prochaine frame
             yield return null;
@@ -45,7 +45,7 @@ public class BreakScript : MonoBehaviour
     public IEnumerator BreakSomethingTwo()
     {
         float timer = 0f;
-        Vector3 startPosition = transform.position + intPos;
+        Vector3 startPosition = transform.position;
         Vector3 startRotation = transform.rotation.eulerAngles;
 
         while (timer < breakDuration2)
@@ -53,7 +53,7 @@ public class BreakScript : MonoBehaviour
             // Interpolation linéaire entre les valeurs initiales et finales
             float t = timer / breakDuration2;
             transform.rotation = Quaternion.Euler(Vector3.Lerp(startRotation, endRotation2, t));
-            transform.position = Vector3.Lerp(startPosition + intPos, endPosition2 + intPos, t);
+            transform.position = Vector3.Lerp(startPosition, endPosition2 + intPos, t);
 
             // Attend la prochaine frame
             yield return null;

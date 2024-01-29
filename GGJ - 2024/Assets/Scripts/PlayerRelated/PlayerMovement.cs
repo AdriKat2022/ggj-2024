@@ -49,6 +49,14 @@ public class PlayerMovement : PlayerControllable
 
         playerInput = new(0, 0, false);
         isAttacking = false;
+        if(GameManager.Instance.dungeonState==0)
+        {
+            transform.position = new(-1, -12,0);
+        }
+        else if (GameManager.Instance.dungeonState == 1)
+        {
+            transform.position = new(-1, 34, 0);
+        }
     }
 
     private void Update()

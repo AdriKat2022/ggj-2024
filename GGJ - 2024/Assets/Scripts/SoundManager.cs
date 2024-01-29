@@ -27,6 +27,13 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip jump;
     public AudioClip damage;
+    public AudioClip punch;
+    public AudioClip cashing;
+    public AudioClip building;
+    public AudioClip breakSomething;
+    public AudioClip totalDestruction;
+    public AudioClip electricity;
+    public AudioClip plusVite;
 
     [Header("Audio Mixer")]
 

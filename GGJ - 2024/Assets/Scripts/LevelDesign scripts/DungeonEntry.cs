@@ -14,7 +14,7 @@ public class DungeonEntry : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-            if (collision.gameObject.TryGetComponent(out PlayerController player))
+            if (collision.gameObject.TryGetComponent(out PlayerController player) && GameManager.Instance.dungeonState==0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
