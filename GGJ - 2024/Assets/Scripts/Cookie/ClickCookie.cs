@@ -47,13 +47,16 @@ public class ClickCookie : MonoBehaviour
 
     private void Start()
     {
-        colliderGouffre =  GameObject.Find("WallPont").GetComponent<Collider2D>();
-        spriteRendererPont = GameObject.Find("Pont");
+        if (firstTime)
+        {
+            colliderGouffre =  GameObject.Find("WallPont").GetComponent<Collider2D>();
+            spriteRendererPont = GameObject.Find("Pont");
+        }
         cookieCounter.text = "x0";
+
         if(GameManager.Instance != null)
         {
-
-        GameManager.Instance.blo.canMove = false;
+            GameManager.Instance.blo.canMove = false;
         }
     }
     private void Update()

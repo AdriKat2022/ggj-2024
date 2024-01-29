@@ -18,7 +18,8 @@ public class BreakScript : MonoBehaviour
 
     private void Start()
     {
-        intPos = GameManager.Instance.cookieInitPos;
+        if(GameManager.Instance != null)
+            intPos = GameManager.Instance.cookieInitPos;
     }
     public IEnumerator BreakSomething()
     {
