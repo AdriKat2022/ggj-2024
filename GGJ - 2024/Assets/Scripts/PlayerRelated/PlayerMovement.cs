@@ -53,9 +53,13 @@ public class PlayerMovement : PlayerControllable
         {
             transform.position = new(-1, -12,0);
         }
-        else if (GameManager.Instance.dungeonState == 1)
+        else if (GameManager.Instance.dungeonState == 2)
         {
             transform.position = new(-1, 34, 0);
+        }
+        else if (GameManager.Instance.dungeonState == 4)
+        {
+            transform.position = new(23.5f, 66, 0);
         }
     }
 
