@@ -24,8 +24,8 @@ public class PlayerAttackModule : MonoBehaviour
         hitbox = GetComponent<Collider2D>();
         hitbox.enabled = false;
         isActive = false;
-        dialogueHandler = GameObject.Find("UI Handler").GetComponent<DialogueHandler>();
-        soundManager = FindObjectOfType<SoundManager>();
+        dialogueHandler = DialogueHandler.Instance;
+        soundManager = SoundManager.Instance;
     }
 
     public void UpdateRotation(float angle)
