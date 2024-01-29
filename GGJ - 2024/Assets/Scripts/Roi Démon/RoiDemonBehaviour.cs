@@ -24,14 +24,7 @@ public class RoiDemonBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        soundManager = SoundManager.Instance;
     }
 
     private void OnDisable()
