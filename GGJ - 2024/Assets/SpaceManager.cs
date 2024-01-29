@@ -4,6 +4,7 @@ public class SpaceManager : MonoBehaviour
 {
     public SubtitleObject subtitles;
     public AudioClip door_open;
+    public AudioClip amongUs;
     public float time_state1;
     public float time_state2;
 
@@ -14,6 +15,7 @@ public class SpaceManager : MonoBehaviour
     void Start()
     {
         SoundManager.Instance.PlaySound(door_open);
+        SoundManager.Instance.PlaySound(amongUs);
         state = 0;
         timer = 0;
     }

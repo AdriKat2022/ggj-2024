@@ -30,6 +30,7 @@ public class BowController : MonoBehaviour
     [SerializeField] private int bowBehaviour;
 
     [SerializeField] private GameObject minigun;
+    private SoundManager soundM;
 
     private bool blocked;
 
@@ -62,7 +63,7 @@ public class BowController : MonoBehaviour
 
     private void Start()
     {
-
+        soundM = FindObjectOfType<SoundManager>();
     }
 
     private void Update()
@@ -74,6 +75,8 @@ public class BowController : MonoBehaviour
             {
                 anim.SetBool("Attack", true);
                 anim.SetBool("Shoot", false);
+                soundM.PlaySound(soundM.bowArrow);
+
             }
             else if(Input.GetKeyUp(KeyCode.E))
             {
@@ -136,7 +139,9 @@ public class BowController : MonoBehaviour
             // Attend la prochaine frame
             yield return null;
         }
-        Destroy(gameObject);
+        if (bowBehaviour == 0) StartCoroutine(InteractionEnd());
+        else if (bowBehaviour == 2) InteractionEnd2();
+        Destroy(gameObject, 11f);
     }
 
     private IEnumerator LaunchPlayer()
@@ -185,12 +190,7 @@ public class BowController : MonoBehaviour
         Instantiate(minigun, Vector3.zero, Quaternion.identity);
     }
 
-    private void OnDestroy()
-    {
-        if(bowBehaviour==0) StartCoroutine(InteractionEnd());
-        else if (bowBehaviour == 2) InteractionEnd2();
-
-    }
+    
 
     private void BlockToggle(bool toggle)
     {
