@@ -7,6 +7,7 @@ public class KeySwitchScene : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Hugo");
+        GameManager.Instance.dungeonState = 1;
+        SceneManager.LoadScene("Overworld");
     }
 }

@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public EndDialogueAction endDialogueAction { get;  set; }
     public Vector3 cookieInitPos { get; set; }  
 
-    public int dungeonState = 0;
+    public int dungeonState;
     // 0 : aucun dongeon visité
     // 1 : premier dongeon visité
     // Etc...
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+        dungeonState = 1;
     }
 
     public void LoadDungeon(int dungeonId)

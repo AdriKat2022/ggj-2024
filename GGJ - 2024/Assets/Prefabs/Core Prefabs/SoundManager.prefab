@@ -57,6 +57,13 @@ MonoBehaviour:
   spaceTheme: {fileID: 8300000, guid: 18429465a01b5e947b5d70ddb9d88418, type: 3}
   jump: {fileID: 0}
   damage: {fileID: 0}
+  punch: {fileID: 8300000, guid: f88887752be2cbd47b5f4e917d045050, type: 3}
+  cashing: {fileID: 8300000, guid: 5651ac18d9f02d64e97dcbfd2267d608, type: 3}
+  building: {fileID: 8300000, guid: 5f572472994795741a39389865298cbe, type: 3}
+  breakSomething: {fileID: 8300000, guid: cf3309af8d373aa469add51ff39c95b5, type: 3}
+  totalDestruction: {fileID: 8300000, guid: 33ce416f75e8e8d488005bf6adc5eb41, type: 3}
+  electricity: {fileID: 8300000, guid: 145eac11280e56f468fa1d56cb55a614, type: 3}
+  plusVite: {fileID: 8300000, guid: e21701079ef55ce4fbe5464a6dfb454f, type: 3}
   mixer: {fileID: 24100000, guid: 495b9ee35ae40d141b464d702f0e18c3, type: 2}
 --- !u!1 &4758911555352636194
 GameObject:

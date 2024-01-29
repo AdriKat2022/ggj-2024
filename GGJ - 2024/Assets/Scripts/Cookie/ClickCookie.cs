@@ -42,6 +42,7 @@ public class ClickCookie : MonoBehaviour
     [SerializeField] private float moveDuration;
     [SerializeField] private SubtitleObject subtitlesAfterCookie;
 
+    private SoundManager soundManager;
 
 
 
@@ -50,7 +51,6 @@ public class ClickCookie : MonoBehaviour
         if (firstTime)
         {
             colliderGouffre =  GameObject.Find("WallPont").GetComponent<Collider2D>();
-            spriteRendererPont = GameObject.Find("Pont");
         }
         cookieCounter.text = "x0";
 
@@ -58,6 +58,9 @@ public class ClickCookie : MonoBehaviour
         {
             GameManager.Instance.blo.canMove = false;
         }
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.PlaySound(soundManager.building);
+
     }
     private void Update()
     {
@@ -68,7 +71,6 @@ public class ClickCookie : MonoBehaviour
 
             foreach (RaycastHit2D hit in hits)
             {
-                print(hit.collider.name);
 
                 if (hit.collider.gameObject == gameObject)
                 {
@@ -81,6 +83,7 @@ public class ClickCookie : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && !isScaling)
         {
+            soundManager.PlaySound(soundManager.cashing);
             cookieCount++;
             if (cookieCount < cookieCountBreak + 6) cookieCounter.text = "x"+cookieCount.ToString();
 
@@ -139,35 +142,58 @@ public class ClickCookie : MonoBehaviour
 
     private void FirstTime()
     {
-        if (cookieCount == cookieCountTransition)
+        if (cookieCount == cookieCountTransition - 2)
+        {
+            soundManager.PlaySound(soundManager.plusVite);
+            print("gg");
+        }
+
+        else if (cookieCount == cookieCountTransition)
         {
             clicDuration /= clicIncreaseFactor;
             speedLine.SetActive(true);
+
         }
 
-        if (cookieCount == cookieCountBreak)
+        else if (cookieCount == cookieCountBreak)
         {
             StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomething());
             speedLine.SetActive(false);
+            soundManager.PlaySound(soundManager.breakSomething);
+
         }
-        if (cookieCount == cookieCountBreak + 7) StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomething());
-        if (cookieCount == cookieCountBreak + 13)
+        else if (cookieCount == cookieCountBreak + 7)
+        {
+            StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomething());
+            soundManager.PlaySound(soundManager.breakSomething);
+
+        }
+        else if (cookieCount == cookieCountBreak + 13)
         {
             StartCoroutine(gameObject.GetComponent<BreakScript>().BreakSomething());
+            soundManager.PlaySound(soundManager.breakSomething);
+
             surbrillance1.SetActive(false);
             surbrillance2.SetActive(false);
             originalScale = originalScale * breakShrink;
 
         }
-        if (cookieCount == cookieCountBreak + 18) canvaCounter.GetComponent<BreakUI>().BreakCounter();
-        if (cookieCount == cookieCountBreak + 27)
+        else if (cookieCount == cookieCountBreak + 18)
+        {
+            canvaCounter.GetComponent<BreakUI>().BreakCounter();
+            soundManager.PlaySound(soundManager.electricity);
+
+        }
+        else if (cookieCount == cookieCountBreak + 27)
         {
             StartCoroutine(gameObject.GetComponent<BreakCookie>().BreakEverything());
             StartCoroutine(decorGauche.GetComponent<BreakScript>().BreakSomethingTwo());
             StartCoroutine(decorDroit.GetComponent<BreakScript>().BreakSomethingTwo());
             canvaCounter.SetActive(false);
             colliderGouffre.enabled = false;
-            spriteRendererPont.SetActive(true);
+            Instantiate(spriteRendererPont);
+            soundManager.PlaySound(soundManager.totalDestruction);
+
         }
 
 

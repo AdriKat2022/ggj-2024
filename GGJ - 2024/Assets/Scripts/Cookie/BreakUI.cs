@@ -10,6 +10,8 @@ public class BreakUI : MonoBehaviour
     [SerializeField] private Sprite breakSprite;
     [SerializeField] private TextMeshProUGUI counter;
 
+
+    
     public void BreakCounter()
     {
         cookieUI.sprite = breakSprite;

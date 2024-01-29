@@ -68,20 +68,22 @@ public class PlayerAttackModule : MonoBehaviour
         {
             damageable.Damage(damage);
         }
-        if (other.TryGetComponent(out RoiDemonBehaviour roiDemon))
+        else if (other.TryGetComponent(out RoiDemonBehaviour roiDemon))
         {
             StartCoroutine(roiDemon.GetLaunched());
             dialogueHandler.Interrupt(DialogueHandler.EventType.All);
-            
-            
+            soundManager.PlaySound(soundManager.punch);
+
+
 
         }
-        if (other.TryGetComponent(out RoiBehaviour roi))
+        else if (other.TryGetComponent(out RoiBehaviour roi))
         {
             this.transform.parent.position = roi.gameObject.transform.position - new Vector3(0, 1, 0);
             roi.transform.GetComponent<Rigidbody2D>().mass = 1;
             roi.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(100, 0));
             roi.transform.GetComponent<Rigidbody2D>().AddTorque(10);
+            soundManager.PlaySound(soundManager.punch);
 
             StartCoroutine(GetPushed());
         }

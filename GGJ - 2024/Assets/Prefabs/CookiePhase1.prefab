@@ -192,7 +192,7 @@ MonoBehaviour:
   surbrillance2: {fileID: 463523363339698481}
   breakShrink: 0.6
   colliderGouffre: {fileID: 0}
-  spriteRendererPont: {fileID: 0}
+  spriteRendererPont: {fileID: 104806742007347973, guid: b1ca179a96e192f419066a69a6f441e7, type: 3}
   main: {fileID: 2021098718404677603}
   waitTimer: 3
   endPosition: {x: -28.4, y: -14.6, z: 0}
@@ -497,7 +497,7 @@ Transform:
   m_GameObject: {fileID: 4410333550274345640}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 19.8, y: 54.2, z: 0}
   m_LocalScale: {x: 1.85, y: 1.85, z: 1.85}
   m_ConstrainProportionsScale: 1
   m_Children: []
