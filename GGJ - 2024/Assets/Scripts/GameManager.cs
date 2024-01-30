@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        
-    }
+/*        dungeonState = 4;
+*/    }
 
     public void LoadDungeon(int dungeonId)
     {

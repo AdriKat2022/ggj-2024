@@ -211,9 +211,9 @@ public class ClickCookie : MonoBehaviour
         float timer = 0f;
         Vector3 startPosition = transform.position;
         Vector3 startRotation = transform.rotation.eulerAngles;
+        soundManager.PlaySound(soundManager.punch);
 
         StartCoroutine(ToNextScene());
-
         while (timer < moveDuration)
         {
             // Interpolation linéaire entre les valeurs initiales et finales

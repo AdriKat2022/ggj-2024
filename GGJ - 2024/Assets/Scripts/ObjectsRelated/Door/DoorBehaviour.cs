@@ -5,13 +5,17 @@ public class DoorBehaviour : MonoBehaviour, IDamageable
 
 
 
-    [SerializeField] private TriggerWithPlayer TriggerName;
     
-    [SerializeField] private TriggerWithPlayer TriggerBar;
+    [SerializeField] private GameObject TriggerBar;
     [SerializeField] private bool isBoss;
     [SerializeField] private ParticleSystem particle;
 
+    private SoundManager soundM;
 
+    private void Start()
+    {
+        soundM = FindObjectOfType<SoundManager>();
+    }
     public bool IsBoss()
     {
         return isBoss;
@@ -20,6 +24,8 @@ public class DoorBehaviour : MonoBehaviour, IDamageable
     public void Damage(int dmg)
     {
         if (!isBoss)
+            soundM.PlaySound(soundM.totalDestruction);
+
             gameObject.SetActive(false);
         
     }
@@ -30,8 +36,7 @@ public class DoorBehaviour : MonoBehaviour, IDamageable
         particle.Play();
         if (isBoss)
         {
-            TriggerName.NameTriggeredEvent.Invoke(false);
-            TriggerBar.BarTriggeredEvent.Invoke(false);
+            TriggerBar.SetActive(true);
 
             this.gameObject.SetActive(false);
         }

@@ -44,7 +44,6 @@ public class RoiDemonBehaviour : MonoBehaviour
         Vector3 moveDirection = Vector3.up;
         Rigidbody2D rigidbody = gameObject.GetComponent<Rigidbody2D>();
         rigidbody.mass = 1;
-        Debug.Log(launchSpeed);
         TriggerName.NameTriggeredEvent.Invoke(false);
         TriggerBar.BarTriggeredEvent.Invoke(false);
         particle.transform.position = this.transform.position;

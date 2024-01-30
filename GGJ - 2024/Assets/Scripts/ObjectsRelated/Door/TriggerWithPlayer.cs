@@ -24,7 +24,7 @@ public class TriggerWithPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out PlayerMovement movement))
+        if (collision.gameObject.TryGetComponent(out PlayerMovement _))
         {
             print("has been triggered");
             if (isforName)

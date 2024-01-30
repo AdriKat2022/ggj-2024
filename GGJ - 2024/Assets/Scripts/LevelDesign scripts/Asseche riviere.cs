@@ -14,11 +14,15 @@ public class Assecheriviere : MonoBehaviour
     private void Start()
     {
         tilemap = GetComponent<Tilemap>(); 
+        if(GameManager.Instance.dungeonState == 4)
+        {
+            Asseche();
+        }
     }
 
     private void Update()
     {
-        Debug();
+
     }
 
     public void Asseche()
@@ -26,11 +30,4 @@ public class Assecheriviere : MonoBehaviour
         tilemap.FloodFill(tilemap.WorldToCell(rivierePosition.position), assecheTile);
     }
 
-    public void Debug()
-    {
-        if (Input.GetKey(KeyCode.R))
-        {
-            Asseche();
-        }
-    }
 }
