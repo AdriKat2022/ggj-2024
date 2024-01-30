@@ -22,7 +22,7 @@ public class BossDisplayUI : MonoBehaviour
     {
         nameTrigger.NameTriggeredEvent.AddListener(HandlerName);
         barTrigger.BarTriggeredEvent.AddListener(HandlerBar);
-        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame

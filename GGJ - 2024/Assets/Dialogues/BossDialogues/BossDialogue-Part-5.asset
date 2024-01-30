@@ -17,17 +17,17 @@ MonoBehaviour:
   <IgnoreWhiteSpaces>k__BackingField: 0
   <LockPlayerMovements>k__BackingField: 0
   <NonSkippable>k__BackingField: 0
-  <AutoAdvance>k__BackingField: 1
+  <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 1
   <Bubbles>k__BackingField:
   - "fin voil\xE0 bref \xE7a commence \xE0 \xEAtre long l\xE0 en plus je dois aller
     au petit coin si tu vois ce que je veux dire parceque si tu continue \xE0 lire
     je vais p\xE9ter super fort si tu vois ce que je veux dire. Tu me crois pas,
     et bien tu devr..!"
-  <DialogueEvent>k__BackingField:
+  DialogueEvent:
     m_PersistentCalls:
       m_Calls: []
-  <DialogueEventIndex>k__BackingField: 0
+  DialogueEventIndex: 0
   <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
   <FollowingSubtitle>k__BackingField: {fileID: 0}

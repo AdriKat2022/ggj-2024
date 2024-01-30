@@ -79,10 +79,9 @@ public class PlayerAttackModule : MonoBehaviour
         }
         else if (other.TryGetComponent(out RoiBehaviour roi))
         {
-            this.transform.parent.position = roi.gameObject.transform.position - new Vector3(0, 1, 0);
-            roi.transform.GetComponent<Rigidbody2D>().mass = 1;
-            roi.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(100, 0));
-            roi.transform.GetComponent<Rigidbody2D>().AddTorque(10);
+            this.transform.parent.position = roi.transform.position - new Vector3(0, 1, 0);
+            roi.Punch();
+            
             soundManager.PlaySound(soundManager.punch);
 
             StartCoroutine(GetPushed());
@@ -91,7 +90,7 @@ public class PlayerAttackModule : MonoBehaviour
         IEnumerator GetPushed()
         {
             soundManager.StopMusic();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(3);
             soundManager.StopMusic();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             
