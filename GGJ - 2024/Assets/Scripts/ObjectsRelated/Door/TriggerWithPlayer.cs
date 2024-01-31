@@ -26,7 +26,6 @@ public class TriggerWithPlayer : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerMovement movement))
         {
-            print("has been triggered");
             if (isforName)
             {
                 NameTriggeredEvent?.Invoke(true);
@@ -34,7 +33,6 @@ public class TriggerWithPlayer : MonoBehaviour
             else
             {
                 BarTriggeredEvent?.Invoke(true);
-
             }
         }
     } 
