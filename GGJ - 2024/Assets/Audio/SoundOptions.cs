@@ -11,6 +11,7 @@ public class SoundOptions : MonoBehaviour
     [SerializeField] private Slider general;
     [SerializeField] private Slider music;
     [SerializeField] private Slider effect;
+    [SerializeField] private GameObject canv;
 
     private void OnEnable()
     {
@@ -20,8 +21,12 @@ public class SoundOptions : MonoBehaviour
 
     void Start()
     {
+        SetVolume("MasterVolume", 1);
+        SetVolume("MusicVolume", 0.1f);
+        SetVolume("EffectsVolume", effect.value);
+        if(canv != null)
+            canv.SetActive(false);
 
-       
     }
 
     // Update is called once per frame

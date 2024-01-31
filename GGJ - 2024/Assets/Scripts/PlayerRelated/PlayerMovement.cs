@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public struct PlayerInputObj
 {
@@ -49,17 +50,20 @@ public class PlayerMovement : PlayerControllable
 
         playerInput = new(0, 0, false);
         isAttacking = false;
-        if(GameManager.Instance.dungeonState==0)
+        if (SceneManager.GetActiveScene().name == "Overworld")
         {
-            transform.position = new(-1, -12,0);
-        }
-        else if (GameManager.Instance.dungeonState == 2)
-        {
-            transform.position = new(-1, 34, 0);
-        }
-        else if (GameManager.Instance.dungeonState == 4)
-        {
-            transform.position = new(23.5f, 66, 0);
+            if (GameManager.Instance.dungeonState == 0)
+            {
+                transform.position = new(-1, -12, 0);
+            }
+            else if (GameManager.Instance.dungeonState == 2)
+            {
+                transform.position = new(-1, 34, 0);
+            }
+            else if (GameManager.Instance.dungeonState == 4)
+            {
+                transform.position = new(23.5f, 66, 0);
+            }
         }
     }
 

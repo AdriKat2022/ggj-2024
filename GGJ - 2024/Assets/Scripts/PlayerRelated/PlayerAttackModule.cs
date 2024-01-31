@@ -87,6 +87,14 @@ public class PlayerAttackModule : MonoBehaviour
             StartCoroutine(GetPushed());
         }
 
+        else if (other.TryGetComponent(out Slime slime))
+        {
+            soundManager.PlaySound(soundManager.punch);
+            StartCoroutine(slime.Punch());
+
+
+        }
+
         IEnumerator GetPushed()
         {
             soundManager.StopMusic();

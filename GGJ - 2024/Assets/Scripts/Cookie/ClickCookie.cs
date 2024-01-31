@@ -54,10 +54,10 @@ public class ClickCookie : MonoBehaviour
         }
         cookieCounter.text = "x0";
 
-        if(GameManager.Instance != null)
-        {
-            GameManager.Instance.blo.canMove = false;
-        }
+        PlayerMovement player = FindObjectOfType<PlayerMovement>();
+        if(player!=null) player.canMove = false;
+
+        
         soundManager = FindObjectOfType<SoundManager>();
         soundManager.PlaySound(soundManager.building);
 
@@ -144,7 +144,6 @@ public class ClickCookie : MonoBehaviour
     {
         if (cookieCount == cookieCountTransition - 2)
         {
-            soundManager.PlaySound(soundManager.plusVite);
             print("gg");
         }
 
@@ -152,6 +151,8 @@ public class ClickCookie : MonoBehaviour
         {
             clicDuration /= clicIncreaseFactor;
             speedLine.SetActive(true);
+            soundManager.PlaySound(soundManager.plusVite);
+
 
         }
 
