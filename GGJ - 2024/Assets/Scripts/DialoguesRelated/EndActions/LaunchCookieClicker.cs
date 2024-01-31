@@ -17,4 +17,12 @@ public class LaunchCookieClicker : EndDialogueAction
 
         Instantiate(clicker);
     }
+
+    private void Start()
+    {
+        if (GameManager.Instance.dungeonState == 2)
+        {
+            GetComponent<Collider2D>().enabled = true;
+        }
+    }
 }

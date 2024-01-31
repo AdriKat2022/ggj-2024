@@ -10,8 +10,17 @@ public class MinigunController : MonoBehaviour
     private GameObject player;
     private bool isPickedUp;
     [SerializeField] private SubtitleObject holdMinigunDialog;
+    private bool blocked;
 
+    private void OnEnable()
+    {
+        DialogueHandler.OnDialogueOpenIsPlayerLocked += BlockToggle;
+    }
 
+    private void OnDisable()
+    {
+        DialogueHandler.OnDialogueOpenIsPlayerLocked -= BlockToggle;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isPickedUp && collision.TryGetComponent(out PlayerMovement player))
@@ -27,17 +36,15 @@ public class MinigunController : MonoBehaviour
             this.player = null;
         }
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
         if (player && Input.GetKeyDown(KeyCode.E))
         {
+            if (blocked) return;
+
             if (!isPickedUp)
             {
                 transform.parent = player.transform;
@@ -56,6 +63,9 @@ public class MinigunController : MonoBehaviour
         }
         
     }
-
+    private void BlockToggle(bool toggle)
+    {
+        blocked = toggle;
+    }
 
 }

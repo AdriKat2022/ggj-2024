@@ -15,6 +15,7 @@ MonoBehaviour:
   <DialogueSpeed>k__BackingField: 35
   <IgnorePunctuation>k__BackingField: 0
   <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 1
   <NonSkippable>k__BackingField: 0
   <AutoAdvance>k__BackingField: 0
   <AutoAdvanceTime>k__BackingField: 0
@@ -31,4 +32,10 @@ MonoBehaviour:
     pas la force de me battre contre toi. "
   - "Tue-moi si \xE7a te chante, mais j\u2019esp\xE8re que tu le regretteras toute
     ta vie et que tu seras rong\xE9e par les remords."
+  DialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DialogueEventIndex: 0
+  <FollowUpTime>k__BackingField: 0
   <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

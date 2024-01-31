@@ -26,7 +26,6 @@ public class TriggerWithPlayer : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out PlayerMovement _))
         {
-            print("has been triggered");
             if (isforName)
             {
                 NameTriggeredEvent?.Invoke(true);

@@ -28,6 +28,8 @@ public class PortalBlock : MonoBehaviour
     {
         if(isActive && linkPortal.GetActive() && collision.TryGetComponent(out PlayerMovement player))
         {
+            GameManager.Instance.cookieInitPos = Vector3.zero;
+
             SceneManager.LoadScene("SpaceScene");
         }
     }

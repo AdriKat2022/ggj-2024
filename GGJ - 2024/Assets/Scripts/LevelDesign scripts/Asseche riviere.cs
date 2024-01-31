@@ -20,11 +20,6 @@ public class Assecheriviere : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-    }
-
     public void Asseche()
     {
         tilemap.FloodFill(tilemap.WorldToCell(rivierePosition.position), assecheTile);

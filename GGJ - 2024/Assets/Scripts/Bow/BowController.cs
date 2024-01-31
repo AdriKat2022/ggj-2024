@@ -70,7 +70,7 @@ public class BowController : MonoBehaviour
     {
         if(isPickedUp)
         {
-            if (blocked) return;
+            if (blocked || isShooting) return;
             if (Input.GetKeyDown(KeyCode.E))
             {
                 anim.SetBool("Attack", true);
@@ -84,7 +84,7 @@ public class BowController : MonoBehaviour
                 anim.SetBool("Shoot", true);
                 
             }
-            if (!isShooting &&  anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
             {
                 isShooting = true;
                 transform.parent = null;
@@ -141,7 +141,7 @@ public class BowController : MonoBehaviour
         }
         if (bowBehaviour == 0) StartCoroutine(InteractionEnd());
         else if (bowBehaviour == 2) InteractionEnd2();
-        Destroy(gameObject, 11f);
+        Destroy(gameObject, 16f);
     }
 
     private IEnumerator LaunchPlayer()
@@ -171,7 +171,7 @@ public class BowController : MonoBehaviour
     public IEnumerator InteractionEnd()
     {
         DialogueHandler.Instance.ShowSubtitles(dialog0, true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         foreach (Collider2D wall in walls)
         {
             wall.enabled = false;
@@ -181,13 +181,9 @@ public class BowController : MonoBehaviour
 
     public void InteractionEnd2()
     {
-        foreach (Collider2D wall in walls)
-        {
-            wall.enabled = false;
-        }
 
         DialogueHandler.Instance.ShowSubtitles(dialog2, true);
-        Instantiate(minigun, Vector3.zero, Quaternion.identity);
+        Instantiate(minigun);
     }
 
     

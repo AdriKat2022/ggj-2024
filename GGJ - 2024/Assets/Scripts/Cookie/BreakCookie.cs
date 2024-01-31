@@ -12,10 +12,12 @@ public class BreakCookie : MonoBehaviour
     [SerializeField] private float rotationSpeed;    // Vitesse de rotation pendant le roulement
 
     private Transform parent;
+    private PlayerMovement blo;
 
     private void Start()
     {
         parent = GetComponentInParent<Transform>();
+        blo = FindObjectOfType<PlayerMovement>();
     }
 
     public IEnumerator BreakEverything()
@@ -52,8 +54,10 @@ public class BreakCookie : MonoBehaviour
             // Met à jour le temps écoulé
             rollTimer += Time.deltaTime;
         }
-
-        GameManager.Instance.blo.canMove = true;
+        if(blo != null)
+        {
+            blo.canMove = true;
+        }
         Destroy(parent.gameObject);
     }
 }

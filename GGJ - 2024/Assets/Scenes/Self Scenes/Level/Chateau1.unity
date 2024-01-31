@@ -26291,12 +26291,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 27774081069738899, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 398258453339149400, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1873934914881802344, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 1762178505}
     - target: {fileID: 1968811854913362248, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -26380,6 +26384,14 @@ PrefabInstance:
     - target: {fileID: 7014110733272276853, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
       propertyPath: m_Name
       value: UI Handler
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211309219836854701, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
+      propertyPath: m_Value
+      value: 0.352
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949525286861575343, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
+      propertyPath: m_Value
+      value: 0.325
       objectReference: {fileID: 0}
     - target: {fileID: 8352326685022027860, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -27205,6 +27217,11 @@ MonoBehaviour:
   maxScale: 0.2
   minScale: 0.15
   rend: {fileID: 0}
+--- !u!1 &1762178505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 27774081069738899, guid: 5e97c024b2e31a9468cc8a725bab67b3, type: 3}
+  m_PrefabInstance: {fileID: 1271542845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1827040029
 GameObject:
   m_ObjectHideFlags: 0

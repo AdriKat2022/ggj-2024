@@ -22,7 +22,7 @@ public class DungeonEntry : MonoBehaviour
             else if (dungeonId == 2 && GameManager.Instance.dungeonState == 2)
             {
                 GameManager.Instance.dungeonState = 3;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene("MountTemple");
             }
             else if (dungeonId == 3 && GameManager.Instance.dungeonState == 4)
             {

@@ -2,15 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class Slime : MonoBehaviour
 {
-    [SerializeField] private PostProcessVolume vol;
     [SerializeField] private DialogueObject deathDialogue;
+    [SerializeField] private Assecheriviere assecheRiv;
     [SerializeField] private float kickForce = 20;
 
     private Rigidbody2D rb;
     private Collider2D col;
+
+    [SerializeField] private GameObject slime1;
+    [SerializeField] private GameObject slime2;
+    [SerializeField] private GameObject slime3;
+    [SerializeField] private GameObject tuer;
+    [SerializeField] private GameObject vivre;
+    [SerializeField] private GameObject question;
+
+    private bool punched = false;
+
 
     private void Start()
     {
@@ -18,43 +29,48 @@ public class Slime : MonoBehaviour
         col = GetComponent<Collider2D>();
     }
 
-    private void Update()
-    {
-        SlimeDebug();
-    }
 
     public void Dies()
     {
-        vol.enabled = true;
 
         StartCoroutine(DieCoroutine());
     }
+    public IEnumerator Punch()
+    {
+        if (!punched)
+        {
+            punched = true;
 
+            yield return new WaitForSecondsRealtime(1);
+
+            yield return DialogueHandler.Instance.ShowDialogueWait(deathDialogue);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            col.isTrigger = true;
+            slime1.SetActive(true);
+            slime2.SetActive(true);
+            slime3.SetActive(true);
+            
+            question.SetActive(true);
+            yield return new WaitForSecondsRealtime(7);
+
+            tuer.SetActive(true);
+            vivre.SetActive(true);
+        }
+    }
 
     private IEnumerator DieCoroutine()
     {
-        yield return new WaitForSecondsRealtime(1);
+        slime1.SetActive(false);
+        slime2.SetActive(false);
+        slime3.SetActive(false);
 
-        yield return DialogueHandler.Instance.ShowDialogueWait(deathDialogue);
-
-        rb.bodyType = RigidbodyType2D.Dynamic;
-        col.isTrigger = true;
-
-        rb.AddForce(kickForce * (Vector2.up + Vector2.left).normalized, ForceMode2D.Impulse);
+        rb.AddForce(kickForce * (Vector2.down + Vector2.left).normalized, ForceMode2D.Impulse);
         rb.AddTorque(kickForce, ForceMode2D.Impulse);
+        GameManager.Instance.dungeonState = 4;
+        assecheRiv.enabled = true;
 
-        vol.enabled = false;
-
-        yield return new WaitForSecondsRealtime(1);
-
+        yield return new WaitForSecondsRealtime(5);
+        SceneManager.LoadScene("Overworld");
         Destroy(gameObject);
-    }
-
-    private void SlimeDebug()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Dies();
-        }
     }
 }
