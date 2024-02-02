@@ -9,7 +9,8 @@ public class DungeonEntry : MonoBehaviour
         SpaceTemple
     }
 
-    [SerializeField , Range(1, 3)] private Dungeon dungeonId;
+    [SerializeField]
+    private Dungeon dungeonId;
 
 
     private GameManager gameManager;
@@ -24,7 +25,6 @@ public class DungeonEntry : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player)) {
-
 
             switch (dungeonId)
             {

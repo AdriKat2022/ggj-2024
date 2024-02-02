@@ -691,6 +691,10 @@ PrefabInstance:
       propertyPath: assecheRiv
       value: 
       objectReference: {fileID: 1651187314}
+    - target: {fileID: 4186859215512675382, guid: b76fc0659a5ffad49ad2df78bde61814, type: 3}
+      propertyPath: m_Size.x
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 4506156392815341864, guid: b76fc0659a5ffad49ad2df78bde61814, type: 3}
       propertyPath: m_Name
       value: Slime
