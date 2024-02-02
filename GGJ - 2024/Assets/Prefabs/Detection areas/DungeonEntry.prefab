@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28783673, y: 0.035980225}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -90,9 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fdfcb25894e4a643b5903194cd8dc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reusableAfterExitCollision: 0
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  interactableVisual: {fileID: 4989622804879220858, guid: 279e0bc40d3ce3f449261b6f63391526, type: 3}
-  dungeonId: 1
+  dungeonId: 0
