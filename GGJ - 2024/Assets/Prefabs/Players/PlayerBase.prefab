@@ -146,6 +146,7 @@ MonoBehaviour:
   endlag: 1
   attackModule: {fileID: 1734501013358902152}
   animator: {fileID: 0}
+  canMove: 1
 --- !u!114 &7401032147522275293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +220,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.46, y: 0.8}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.3}
+  m_Size: {x: 0.46, y: 0.2}
+  m_Direction: 1
