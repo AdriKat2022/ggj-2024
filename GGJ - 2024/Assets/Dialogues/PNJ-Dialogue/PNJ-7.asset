@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: PNJ-7
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 25
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 1
+  <NonSkippable>k__BackingField: 1
+  <AutoAdvance>k__BackingField: 1
+  <AutoAdvanceTime>k__BackingField: 2
+  <Bubbles>k__BackingField:
+  - "Oh pardon, non ne vous inqui\xE9tez pas, je ne suis pas violent. Ils le m\xE9ritaient
+    et puis de toute fa\xE7on cet alcoolique de papa \xE9tait d\u2019accord avec
+    moi\u2026"
+  - "... la boisson a toujours \xE9t\xE9 mon \xE9chappatoire\u2026 oh non j\u2019ai
+    la gorge s\xE8che !"
+  - "O\xF9 est ma vodka ? et mes champis ?"
+  - "Oh non non non non j\u2019en ai besoin maintenant\u2026"
+  - Ah ha ! Oh. J'ai rien dit, c'est ma bouteille d'eau.
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 0608c064d029964439ae1a6db7abaeca, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

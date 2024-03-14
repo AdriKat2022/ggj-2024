@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: BossDialogue-Part-1
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 35
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 1
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Bienvenue, h\xE9ros. Je t\u2019attendais."
+  - "Si seulement tu savais combien de temps je t\u2019attendais."
+  - "Cela fait des mill\xE9naires tu m\u2019entends, DES MILL\xC9NAIRES que j\u2019attendais."
+  - "Oui, si longtemps. Tu te demandes s\xFBrement ce que j\u2019ai pu faire pendant
+    ces MILLENAIRES pendant lesquels JE t\u2019ai attendu."
+  - "Eh bien, laisse moi te raconter la courte, TR\xC8S COURTE histoire de ma vie.
+    Tout commen\xE7a en l\u2019an -1490."
+  - "A l\u2019\xE9poque, notre terre \xE9tait gouvern\xE9e par des dinosaures, en
+    particulier les tric\xE9ratops avec lesquels j\u2019ai eu de nombreuses histoires
+    que tu peux retrouver dans ton Culturo\xA9 le plus proche."
+  <DialogueEvent>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <DialogueEventIndex>k__BackingField: 0
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: dbd76d8a24e2e3c4b811dac35039891a, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

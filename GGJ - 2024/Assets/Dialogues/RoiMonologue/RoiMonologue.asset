@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: RoiMonologue
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 100
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Bienvenue, h\xE9ros. Je t\u2019attendais. Si seulement tu savais depuis combien
+    de temps je t\u2019attendais.\r"
+  - "Cela fait bien 10 minutes que je t\u2019attends derri\xE8re cette atrocit\xE9. "
+  - "Si tu savais \xF4 combien je te remercie, ce monstre m\u2019a vol\xE9 ma couronne
+    et mon honneur. "
+  - "Tu ne peux pas comprendre \xE0 quel point se faire voler sa position est humiliant.\r\n\r"
+  DialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DialogueEventIndex: 0
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 7d944c173d99858468864ad760cb1fe3, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

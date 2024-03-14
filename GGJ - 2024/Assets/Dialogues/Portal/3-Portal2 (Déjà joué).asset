@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: "3-Portal2 (D\xE9j\xE0 jou\xE9)"
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - text: "Ok bah tu sais quoi par les pouvoirs qui me sont attribu\xE9s"
+    time: 3.7
+    sizeModifer: 0
+  - text: 'on va faire un petit skip.. '
+    time: 2
+    sizeModifer: 0
+  - text: laisse moi juste changer deux trois trucs
+    time: 4.2
+    sizeModifer: 0
+  - text: "l\xE0\u2026"
+    time: 0.8
+    sizeModifer: 0
+  - text: "Voil\xE0 \xE7a devrait \xEAtre bon maintenant.."
+    time: 2.7
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 880a378efdad0da49976d2882165e332, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

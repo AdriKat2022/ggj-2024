@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: 1-Gouffre-(Nar)
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 1
+  <Bubbles>k__BackingField:
+  - text: "Regarde, un gouffre ! Faut juste que tu saute par dessus\u2026"
+    time: 3.54
+    sizeModifer: 0
+  - text: "Attends comment \xE7a tu peux pas sauter ?"
+    time: 2.17
+    sizeModifer: 0
+  - text: "Tu vas me dire qu\u2019apr\xE8s des centaines d\u2019ann\xE9es d\u2019\xE9volution
+      de l\u2019esp\xE8ce humaine toi et tes pitites jambes peuvent pas sauter ?"
+    time: 6.15
+    sizeModifer: 0
+  - text: "Tu sais vraiment rien faire par toi m\xEAme."
+    time: 2.98
+    sizeModifer: 0
+  - text: "Bon \xE9coute, euuuh, je vais trouver un truc pour toi"
+    time: 4.12
+    sizeModifer: 0
+  - text: attends un peu
+    time: 1.08
+    sizeModifer: 0
+  - text: attend un peuuuuuuuuuu
+    time: 2.16
+    sizeModifer: 0
+  - text: "Emmmm, vas-y joue \xE0 \xE7a en attendant et fait pas de b\xE9tises."
+    time: 4.66
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: 681b5d0e9b9aa7446a4c03d8dcce7c81, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2486139e39b2e74da13128c0ca8eb2e, type: 3}
+  m_Name: "1Act (R\xE9veil, Mari mort...)"
+  m_EditorClassIdentifier: 
+  <LockPlayerMovements>k__BackingField: 1
+  <Bubbles>k__BackingField:
+  - text: "Bonjour Blo. D\xE9sol\xE9 de te r\xE9veiller comme \xE7a, mais ce qu\u2019il
+      se passe est urgent."
+    time: 4.8
+    sizeModifer: 0
+  - text: "Le roi, ton p\xE8re, vient de tuer ton mari Pablo."
+    time: 3.41
+    sizeModifer: 0
+  - text: Normalement je te dirais de porter plainte au commissariat, mais on a pas
+      fait de commissariat.
+    time: 5.08
+    sizeModifer: 0
+  - text: "Donc pour l\u2019histoire tu devras te venger de ton p\xE8re, ce satan\xE9
+      roi !"
+    time: 4.1
+    sizeModifer: 0
+  - text: "Pour cela, tu devras traverser ce royaume en qu\xEAte de TROIS donjons,
+      et apr\xE8s cela tu seras capable d\u2019entrer dans le palais royal pour lui
+      mettre la t\xEAte sur un piquet "
+    time: 10.42
+    sizeModifer: 0
+  - text: enfin pas vraiment, les graphistes ont eu la flemme de faire un piquet.
+    time: 3.74
+    sizeModifer: 0
+  <SubtitlesAudio>k__BackingField: {fileID: 8300000, guid: be8c2422fab51184dbade877b9aa1f05, type: 3}
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 0}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57afbb32306514348876a09f683ed872, type: 3}
+  m_Name: RoiMonologue 4
+  m_EditorClassIdentifier: 
+  <DialogueSpeed>k__BackingField: 100
+  <IgnorePunctuation>k__BackingField: 0
+  <IgnoreWhiteSpaces>k__BackingField: 0
+  <LockPlayerMovements>k__BackingField: 0
+  <NonSkippable>k__BackingField: 0
+  <AutoAdvance>k__BackingField: 0
+  <AutoAdvanceTime>k__BackingField: 0
+  <Bubbles>k__BackingField:
+  - "Mais bref assez parl\xE9 d\u2019argent, tu ne voudrais pas travailler pour moi
+    ?  \r\n"
+  - "J\u2019aurai besoin d\u2019hommes en plus dans mes chantiers et je vois que
+    tu es tout en muscle !"
+  - " Tu es parfait pour ce job ! Tu veux \xEAtre pay\xE9 ? QUOI ? Mais le paiement
+    c\u2019est de travailler pour le roi ! "
+  - "Travailler pour la bonne cause ! J\u2019offre \xE0 mes employ\xE9s un lieu pour
+    dormir et tu veux en plus \xEAtre PAYER ? "
+  - "De l\u2019esclavagisme ? Moi faire de l\u2019esclavagisme ? Tu commences \xE0
+    me courir sur le haricot, \u201Ch\xE9ros\u201D. "
+  DialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DialogueEventIndex: 0
+  <FollowUpTime>k__BackingField: 0
+  <FollowingDialogue>k__BackingField: {fileID: 11400000, guid: 88fc6d15566535044a26f0e439f82157, type: 2}
+  <FollowingSubtitle>k__BackingField: {fileID: 0}
